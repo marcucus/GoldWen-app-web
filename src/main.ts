@@ -18,7 +18,6 @@ async function bootstrap() {
   hbs.registerHelper('eq', (a: unknown, b: unknown) => a === b);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
   hbs.registerHelper('substring', (str: string, start: number, end: number) =>
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     str.substring(start, end),
   );
 
@@ -28,5 +27,4 @@ async function bootstrap() {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
 void bootstrap();

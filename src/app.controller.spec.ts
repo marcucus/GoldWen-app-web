@@ -16,7 +16,9 @@ describe('AppController', () => {
 
   describe('health endpoint', () => {
     it('should return health message', () => {
-      expect(appController.getHealth()).toBe('GoldWen Showcase API is running!');
+      expect(appController.getHealth()).toBe(
+        'GoldWen Showcase API is running!',
+      );
     });
   });
 });
