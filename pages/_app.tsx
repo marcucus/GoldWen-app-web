@@ -8,7 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <link href="/css/styles.css" rel="stylesheet" />
       </Head>
-      <Component {...pageProps} />
+      <div className="font-sans text-gray-text bg-cream-light min-h-screen">
+        <Component {...pageProps} />
+      </div>
     </>
   )
 }

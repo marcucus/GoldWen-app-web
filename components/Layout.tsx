@@ -105,8 +105,7 @@ export default function Layout({ children, title, description, keywords, app }: 
         />
       </Head>
 
-      <body className="font-sans text-gray-text bg-cream-light">
-        {/* Navigation */}
+      {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark transition-all duration-300">
           <div className="container-responsive">
             <div className="flex items-center justify-between h-16">
@@ -252,7 +251,6 @@ export default function Layout({ children, title, description, keywords, app }: 
             </div>
           </div>
         </footer>
-      </body>
     </>
   );
 }
