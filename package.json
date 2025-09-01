@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "vercel-build": "npx tailwindcss -i ./src/styles.css -o ./public/css/styles.css && npx nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "npm run build:css && nest start",
     "start:dev": "npm run build:css && nest start --watch",
