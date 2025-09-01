@@ -17,10 +17,8 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', async () => {
-    const response = await request(app.getHttpServer())
-      .get('/')
-      .expect(200);
-    
+    const response = await request(app.getHttpServer()).get('/').expect(200);
+
     expect(response.text).toContain('GoldWen');
   });
 
@@ -28,7 +26,7 @@ describe('AppController (e2e)', () => {
     const response = await request(app.getHttpServer())
       .get('/api/health')
       .expect(200);
-    
+
     expect(response.text).toBe('GoldWen Showcase API is running!');
   });
 });
