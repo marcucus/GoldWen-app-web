@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="author" content="{{app.name}} Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://goldwen.app">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goldwen.app">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="https://goldwen.app/static/images/goldwen-og.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://goldwen.app">
+    <meta property="twitter:title" content="{{title}}">
+    <meta property="twitter:description" content="{{description}}">
+    <meta property="twitter:image" content="https://goldwen.app/static/images/goldwen-og.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "{{app.name}}",
+        "description": "{{app.description}}",
+        "url": "https://goldwen.app",
+        "applicationCategory": "Dating",
+        "operatingSystem": "iOS, Android",
+        "author": {
+            "@type": "Organization",
+            "name": "{{app.name}} Team"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-text bg-cream-light">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark">
+        <div class="container-responsive">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">G</span>
+                    </div>
+                    <span class="font-serif font-bold text-xl text-gray-text">{{app.name}}</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-text hover:text-gold-primary transition-colors">Fonctionnalités</a>
+                    <a href="#about" class="text-gray-text hover:text-gold-primary transition-colors">À propos</a>
+                    <a href="#download" class="btn-primary text-sm">Télécharger</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-gray-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-cream-light via-cream-default to-beige-light">
+        <div class="container-responsive">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="space-calm-lg">
+                    <h1 class="font-serif font-bold text-gray-text mb-6">
+                        {{app.name}}<br>
+                        <span class="text-gold-primary gold-accent">{{app.tagline}}</span>
+                    </h1>
+                    <p class="text-xl text-gray-medium mb-8 leading-relaxed">
+                        {{app.description}}
+                    </p>
+                    <p class="text-lg font-medium text-gold-primary mb-10">
+                        "{{app.slogan}}"
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#download" class="btn-primary">
+                            Télécharger l'application
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            Découvrir les fonctionnalités
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gold-primary rounded-full"></div>
+                                <div>
+                                    <div class="h-4 bg-gray-200 rounded w-24 mb-2"></div>
+                                    <div class="h-3 bg-gray-100 rounded w-16"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="h-3 bg-gray-100 rounded"></div>
+                                <div class="h-3 bg-gray-100 rounded w-3/4"></div>
+                            </div>
+                            <div class="flex justify-center">
+                                <div class="w-20 h-10 bg-gold-primary rounded-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-white">
+        <div class="container-responsive">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-gray-text mb-6 gold-accent">
+                    Une approche révolutionnaire des rencontres
+                </h2>
+                <p class="text-xl text-gray-medium max-w-3xl mx-auto">
+                    Fini le swipe incessant et l'anxiété. {{app.name}} propose une expérience apaisante 
+                    et intentionnelle pour des connexions authentiques.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {{#each features}}
+                <div class="card text-center space-calm">
+                    <div class="icon-large mx-auto mb-6">
+                        {{#if (eq icon 'calendar')}}
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        {{else if (eq icon 'heart')}}
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                        {{else if (eq icon 'chat')}}
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                        {{else}}
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        {{/if}}
+                    </div>
+                    <h3 class="font-serif font-semibold text-gray-text mb-4">{{title}}</h3>
+                    <p class="text-gray-medium">{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Philosophy Section -->
+    <section id="about" class="section-padding bg-gradient-to-r from-beige-light to-cream-default">
+        <div class="container-responsive">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-calm-lg">
+                    <h2 class="font-serif font-bold text-gray-text mb-8 gold-accent">
+                        La philosophie "Calm Technology"
+                    </h2>
+                    <div class="space-calm">
+                        <p class="text-lg text-gray-medium">
+                            {{app.name}} adopte les principes de la "Calm Technology" pour créer une expérience 
+                            apaisante qui réduit l'anxiété liée aux applications de rencontre traditionnelles.
+                        </p>
+                        <p class="text-lg text-gray-medium">
+                            Notre interface minimaliste, nos espaces généreux et nos interactions prévisibles 
+                            vous permettent de vous concentrer sur l'essentiel : créer des connexions authentiques.
+                        </p>
+                        <p class="text-lg text-gray-medium">
+                            Avec une seule notification par jour et des conversations limitées dans le temps, 
+                            nous encourageons des échanges plus intentionnels et moins compulsifs.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="font-serif font-semibold text-gray-text mb-3">Design Minimaliste</h4>
+                        <p class="text-gray-medium">Interfaces épurées sans éléments superflus pour une expérience sereine.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="font-serif font-semibold text-gray-text mb-3">Interactions Prévisibles</h4>
+                        <p class="text-gray-medium">Chaque action est claire et rassurante, vous savez toujours ce qui se passe.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="font-serif font-semibold text-gray-text mb-3">Notifications Limitées</h4>
+                        <p class="text-gray-medium">Une seule notification par jour, pas de dépendance créée artificiellement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personas Section -->
+    <section class="section-padding bg-white">
+        <div class="container-responsive">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-gray-text mb-6 gold-accent">
+                    Pour qui {{app.name}} est-elle conçue ?
+                </h2>
+                <p class="text-xl text-gray-medium max-w-3xl mx-auto">
+                    Notre application s'adresse aux personnes qui recherchent des connexions authentiques 
+                    et qui sont fatiguées des applications de rencontre traditionnelles.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                {{#each personas}}
+                <div class="card space-calm">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">{{substring name 0 1}}</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-semibold text-gray-text">{{name}}</h3>
+                            <p class="text-gold-primary font-medium">{{age}} ans</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-medium">{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Download/CTA Section -->
+    <section id="download" class="section-padding bg-gradient-to-br from-gold-primary to-gold-dark text-white">
+        <div class="container-responsive text-center">
+            <div class="max-w-3xl mx-auto space-calm-lg">
+                <h2 class="font-serif font-bold mb-6">
+                    Prêt(e) à vivre une expérience de rencontre différente ?
+                </h2>
+                <p class="text-xl mb-10 opacity-90">
+                    Rejoignez {{app.name}} et découvrez comment la qualité peut transformer vos rencontres en ligne. 
+                    Téléchargez l'application dès aujourd'hui.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#" class="btn bg-white text-gold-primary hover:bg-cream-light">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span>App Store</span>
+                        </span>
+                    </a>
+                    <a href="#" class="btn bg-white text-gold-primary hover:bg-cream-light">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            <span>Google Play</span>
+                        </span>
+                    </a>
+                </div>
+                <p class="text-sm opacity-75 mt-8">
+                    Disponible prochainement sur iOS et Android
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-text text-white py-12">
+        <div class="container-responsive">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">G</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl">{{app.name}}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">{{app.slogan}}</p>
+                    <p class="text-gray-400 text-sm">
+                        L'application de rencontre qui privilégie la qualité des connexions 
+                        pour des relations authentiques et durables.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Application</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#features" class="hover:text-gold-primary transition-colors">Fonctionnalités</a></li>
+                        <li><a href="#about" class="hover:text-gold-primary transition-colors">À propos</a></li>
+                        <li><a href="#download" class="hover:text-gold-primary transition-colors">Télécharger</a></li>
+                        <li><a href="#" class="hover:text-gold-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-gold-primary transition-colors">Confidentialité</a></li>
+                        <li><a href="#" class="hover:text-gold-primary transition-colors">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="hover:text-gold-primary transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-gold-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 {{app.name}}. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling and animations -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observeElements = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            elements.forEach(el => observer.observe(el));
+        };
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', observeElements);
+    </script>
+</body>
+</html>

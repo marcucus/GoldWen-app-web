@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for GoldWen typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Custom base styles following GoldWen design system */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-text bg-cream-light;
+    line-height: 1.7;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-gray-text;
+    line-height: 1.3;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  p {
+    @apply text-lg leading-relaxed;
+  }
+}
+
+/* Custom component styles for GoldWen */
+@layer components {
+  .btn {
+    @apply inline-block px-8 py-4 rounded-lg font-semibold text-center transition-all duration-300 ease-in-out;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gold-primary text-white hover:bg-gold-dark hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply btn border-2 border-gold-primary text-gold-primary hover:bg-gold-primary hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-cream-dark p-8 transition-all duration-300 hover:shadow-md;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-responsive {
+    @apply container mx-auto px-6 md:px-8 lg:px-12;
+  }
+  
+  /* Calm Technology inspired animations */
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Gold accent elements */
+  .gold-accent {
+    position: relative;
+  }
+  
+  .gold-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #D4AF37 0%, transparent 100%);
+    border-radius: 2px;
+  }
+  
+  /* Minimal icons styling */
+  .icon {
+    @apply w-12 h-12 text-gold-primary;
+  }
+  
+  .icon-large {
+    @apply w-16 h-16 text-gold-primary;
+  }
+}
+
+/* Utility classes for calm design */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Generous spacing utilities */
+  .space-calm > * + * {
+    margin-top: 2rem;
+  }
+  
+  .space-calm-lg > * + * {
+    margin-top: 3rem;
+  }
+}
