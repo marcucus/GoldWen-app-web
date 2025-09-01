@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{app.name}} Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-text bg-cream-light">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark transition-all duration-300">
+        <div class="container-responsive">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
+                            <span class="text-white font-bold text-sm">G</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl text-gray-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Accueil
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/support" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Support
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/contact" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/#download" class="btn-primary text-sm px-6 py-2.5 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                        Télécharger
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
+                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg mt-2 border border-cream-dark shadow-lg">
+                    <a href="/" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Accueil
+                    </a>
+                    <a href="/support" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Support
+                    </a>
+                    <a href="/contact" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Contact
+                    </a>
+                    <a href="/#download" class="block mx-4 my-2 text-center btn-primary text-sm py-3 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                        Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <!-- Header Section -->
+        <section class="bg-gradient-to-br from-cream-light via-cream-default to-beige-light py-16">
+            <div class="container-responsive">
+                <div class="text-center max-w-4xl mx-auto space-calm-lg fade-in">
+                    <h1 class="font-serif font-bold text-4xl md:text-5xl text-gray-text mb-6 gold-accent">
+                        Mentions Légales
+                    </h1>
+                    <p class="text-xl text-gray-medium leading-relaxed mb-8">
+                        Informations légales et réglementaires concernant GoldWen et notre société éditrice.
+                    </p>
+                    <p class="text-sm text-gray-medium">
+                        Conformément à l'article 6 de la Loi pour la Confiance dans l'Économie Numérique
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Content -->
+        <section class="py-16 bg-white">
+            <div class="container-responsive">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Company Information -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            1. Éditeur du Site
+                        </h2>
+                        
+                        <div class="bg-gradient-to-r from-cream-light to-beige-light rounded-xl p-8">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">Raison sociale</h3>
+                                        <p class="text-gray-medium">GoldWen SAS</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">Forme juridique</h3>
+                                        <p class="text-gray-medium">Société par Actions Simplifiée</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">Capital social</h3>
+                                        <p class="text-gray-medium">100 000 €</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">SIRET</h3>
+                                        <p class="text-gray-medium">XXX XXX XXX 00010</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">Siège social</h3>
+                                        <p class="text-gray-medium">
+                                            42 Rue de la Technologie<br>
+                                            75001 Paris, France
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">RCS</h3>
+                                        <p class="text-gray-medium">Paris B XXX XXX XXX</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">Code APE</h3>
+                                        <p class="text-gray-medium">6201Z - Programmation informatique</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-2">TVA intracommunautaire</h3>
+                                        <p class="text-gray-medium">FR XX XXX XXX XXX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Management -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            2. Direction et Responsabilité
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-beige-light rounded-lg p-6">
+                                <h3 class="font-semibold text-gray-text mb-3">Directeur de la publication</h3>
+                                <p class="text-gray-medium mb-2">Prénom NOM</p>
+                                <p class="text-gray-medium text-sm">Président de GoldWen SAS</p>
+                                <p class="text-gray-medium text-sm">legal@goldwen.app</p>
+                            </div>
+                            <div class="bg-beige-light rounded-lg p-6">
+                                <h3 class="font-semibold text-gray-text mb-3">Responsable technique</h3>
+                                <p class="text-gray-medium mb-2">Prénom NOM</p>
+                                <p class="text-gray-medium text-sm">CTO de GoldWen SAS</p>
+                                <p class="text-gray-medium text-sm">tech@goldwen.app</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Hosting -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            3. Hébergement
+                        </h2>
+                        
+                        <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                            <h3 class="font-semibold text-gray-text mb-3">Hébergeur principal</h3>
+                            <div class="space-y-2">
+                                <p class="text-gray-medium"><strong>OVHcloud</strong></p>
+                                <p class="text-gray-medium">2 rue Kellermann - 59100 Roubaix, France</p>
+                                <p class="text-gray-medium">Téléphone : +33 (0)9 72 10 10 07</p>
+                                <p class="text-gray-medium">Site web : ovhcloud.com</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm mt-4">
+                            <h3 class="font-semibold text-gray-text mb-3">CDN et Distribution</h3>
+                            <div class="space-y-2">
+                                <p class="text-gray-medium"><strong>Cloudflare</strong></p>
+                                <p class="text-gray-medium">101 Townsend St, San Francisco, CA 94107, États-Unis</p>
+                                <p class="text-gray-medium">Site web : cloudflare.com</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Intellectual Property -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            4. Propriété Intellectuelle
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-r from-gold-primary/10 to-gold-light/10 rounded-xl p-6 border border-gold-primary/20">
+                                <h3 class="font-semibold text-gray-text mb-3">Marques et logos</h3>
+                                <p class="text-gray-medium">
+                                    La marque "GoldWen", le logo et tous les éléments de design sont la propriété exclusive de GoldWen SAS. 
+                                    Toute reproduction ou utilisation sans autorisation écrite est strictement interdite.
+                                </p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Code source</h3>
+                                    <p class="text-gray-medium text-sm">
+                                        Le code source de l'application GoldWen est protégé par le droit d'auteur. 
+                                        Tous droits réservés à GoldWen SAS.
+                                    </p>
+                                </div>
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Contenu utilisateur</h3>
+                                    <p class="text-gray-medium text-sm">
+                                        Vous conservez tous les droits sur le contenu que vous publiez, 
+                                        mais accordez à GoldWen une licence d'utilisation pour le fonctionnement du service.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Data Protection -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            5. Protection des Données
+                        </h2>
+                        
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold text-blue-800 mb-2">Conformité RGPD</h3>
+                                    <p class="text-blue-700 mb-4">
+                                        GoldWen SAS est déclaré à la CNIL et respecte le Règlement Général sur la Protection des Données (RGPD).
+                                    </p>
+                                    
+                                    <div class="space-y-3">
+                                        <div>
+                                            <h4 class="font-medium text-blue-800">Délégué à la Protection des Données (DPO)</h4>
+                                            <p class="text-blue-700 text-sm">
+                                                Prénom NOM<br>
+                                                privacy@goldwen.app<br>
+                                                42 Rue de la Technologie, 75001 Paris
+                                            </p>
+                                        </div>
+                                        
+                                        <div>
+                                            <h4 class="font-medium text-blue-800">Numéro de déclaration CNIL</h4>
+                                            <p class="text-blue-700 text-sm">En cours de traitement</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Applicable Law -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            6. Droit Applicable et Juridictions
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                                <h3 class="font-semibold text-gray-text mb-2">Droit applicable</h3>
+                                <p class="text-gray-medium">
+                                    Le présent site et son utilisation sont régis par le droit français. 
+                                    En cas de litige, les tribunaux français seront seuls compétents.
+                                </p>
+                            </div>
+
+                            <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                                <h3 class="font-semibold text-gray-text mb-2">Médiation</h3>
+                                <p class="text-gray-medium">
+                                    Conformément aux dispositions du Code de la consommation concernant "la médiation des litiges de la consommation", 
+                                    nous proposons une médiation des litiges de consommation.
+                                </p>
+                                <p class="text-gray-medium mt-2">
+                                    <strong>Médiateur :</strong> Centre de Médiation et d'Arbitrage de Paris (CMAP)<br>
+                                    <strong>Site web :</strong> cmap.fr
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Regulatory Information -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            7. Informations Réglementaires
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-cream-light rounded-lg p-6">
+                                <h3 class="font-semibold text-gray-text mb-3">Activité économique</h3>
+                                <ul class="text-gray-medium text-sm space-y-2">
+                                    <li>• Édition de logiciels applicatifs</li>
+                                    <li>• Services de rencontres en ligne</li>
+                                    <li>• Conseil en systèmes informatiques</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-cream-light rounded-lg p-6">
+                                <h3 class="font-semibold text-gray-text mb-3">Autorités de contrôle</h3>
+                                <ul class="text-gray-medium text-sm space-y-2">
+                                    <li>• CNIL pour la protection des données</li>
+                                    <li>• DGCCRF pour la protection du consommateur</li>
+                                    <li>• ARCOM pour les services numériques</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Information -->
+                    <section class="mb-12">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                            8. Nous Contacter
+                        </h2>
+                        
+                        <div class="bg-gradient-to-r from-beige-light to-cream-light rounded-xl p-8">
+                            <p class="text-gray-medium mb-6">
+                                Pour toute question concernant ces mentions légales ou notre société :
+                            </p>
+                            
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gold-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-text mb-2">Email</h3>
+                                    <p class="text-gray-medium text-sm">legal@goldwen.app</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gold-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-text mb-2">Adresse postale</h3>
+                                    <p class="text-gray-medium text-sm">
+                                        42 Rue de la Technologie<br>
+                                        75001 Paris, France
+                                    </p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gold-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-text mb-2">Horaires</h3>
+                                    <p class="text-gray-medium text-sm">
+                                        Lundi - Vendredi<br>
+                                        9h00 - 18h00 (CET)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-text text-white py-12">
+        <div class="container-responsive">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">G</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl">{{app.name}}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">{{app.slogan}}</p>
+                    <p class="text-gray-400 text-sm">
+                        L'application de rencontre qui privilégie la qualité des connexions 
+                        pour des relations authentiques et durables.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Application</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-gold-primary transition-colors">Accueil</a></li>
+                        <li><a href="/#features" class="hover:text-gold-primary transition-colors">Fonctionnalités</a></li>
+                        <li><a href="/#about" class="hover:text-gold-primary transition-colors">À propos</a></li>
+                        <li><a href="/support" class="hover:text-gold-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/confidentialite" class="hover:text-gold-primary transition-colors">Confidentialité</a></li>
+                        <li><a href="/conditions" class="hover:text-gold-primary transition-colors">Conditions d'utilisation</a></li>
+                        <li><a href="/mentions-legales" class="text-gold-primary">Mentions légales</a></li>
+                        <li><a href="/contact" class="hover:text-gold-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 {{app.name}}. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu and interactions -->
+    <script>
+        // Mobile menu toggle functionality
+        const initMobileMenu = () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'max-h-0');
+                    mobileMenu.classList.add('opacity-100', 'max-h-96');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'max-h-0');
+                    mobileMenu.classList.remove('opacity-100', 'max-h-96');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            };
+
+            mobileMenuButton?.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenuButton?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+        };
+
+        // Enhanced navbar scroll behavior
+        const initNavbarScroll = () => {
+            const navbar = document.querySelector('nav');
+
+            const updateNavbar = () => {
+                const scrollY = window.scrollY;
+                
+                if (scrollY > 50) {
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('border-b');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('border-b');
+                }
+            };
+
+            window.addEventListener('scroll', updateNavbar);
+        };
+
+        // Initialize all functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initMobileMenu();
+            initNavbarScroll();
+        });
+    </script>
+</body>
+</html>

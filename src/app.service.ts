@@ -81,7 +81,8 @@ export class AppService {
     return {
       ...this.getBasePageData(),
       title: 'Support et Aide - GoldWen',
-      description: 'Trouvez de l\'aide et des réponses à vos questions sur GoldWen.',
+      description:
+        "Trouvez de l'aide et des réponses à vos questions sur GoldWen.",
     };
   }
 
@@ -89,15 +90,17 @@ export class AppService {
     return {
       ...this.getBasePageData(),
       title: 'Politique de Confidentialité - GoldWen',
-      description: 'Découvrez comment GoldWen protège et utilise vos données personnelles.',
+      description:
+        'Découvrez comment GoldWen protège et utilise vos données personnelles.',
     };
   }
 
   getTermsPageData() {
     return {
       ...this.getBasePageData(),
-      title: 'Conditions d\'Utilisation - GoldWen',
-      description: 'Consultez les conditions d\'utilisation de l\'application GoldWen.',
+      title: "Conditions d'Utilisation - GoldWen",
+      description:
+        "Consultez les conditions d'utilisation de l'application GoldWen.",
     };
   }
 
@@ -113,7 +116,8 @@ export class AppService {
     return {
       ...this.getBasePageData(),
       title: 'Contact - GoldWen',
-      description: 'Contactez l\'équipe GoldWen pour toute question ou suggestion.',
+      description:
+        "Contactez l'équipe GoldWen pour toute question ou suggestion.",
     };
   }
 }
