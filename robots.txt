@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://goldwen.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.json
+Disallow: /assets/
+
+# Allow important pages
+Allow: /
+Allow: /index.html
+
+# Block common bot patterns that aren't search engines
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
