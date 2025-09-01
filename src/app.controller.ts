@@ -12,6 +12,36 @@ export class AppController {
     return this.appService.getHomePageData();
   }
 
+  @Get('support')
+  @Render('support')
+  getSupport() {
+    return this.appService.getSupportPageData();
+  }
+
+  @Get('confidentialite')
+  @Render('privacy')
+  getPrivacy() {
+    return this.appService.getPrivacyPageData();
+  }
+
+  @Get('conditions')
+  @Render('terms')
+  getTerms() {
+    return this.appService.getTermsPageData();
+  }
+
+  @Get('mentions-legales')
+  @Render('legal')
+  getLegal() {
+    return this.appService.getLegalPageData();
+  }
+
+  @Get('contact')
+  @Render('contact')
+  getContact() {
+    return this.appService.getContactPageData();
+  }
+
   @Get('api/health')
   getHealth(): string {
     return this.appService.getHello();
