@@ -20,44 +20,107 @@
     
     <!-- CSS -->
     <link href="/css/styles.css" rel="stylesheet">
+    
+    <!-- Theme Detection Script - Must be in head to prevent FOUC -->
+    <script>
+        // Theme detection and application - prevents FOUC
+        (function() {
+            const getTheme = () => {
+                const saved = localStorage.getItem('goldwen-theme');
+                if (saved && saved !== 'system') return saved;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+            
+            const applyTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            };
+            
+            // Apply theme immediately
+            const currentTheme = getTheme();
+            applyTheme(currentTheme);
+            
+            // Set initial theme preference
+            window.__goldwen_theme = localStorage.getItem('goldwen-theme') || 'system';
+        })();
+    </script>
 </head>
-<body class="font-sans text-gray-text bg-cream-light">
+<body class="font-sans text-gray-text bg-cream-light dark:text-dark-text dark:bg-dark-primary transition-colors duration-300">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 glass-effect bg-white/95 dark:bg-dark-secondary/95 border-b border-cream-dark dark:border-dark-tertiary transition-all duration-300">
         <div class="container-responsive">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
                     <a href="/" class="flex items-center space-x-3 group">
                         <div class="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
-                            <span class="text-white font-bold text-sm">G</span>
+                            <img src="/images/logo_sans_fond.png" alt="GoldWen Logo" class="w-8 h-8 object-contain dark:hidden">
+                            <img src="/images/logo_base.png" alt="GoldWen Logo" class="w-8 h-8 object-contain hidden dark:block">
                         </div>
-                        <span class="font-serif font-bold text-xl text-gray-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
+                        <span class="font-serif font-bold text-xl text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
                     </a>
                 </div>
                 
                 <!-- Desktop menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                    <a href="/" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
                         Accueil
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="/support" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                    <a href="/support" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
                         Support
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="/contact" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                    <a href="/contact" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
                         Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
+                    
+                    <!-- Theme Toggle -->
+                    <div class="relative">
+                        <button id="theme-toggle" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-secondary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50" aria-label="Toggle theme">
+                            <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                            <svg id="theme-icon-system" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </button>
+                        <!-- Theme Dropdown -->
+                        <div id="theme-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-dark-secondary rounded-lg shadow-lg border border-cream-dark dark:border-dark-tertiary opacity-0 pointer-events-none transition-all duration-200 transform translate-y-2 z-50">
+                            <div class="py-1">
+                                <button data-theme="light" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                    Clair
+                                </button>
+                                <button data-theme="dark" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                    </svg>
+                                    Sombre
+                                </button>
+                                <button data-theme="system" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    Système
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <a href="/#download" class="btn-primary text-sm px-6 py-2.5 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                         Télécharger
                     </a>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
+                <button id="mobile-menu-button" class="md:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
                     <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -69,16 +132,31 @@
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg mt-2 border border-cream-dark shadow-lg">
-                    <a href="/" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 dark:bg-dark-secondary/95 backdrop-blur-sm rounded-lg mt-2 border border-cream-dark dark:border-dark-tertiary shadow-lg">
+                    <a href="/" class="block px-4 py-3 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-md font-medium">
                         Accueil
                     </a>
-                    <a href="/support" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                    <a href="/support" class="block px-4 py-3 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-md font-medium">
                         Support
                     </a>
-                    <a href="/contact" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                    <a href="/contact" class="block px-4 py-3 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-md font-medium">
                         Contact
                     </a>
+                    <!-- Mobile Theme Toggle -->
+                    <div class="px-4 py-2">
+                        <span class="text-sm text-gray-medium dark:text-dark-text-secondary block mb-2">Thème</span>
+                        <div class="flex space-x-2">
+                            <button data-theme="light" class="flex-1 px-3 py-2 text-xs bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text rounded-md hover:bg-gold-primary hover:text-white transition-colors">
+                                Clair
+                            </button>
+                            <button data-theme="dark" class="flex-1 px-3 py-2 text-xs bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text rounded-md hover:bg-gold-primary hover:text-white transition-colors">
+                                Sombre
+                            </button>
+                            <button data-theme="system" class="flex-1 px-3 py-2 text-xs bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text rounded-md hover:bg-gold-primary hover:text-white transition-colors">
+                                Auto
+                            </button>
+                        </div>
+                    </div>
                     <a href="/#download" class="block mx-4 my-2 text-center btn-primary text-sm py-3 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                         Télécharger
                     </a>
@@ -93,25 +171,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-text text-white py-12">
+    <footer class="bg-gray-text dark:bg-dark-primary text-white py-12">
         <div class="container-responsive">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
                         <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">G</span>
+                            <img src="/images/logo_sans_fond.png" alt="GoldWen Logo" class="w-6 h-6 object-contain dark:hidden">
+                            <img src="/images/logo_base.png" alt="GoldWen Logo" class="w-6 h-6 object-contain hidden dark:block">
                         </div>
                         <span class="font-serif font-bold text-xl">{{app.name}}</span>
                     </div>
-                    <p class="text-gray-300 mb-4">{{app.slogan}}</p>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-gray-300 dark:text-dark-text-secondary mb-4">{{app.slogan}}</p>
+                    <p class="text-gray-400 dark:text-dark-text-secondary text-sm">
                         L'application de rencontre qui privilégie la qualité des connexions 
                         pour des relations authentiques et durables.
                     </p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Application</h4>
-                    <ul class="space-y-2 text-gray-300">
+                    <ul class="space-y-2 text-gray-300 dark:text-dark-text-secondary">
                         <li><a href="/" class="hover:text-gold-primary transition-colors">Accueil</a></li>
                         <li><a href="/#features" class="hover:text-gold-primary transition-colors">Fonctionnalités</a></li>
                         <li><a href="/#about" class="hover:text-gold-primary transition-colors">À propos</a></li>
@@ -120,7 +199,7 @@
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Légal</h4>
-                    <ul class="space-y-2 text-gray-300">
+                    <ul class="space-y-2 text-gray-300 dark:text-dark-text-secondary">
                         <li><a href="/confidentialite" class="hover:text-gold-primary transition-colors">Confidentialité</a></li>
                         <li><a href="/conditions" class="hover:text-gold-primary transition-colors">Conditions d'utilisation</a></li>
                         <li><a href="/mentions-legales" class="hover:text-gold-primary transition-colors">Mentions légales</a></li>
@@ -128,7 +207,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <div class="border-t border-gray-600 dark:border-dark-tertiary mt-8 pt-8 text-center text-gray-400 dark:text-dark-text-secondary text-sm">
                 <p>&copy; 2025 {{app.name}}. Tous droits réservés.</p>
             </div>
         </div>
@@ -136,6 +215,110 @@
 
     <!-- JavaScript for mobile menu and interactions -->
     <script>
+        // Theme Management
+        const ThemeManager = {
+            init() {
+                this.currentTheme = window.__goldwen_theme || 'system';
+                this.setupEventListeners();
+                this.updateThemeIcon();
+                this.updateActiveThemeButton();
+            },
+
+            getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            },
+
+            getEffectiveTheme() {
+                return this.currentTheme === 'system' ? this.getSystemTheme() : this.currentTheme;
+            },
+
+            applyTheme(theme) {
+                const effectiveTheme = theme === 'system' ? this.getSystemTheme() : theme;
+                document.documentElement.classList.toggle('dark', effectiveTheme === 'dark');
+            },
+
+            setTheme(newTheme) {
+                this.currentTheme = newTheme;
+                localStorage.setItem('goldwen-theme', newTheme);
+                this.applyTheme(newTheme);
+                this.updateThemeIcon();
+                this.updateActiveThemeButton();
+                this.hideThemeDropdown();
+            },
+
+            updateThemeIcon() {
+                const lightIcon = document.getElementById('theme-icon-light');
+                const darkIcon = document.getElementById('theme-icon-dark');
+                const systemIcon = document.getElementById('theme-icon-system');
+                
+                if (!lightIcon || !darkIcon || !systemIcon) return;
+
+                // Hide all icons
+                [lightIcon, darkIcon, systemIcon].forEach(icon => icon.classList.add('hidden'));
+
+                // Show appropriate icon
+                if (this.currentTheme === 'light') {
+                    lightIcon.classList.remove('hidden');
+                } else if (this.currentTheme === 'dark') {
+                    darkIcon.classList.remove('hidden');
+                } else {
+                    systemIcon.classList.remove('hidden');
+                }
+            },
+
+            updateActiveThemeButton() {
+                const buttons = document.querySelectorAll('[data-theme]');
+                buttons.forEach(button => {
+                    const isActive = button.dataset.theme === this.currentTheme;
+                    button.classList.toggle('bg-gold-primary', isActive);
+                    button.classList.toggle('text-white', isActive);
+                });
+            },
+
+            showThemeDropdown() {
+                const dropdown = document.getElementById('theme-dropdown');
+                if (dropdown) {
+                    dropdown.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+                    dropdown.classList.add('opacity-100', 'translate-y-0');
+                }
+            },
+
+            hideThemeDropdown() {
+                const dropdown = document.getElementById('theme-dropdown');
+                if (dropdown) {
+                    dropdown.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                    dropdown.classList.remove('opacity-100', 'translate-y-0');
+                }
+            },
+
+            setupEventListeners() {
+                // Theme toggle button
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.showThemeDropdown();
+                    });
+                }
+
+                // Theme selection buttons
+                document.addEventListener('click', (e) => {
+                    if (e.target.dataset.theme) {
+                        this.setTheme(e.target.dataset.theme);
+                    } else if (!e.target.closest('#theme-dropdown') && !e.target.closest('#theme-toggle')) {
+                        this.hideThemeDropdown();
+                    }
+                });
+
+                // Listen for system theme changes
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (this.currentTheme === 'system') {
+                        this.applyTheme('system');
+                    }
+                });
+            }
+        };
+
         // Mobile menu toggle functionality
         const initMobileMenu = () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -160,19 +343,23 @@
                 }
             };
 
-            mobileMenuButton.addEventListener('click', toggleMenu);
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', toggleMenu);
 
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    toggleMenu();
-                }
-            });
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (isMenuOpen && !mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+            }
         };
 
         // Enhanced navbar scroll behavior
         const initNavbarScroll = () => {
             const navbar = document.querySelector('nav');
+            if (!navbar) return;
+
             let lastScrollY = window.scrollY;
 
             const updateNavbar = () => {
@@ -194,6 +381,7 @@
 
         // Initialize all functionality when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
+            ThemeManager.init();
             initMobileMenu();
             initNavbarScroll();
         });
