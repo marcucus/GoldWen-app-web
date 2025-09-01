@@ -6,6 +6,16 @@ export class AppService {
     return 'GoldWen Showcase API is running!';
   }
 
+  getBasePageData() {
+    return {
+      app: {
+        name: 'GoldWen',
+        slogan: 'Conçue pour être désinstallée',
+        tagline: 'La qualité plutôt que la quantité',
+      },
+    };
+  }
+
   getHomePageData() {
     return {
       title: "GoldWen - L'application de rencontre qui valorise la qualité",
@@ -64,6 +74,50 @@ export class AppService {
         primary: "Télécharger l'app",
         secondary: 'En savoir plus',
       },
+    };
+  }
+
+  getSupportPageData() {
+    return {
+      ...this.getBasePageData(),
+      title: 'Support et Aide - GoldWen',
+      description:
+        "Trouvez de l'aide et des réponses à vos questions sur GoldWen.",
+    };
+  }
+
+  getPrivacyPageData() {
+    return {
+      ...this.getBasePageData(),
+      title: 'Politique de Confidentialité - GoldWen',
+      description:
+        'Découvrez comment GoldWen protège et utilise vos données personnelles.',
+    };
+  }
+
+  getTermsPageData() {
+    return {
+      ...this.getBasePageData(),
+      title: "Conditions d'Utilisation - GoldWen",
+      description:
+        "Consultez les conditions d'utilisation de l'application GoldWen.",
+    };
+  }
+
+  getLegalPageData() {
+    return {
+      ...this.getBasePageData(),
+      title: 'Mentions Légales - GoldWen',
+      description: 'Informations légales et réglementaires concernant GoldWen.',
+    };
+  }
+
+  getContactPageData() {
+    return {
+      ...this.getBasePageData(),
+      title: 'Contact - GoldWen',
+      description:
+        "Contactez l'équipe GoldWen pour toute question ou suggestion.",
     };
   }
 }

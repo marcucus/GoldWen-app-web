@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{app.name}} Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-text bg-cream-light">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark transition-all duration-300">
+        <div class="container-responsive">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
+                            <span class="text-white font-bold text-sm">G</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl text-gray-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Accueil
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/support" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Support
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/contact" class="text-gray-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/#download" class="btn-primary text-sm px-6 py-2.5 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                        Télécharger
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
+                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg mt-2 border border-cream-dark shadow-lg">
+                    <a href="/" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Accueil
+                    </a>
+                    <a href="/support" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Support
+                    </a>
+                    <a href="/contact" class="block px-4 py-3 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-md font-medium">
+                        Contact
+                    </a>
+                    <a href="/#download" class="block mx-4 my-2 text-center btn-primary text-sm py-3 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                        Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <!-- Header Section -->
+        <section class="bg-gradient-to-br from-cream-light via-cream-default to-beige-light py-16">
+            <div class="container-responsive">
+                <div class="text-center max-w-4xl mx-auto space-calm-lg fade-in">
+                    <h1 class="font-serif font-bold text-4xl md:text-5xl text-gray-text mb-6 gold-accent">
+                        Conditions d'Utilisation
+                    </h1>
+                    <p class="text-xl text-gray-medium leading-relaxed mb-8">
+                        Les règles et conditions qui régissent l'utilisation de GoldWen pour une expérience respectueuse et sécurisée.
+                    </p>
+                    <p class="text-sm text-gray-medium">
+                        Dernière mise à jour : 1er janvier 2025 • Version 1.0
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content -->
+        <section class="py-16 bg-white">
+            <div class="container-responsive">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Introduction -->
+                    <div class="bg-gradient-to-r from-gold-primary/10 to-gold-light/10 rounded-xl p-8 mb-12 border border-gold-primary/20">
+                        <h2 class="font-serif font-bold text-2xl text-gray-text mb-4 gold-accent">
+                            Bienvenue sur GoldWen
+                        </h2>
+                        <p class="text-gray-medium leading-relaxed">
+                            En utilisant GoldWen, vous acceptez ces conditions d'utilisation. Elles définissent nos droits et responsabilités mutuels et sont conçues pour protéger tous les membres de notre communauté. Notre objectif est de créer un environnement sûr et respectueux pour des rencontres authentiques.
+                        </p>
+                    </div>
+
+                    <div class="space-calm-lg">
+                        <!-- Account Terms -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                1. Éligibilité et Compte Utilisateur
+                            </h2>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-lg text-gray-text mb-3">Conditions d'éligibilité</h3>
+                                    <ul class="text-gray-medium space-y-2">
+                                        <li>• Vous devez avoir au moins 18 ans</li>
+                                        <li>• Vous devez fournir des informations véridiques et à jour</li>
+                                        <li>• Vous ne devez pas avoir été précédemment exclu de GoldWen</li>
+                                        <li>• Vous devez respecter les lois locales en vigueur</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-lg text-gray-text mb-3">Responsabilités du compte</h3>
+                                    <ul class="text-gray-medium space-y-2">
+                                        <li>• Maintenir la confidentialité de vos identifiants de connexion</li>
+                                        <li>• Utiliser uniquement des photos de vous-même</li>
+                                        <li>• Mettre à jour vos informations si elles changent</li>
+                                        <li>• Signaler toute utilisation non autorisée de votre compte</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Community Guidelines -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                2. Règles de la Communauté
+                            </h2>
+                            
+                            <div class="bg-gradient-to-r from-cream-light to-beige-light rounded-xl p-8 mb-6">
+                                <h3 class="font-semibold text-lg text-gray-text mb-4">Notre philosophie : Respect et Authenticité</h3>
+                                <p class="text-gray-medium mb-4">
+                                    GoldWen promeut des interactions respectueuses et authentiques. Nous encourageons la bienveillance et la sincérité dans tous les échanges.
+                                </p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                    <h3 class="font-semibold text-green-800 mb-3 flex items-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Comportements encouragés
+                                    </h3>
+                                    <ul class="text-green-700 space-y-1 text-sm">
+                                        <li>• Être respectueux et poli</li>
+                                        <li>• Communiquer avec sincérité</li>
+                                        <li>• Respecter le consentement</li>
+                                        <li>• Prendre le temps d'apprendre à connaître</li>
+                                        <li>• Signaler les comportements inappropriés</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                                    <h3 class="font-semibold text-red-800 mb-3 flex items-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                        Comportements interdits
+                                    </h3>
+                                    <ul class="text-red-700 space-y-1 text-sm">
+                                        <li>• Harcèlement ou intimidation</li>
+                                        <li>• Contenu sexuellement explicite</li>
+                                        <li>• Discours de haine ou discriminatoire</li>
+                                        <li>• Usurpation d'identité</li>
+                                        <li>• Sollicitation commerciale ou spam</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Service Usage -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                3. Utilisation du Service
+                            </h2>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                                    <h3 class="font-semibold text-gray-text mb-3">Sélection quotidienne</h3>
+                                    <p class="text-gray-medium">
+                                        Vous recevez une sélection de 3 à 5 profils par jour à midi. Cette limitation est intentionnelle pour encourager des choix réfléchis et réduire la fatigue de décision.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                                    <h3 class="font-semibold text-gray-text mb-3">Conversations éphémères</h3>
+                                    <p class="text-gray-medium">
+                                        Les conversations disparaissent automatiquement après 24 heures. Cette fonctionnalité encourage des échanges spontanés et évite l'accumulation de conversations non actives.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white border-l-4 border-gold-primary p-6 shadow-sm">
+                                    <h3 class="font-semibold text-gray-text mb-3">Notification unique</h3>
+                                    <p class="text-gray-medium">
+                                        Vous recevez une seule notification par jour pour votre sélection. Nous limitons volontairement les notifications pour respecter notre philosophie de "Calm Technology".
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Premium Features -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                4. GoldWen Plus (Abonnement Premium)
+                            </h2>
+                            
+                            <div class="bg-gradient-to-r from-gold-primary/5 to-gold-light/5 rounded-xl p-8">
+                                <h3 class="font-semibold text-lg text-gray-text mb-4">Fonctionnalités Premium</h3>
+                                <ul class="text-gray-medium space-y-2 mb-6">
+                                    <li>• Possibilité de "choisir" jusqu'à 3 profils par jour</li>
+                                    <li>• Accès prioritaire aux nouvelles fonctionnalités</li>
+                                    <li>• Support client prioritaire</li>
+                                </ul>
+                                
+                                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-text mb-2">Facturation</h4>
+                                        <p class="text-gray-medium">Renouvellement automatique via App Store ou Google Play</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-text mb-2">Annulation</h4>
+                                        <p class="text-gray-medium">Possible à tout moment dans les paramètres de votre compte</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-text mb-2">Remboursement</h4>
+                                        <p class="text-gray-medium">Selon les politiques d'Apple et Google</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Content Policy -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                5. Politique de Contenu
+                            </h2>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Photos de profil</h3>
+                                    <ul class="text-gray-medium space-y-1">
+                                        <li>• Doivent vous représenter fidèlement</li>
+                                        <li>• Être récentes (moins de 2 ans)</li>
+                                        <li>• Ne pas contenir d'autres personnes comme sujet principal</li>
+                                        <li>• Respecter la décence et les bonnes mœurs</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Description de profil</h3>
+                                    <ul class="text-gray-medium space-y-1">
+                                        <li>• Être authentique et représentative de qui vous êtes</li>
+                                        <li>• Ne pas contenir d'informations de contact</li>
+                                        <li>• Éviter les contenus promotionnels ou commerciaux</li>
+                                        <li>• Respecter les autres utilisateurs</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-beige-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Messages</h3>
+                                    <ul class="text-gray-medium space-y-1">
+                                        <li>• Rester respectueux et appropriés</li>
+                                        <li>• Ne pas contenir de contenu sexuellement explicite</li>
+                                        <li>• Éviter le spam ou les messages répétitifs</li>
+                                        <li>• Respecter le consentement de votre interlocuteur</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Limitations -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                6. Limitations et Responsabilités
+                            </h2>
+                            
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mb-6">
+                                <div class="flex items-start space-x-3">
+                                    <svg class="w-6 h-6 text-yellow-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                    </svg>
+                                    <div>
+                                        <h3 class="font-semibold text-yellow-800 mb-2">Disclaimer important</h3>
+                                        <p class="text-yellow-700">
+                                            GoldWen est une plateforme de rencontre. Nous ne garantissons pas de résultats spécifiques et ne sommes pas responsables des interactions entre utilisateurs en dehors de notre plateforme.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-2 h-2 bg-gold-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-medium"><strong>Rencontres physiques :</strong> Exercez toujours votre bon jugement et prenez des précautions appropriées</p>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-2 h-2 bg-gold-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-medium"><strong>Vérification des profils :</strong> Nous ne vérifions pas l'identité des utilisateurs, restez vigilant</p>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-2 h-2 bg-gold-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-medium"><strong>Disponibilité du service :</strong> Nous nous efforçons de maintenir le service disponible mais ne garantissons pas une disponibilité de 100%</p>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-2 h-2 bg-gold-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-medium"><strong>Évolution du service :</strong> Nous nous réservons le droit de modifier les fonctionnalités avec préavis</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Termination -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                7. Suspension et Résiliation
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-cream-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Suspension temporaire</h3>
+                                    <p class="text-gray-medium text-sm mb-3">
+                                        En cas de violation mineure des règles, nous pouvons suspendre temporairement votre compte avec possibilité de réactivation.
+                                    </p>
+                                    <ul class="text-gray-medium text-sm space-y-1">
+                                        <li>• Durée : 24h à 30 jours</li>
+                                        <li>• Notification par email</li>
+                                        <li>• Possibilité d'appel</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-cream-light rounded-lg p-6">
+                                    <h3 class="font-semibold text-gray-text mb-3">Résiliation définitive</h3>
+                                    <p class="text-gray-medium text-sm mb-3">
+                                        En cas de violation grave ou répétée, nous pouvons procéder à une exclusion définitive de la plateforme.
+                                    </p>
+                                    <ul class="text-gray-medium text-sm space-y-1">
+                                        <li>• Suppression immédiate</li>
+                                        <li>• Interdiction de se réinscrire</li>
+                                        <li>• Notification des raisons</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Legal -->
+                        <section class="mb-12">
+                            <h2 class="font-serif font-bold text-2xl text-gray-text mb-6 gold-accent">
+                                8. Dispositions Légales
+                            </h2>
+                            
+                            <div class="bg-gradient-to-r from-beige-light to-cream-light rounded-xl p-8">
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-3">Droit applicable</h3>
+                                        <p class="text-gray-medium text-sm">
+                                            Ces conditions sont régies par le droit français. Tout litige sera soumis aux tribunaux compétents de Paris.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-3">Modifications</h3>
+                                        <p class="text-gray-medium text-sm">
+                                            Nous nous réservons le droit de modifier ces conditions avec un préavis de 30 jours par notification dans l'application.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-3">Divisibilité</h3>
+                                        <p class="text-gray-medium text-sm">
+                                            Si une clause est déclarée nulle, les autres clauses restent en vigueur.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-text mb-3">Contact</h3>
+                                        <p class="text-gray-medium text-sm">
+                                            Pour toute question : legal@goldwen.app
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-text text-white py-12">
+        <div class="container-responsive">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">G</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl">{{app.name}}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">{{app.slogan}}</p>
+                    <p class="text-gray-400 text-sm">
+                        L'application de rencontre qui privilégie la qualité des connexions 
+                        pour des relations authentiques et durables.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Application</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-gold-primary transition-colors">Accueil</a></li>
+                        <li><a href="/#features" class="hover:text-gold-primary transition-colors">Fonctionnalités</a></li>
+                        <li><a href="/#about" class="hover:text-gold-primary transition-colors">À propos</a></li>
+                        <li><a href="/support" class="hover:text-gold-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/confidentialite" class="hover:text-gold-primary transition-colors">Confidentialité</a></li>
+                        <li><a href="/conditions" class="text-gold-primary">Conditions d'utilisation</a></li>
+                        <li><a href="/mentions-legales" class="hover:text-gold-primary transition-colors">Mentions légales</a></li>
+                        <li><a href="/contact" class="hover:text-gold-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 {{app.name}}. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu and interactions -->
+    <script>
+        // Mobile menu toggle functionality
+        const initMobileMenu = () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'max-h-0');
+                    mobileMenu.classList.add('opacity-100', 'max-h-96');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'max-h-0');
+                    mobileMenu.classList.remove('opacity-100', 'max-h-96');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            };
+
+            mobileMenuButton?.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenuButton?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+        };
+
+        // Enhanced navbar scroll behavior
+        const initNavbarScroll = () => {
+            const navbar = document.querySelector('nav');
+
+            const updateNavbar = () => {
+                const scrollY = window.scrollY;
+                
+                if (scrollY > 50) {
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('border-b');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('border-b');
+                }
+            };
+
+            window.addEventListener('scroll', updateNavbar);
+        };
+
+        // Initialize all functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initMobileMenu();
+            initNavbarScroll();
+        });
+    </script>
+</body>
+</html>
