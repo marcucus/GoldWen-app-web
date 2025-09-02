@@ -19,7 +19,7 @@ export default function Home({ pageData }: HomeProps) {
       <section className="section-padding bg-gradient-cream">
         <div className="container-responsive">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="space-calm-lg slide-in-left">
+            <div className="space-calm-lg">
               <h1 className="font-serif font-bold text-gray-text mb-8 text-shadow">
                 {pageData.app.name}<br />
                 <span className="text-gold-primary gold-accent animate-pulse-slow">
@@ -44,7 +44,7 @@ export default function Home({ pageData }: HomeProps) {
                 </a>
               </div>
             </div>
-            <div className="relative slide-in-right">
+            <div className="relative">
               <div className="bg-white rounded-3xl shadow-2xl p-8 transform rotate-2 hover:rotate-0 transition-all duration-500 hover-lift animate-float">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-3">
@@ -71,7 +71,7 @@ export default function Home({ pageData }: HomeProps) {
       {/* Features Section */}
       <section id="features" className="section-padding bg-white">
         <div className="container-responsive">
-          <div className="text-center mb-20 fade-in">
+          <div className="text-center mb-20">
             <h2 className="font-serif font-bold text-gray-text mb-8 gold-accent text-shadow">
               Une approche révolutionnaire des rencontres
             </h2>
@@ -85,8 +85,7 @@ export default function Home({ pageData }: HomeProps) {
             {pageData.features.map((feature, index) => (
               <div 
                 key={feature.title}
-                className="card text-center space-calm fade-in hover-lift group" 
-                style={{ animationDelay: `${index}00ms` }}
+                className="card text-center space-calm hover-lift group"
               >
                 <div className="icon-large mx-auto mb-6 group-hover:animate-pulse">
                   <Icon name={feature.icon} />
@@ -107,7 +106,7 @@ export default function Home({ pageData }: HomeProps) {
       <section id="about" className="section-padding gradient-cream">
         <div className="container-responsive">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-calm-lg slide-in-left">
+            <div className="space-calm-lg">
               <h2 className="font-serif font-bold text-gray-text mb-8 gold-accent text-shadow">
                 La philosophie &quot;Calm Technology&quot;
               </h2>
