@@ -263,4 +263,78 @@
       linear-gradient(-45deg, transparent 35%, rgba(232, 212, 132, 0.05) 35%, rgba(232, 212, 132, 0.05) 65%, transparent 65%);
     background-size: 20px 20px;
   }
+
+  /* Missing gradient classes */
+  .bg-gradient-cream {
+    background: linear-gradient(135deg, #FBF9F7 0%, #F5F1EB 50%, #EDE7DB 100%);
+  }
+  
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
+  }
+
+  .gradient-cream {
+    background: linear-gradient(135deg, #FBF9F7 0%, #F5F1EB 50%, #EDE7DB 100%);
+  }
+
+  /* Animation classes that might be missing */
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Enhanced Download Button Styles */
+  .download-btn-app-store {
+    @apply bg-black text-white px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    min-width: 220px;
+  }
+
+  .download-btn-app-store:hover {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .download-btn-google-play {
+    @apply text-white px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+    background: linear-gradient(135deg, #01875f 0%, #4285f4 50%, #ea4335 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    min-width: 220px;
+  }
+
+  .download-btn-google-play:hover {
+    background: linear-gradient(135deg, #019858 0%, #5396f5 50%, #eb5545 100%);
+    box-shadow: 0 20px 40px rgba(66, 133, 244, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .download-icon-wrapper {
+    @apply w-12 h-12 flex items-center justify-center rounded-xl;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .download-btn-app-store:hover .download-icon-wrapper,
+  .download-btn-google-play:hover .download-icon-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
 }
