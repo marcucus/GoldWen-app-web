@@ -117,9 +117,23 @@ The website will be available at `http://localhost:3000`
 
 ### Build for Production
 ```bash
-npm run build
 npm run build:css
+npm run build
 ```
+
+### Vercel Deployment
+This project is configured for deployment on Vercel with automatic Next.js detection.
+
+The `vercel.json` configuration ensures:
+- Proper Next.js build process with CSS compilation
+- Clean URLs and no trailing slashes
+- Automatic routing for all pages and API endpoints
+
+To deploy:
+1. Connect your repository to Vercel
+2. Vercel will automatically detect the Next.js framework
+3. The build command includes CSS compilation: `npm run build:css && npm run build`
+4. All routes including `/`, `/support`, `/contact`, etc. will work properly
 
 ### Environment Variables
 Create a `.env` file for production settings:
@@ -135,7 +149,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production
 COPY . .
-RUN npm run build && npm run build:css
+RUN npm run build:css && npm run build
 EXPOSE 3000
 CMD ["npm", "run", "start:prod"]
 ```

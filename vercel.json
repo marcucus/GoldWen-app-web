@@ -1,4 +1,14 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": {
+        "buildCommand": "npm run build:css && npm run build"
+      }
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false
 }
