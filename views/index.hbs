@@ -85,84 +85,57 @@
 <body class="font-sans text-gray-text bg-cream-light dark:text-dark-text dark:bg-dark-primary transition-colors duration-300">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect bg-white/95 dark:bg-dark-secondary/95 border-b border-cream-dark dark:border-dark-tertiary transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark">
         <div class="container-responsive">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <a href="/" class="flex items-center space-x-3 group">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
-                            <img src="/images/logo_sans_fond.png" alt="GoldWen Logo" class="w-8 h-8 object-contain dark:hidden">
-                            <img src="/images/logo_base.png" alt="GoldWen Logo" class="w-8 h-8 object-contain hidden dark:block">
-                        </div>
-                        <span class="font-serif font-bold text-xl text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
-                    </a>
-                </div>
-                
-                <!-- Desktop menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
-                        Fonctionnalités
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#about" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 font-medium relative group">
-                        À propos
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    
-                    <!-- Theme Toggle -->
-                    <div class="relative">
-                        <button id="theme-toggle" class="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-secondary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50" aria-label="Toggle theme">
-                            <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                            </svg>
-                            <svg id="theme-icon-system" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </button>
-                        <!-- Theme Dropdown -->
-                        <div id="theme-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-dark-secondary rounded-lg shadow-lg border border-cream-dark dark:border-dark-tertiary opacity-0 pointer-events-none transition-all duration-200 transform translate-y-2 z-50">
-                            <div class="py-1">
-                                <button data-theme="light" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
-                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                    </svg>
-                                    Clair
-                                </button>
-                                <button data-theme="dark" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
-                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                                    </svg>
-                                    Sombre
-                                </button>
-                                <button data-theme="system" class="flex items-center px-4 py-2 text-sm text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary w-full text-left transition-colors">
-                                    <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                    Système
-                                </button>
-                            </div>
-                        </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">G</span>
                     </div>
-                    
-                    <a href="#download" class="btn-primary text-sm px-6 py-2.5 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                        Télécharger
-                    </a>
+                    <span class="font-serif font-bold text-xl text-gray-text">{{app.name}}</span>
                 </div>
-                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-text hover:text-gold-primary transition-colors">Fonctionnalités</a>
+                    <a href="#about" class="text-gray-text hover:text-gold-primary transition-colors">À propos</a>
+                    <a href="#download" class="btn-primary text-sm">Télécharger</a>
+                </div>
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
-                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="md:hidden text-gray-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg id="close-icon" class="w-6 h-6 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
+        </div>
+    </nav>
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark">
+        <div class="container-responsive">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">G</span>
+                    </div>
+                    <span class="font-serif font-bold text-xl text-gray-text">{{app.name}}</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-text hover:text-gold-primary transition-colors">Fonctionnalités</a>
+                    <a href="#about" class="text-gray-text hover:text-gold-primary transition-colors">À propos</a>
+                    <a href="#download" class="btn-primary text-sm">Télécharger</a>
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
+                </div>
+                <!-- Mobile menu button -->
+<<<<<<< HEAD
+                <button id="mobile-menu-button" class="md:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50">
+                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+=======
+                <button class="md:hidden text-gray-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+<<<<<<< HEAD
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden opacity-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -193,6 +166,8 @@
                     </a>
                 </div>
             </div>
+=======
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
         </div>
     </nav>
 
@@ -250,8 +225,13 @@
     <!-- Features Section -->
     <section id="features" class="section-padding bg-white">
         <div class="container-responsive">
+<<<<<<< HEAD
             <div class="text-center mb-20 fade-in">
                 <h2 class="font-serif font-bold text-gray-text mb-8 gold-accent text-shadow">
+=======
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-gray-text mb-6 gold-accent">
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
                     Une approche révolutionnaire des rencontres
                 </h2>
                 <p class="text-xl text-gray-medium max-w-3xl mx-auto leading-relaxed">
@@ -262,8 +242,13 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {{#each features}}
+<<<<<<< HEAD
                 <div class="card text-center space-calm fade-in hover-lift group" style="animation-delay: {{@index}}00ms;">
                     <div class="icon-large mx-auto mb-6 group-hover:animate-pulse">
+=======
+                <div class="card text-center space-calm">
+                    <div class="icon-large mx-auto mb-6">
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
                         {{#if (eq icon 'calendar')}}
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full drop-shadow-lg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -293,9 +278,15 @@
     <!-- About/Philosophy Section -->
     <section id="about" class="section-padding gradient-cream">
         <div class="container-responsive">
+<<<<<<< HEAD
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="space-calm-lg slide-in-left">
                     <h2 class="font-serif font-bold text-gray-text mb-8 gold-accent text-shadow">
+=======
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-calm-lg">
+                    <h2 class="font-serif font-bold text-gray-text mb-8 gold-accent">
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
                         La philosophie "Calm Technology"
                     </h2>
                     <div class="space-calm">
@@ -441,104 +432,24 @@
         </div>
     </footer>
 
-    <!-- JavaScript for smooth scrolling, animations and mobile menu -->
+    <!-- JavaScript for smooth scrolling and animations -->
     <script>
-        // Mobile menu toggle functionality
-        const initMobileMenu = () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-            let isMenuOpen = false;
-
-            const toggleMenu = () => {
-                isMenuOpen = !isMenuOpen;
-                
-                if (isMenuOpen) {
-                    // Open menu
-                    mobileMenu.classList.remove('opacity-0', 'max-h-0');
-                    mobileMenu.classList.add('opacity-100', 'max-h-96');
-                    menuIcon.classList.add('hidden');
-                    closeIcon.classList.remove('hidden');
-                } else {
-                    // Close menu
-                    mobileMenu.classList.remove('opacity-100', 'max-h-96');
-                    mobileMenu.classList.add('opacity-0', 'max-h-0');
-                    menuIcon.classList.remove('hidden');
-                    closeIcon.classList.add('hidden');
-                }
-            };
-
-            // Add click event to mobile menu button
-            mobileMenuButton?.addEventListener('click', toggleMenu);
-
-            // Close mobile menu when clicking on links
-            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (isMenuOpen) {
-                        toggleMenu();
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    toggleMenu();
-                }
-            });
-        };
-
         // Smooth scrolling for anchor links
-        const initSmoothScrolling = () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-        };
-
-        // Enhanced navbar scroll behavior
-        const initNavbarScroll = () => {
-            const navbar = document.querySelector('nav');
-            let lastScrollY = window.scrollY;
-            let ticking = false;
-
-            const updateNavbar = () => {
-                const scrollY = window.scrollY;
-                
-                if (scrollY > 50) {
-                    navbar.classList.add('shadow-lg');
-                    navbar.classList.remove('border-b');
-                } else {
-                    navbar.classList.remove('shadow-lg');
-                    navbar.classList.add('border-b');
-                }
-                
-                lastScrollY = scrollY;
-                ticking = false;
-            };
-
-            const requestTick = () => {
-                if (!ticking) {
-                    requestAnimationFrame(updateNavbar);
-                    ticking = true;
-                }
-            };
-
-            window.addEventListener('scroll', requestTick);
-        };
+        });
 
         // Fade in animation on scroll
-        const initScrollAnimations = () => {
+        const observeElements = () => {
             const elements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -554,6 +465,7 @@
             elements.forEach(el => observer.observe(el));
         };
 
+<<<<<<< HEAD
         // Enhanced button hover effects
         const initButtonEffects = () => {
             const buttons = document.querySelectorAll('.btn-primary');
@@ -681,6 +593,10 @@
             initScrollAnimations();
             initButtonEffects();
         });
+=======
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', observeElements);
+>>>>>>> parent of 7863156 (Merge pull request #5 from marcucus/copilot/fix-9d30f16f-d3b1-4d9f-a840-ed2ec8900b8e)
     </script>
 </body>
 </html>
