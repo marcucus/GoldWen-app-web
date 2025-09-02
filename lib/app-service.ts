@@ -1,12 +1,44 @@
-import { Injectable } from '@nestjs/common';
+export interface AppData {
+  name: string;
+  slogan: string;
+  tagline: string;
+  description?: string;
+}
 
-@Injectable()
+export interface PageData {
+  title: string;
+  description: string;
+  keywords?: string;
+  app: AppData;
+}
+
+export interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Persona {
+  name: string;
+  age: number;
+  description: string;
+}
+
+export interface HomePageData extends PageData {
+  features: Feature[];
+  personas: Persona[];
+  cta: {
+    primary: string;
+    secondary: string;
+  };
+}
+
 export class AppService {
   getHello(): string {
     return 'GoldWen Showcase API is running!';
   }
 
-  getBasePageData() {
+  getBasePageData(): { app: AppData } {
     return {
       app: {
         name: 'GoldWen',
@@ -16,7 +48,7 @@ export class AppService {
     };
   }
 
-  getHomePageData() {
+  getHomePageData(): HomePageData {
     return {
       title: "GoldWen - L'application de rencontre qui valorise la qualité",
       description:
@@ -77,7 +109,7 @@ export class AppService {
     };
   }
 
-  getSupportPageData() {
+  getSupportPageData(): PageData {
     return {
       ...this.getBasePageData(),
       title: 'Support et Aide - GoldWen | Application de Rencontre Haut de Gamme',
@@ -87,7 +119,7 @@ export class AppService {
     };
   }
 
-  getPrivacyPageData() {
+  getPrivacyPageData(): PageData {
     return {
       ...this.getBasePageData(),
       title: 'Politique de Confidentialité - GoldWen | Protection des Données Personnelles',
@@ -97,7 +129,7 @@ export class AppService {
     };
   }
 
-  getTermsPageData() {
+  getTermsPageData(): PageData {
     return {
       ...this.getBasePageData(),
       title: "Conditions d'Utilisation - GoldWen | CGU Application Rencontre",
@@ -107,7 +139,7 @@ export class AppService {
     };
   }
 
-  getLegalPageData() {
+  getLegalPageData(): PageData {
     return {
       ...this.getBasePageData(),
       title: 'Mentions Légales - GoldWen | Informations Légales Application Rencontre',
@@ -116,7 +148,7 @@ export class AppService {
     };
   }
 
-  getContactPageData() {
+  getContactPageData(): PageData {
     return {
       ...this.getBasePageData(),
       title: 'Contact - GoldWen | Contactez Notre Équipe Application Rencontre',
@@ -126,3 +158,5 @@ export class AppService {
     };
   }
 }
+
+export const appService = new AppService();
