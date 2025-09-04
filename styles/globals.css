@@ -340,7 +340,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: title-elegant-shimmer 8s ease-in-out infinite;
-    text-transform: uppercase;
     position: relative;
     overflow: visible;
   }
