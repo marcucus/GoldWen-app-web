@@ -208,12 +208,28 @@
 
   /* Ensure perfect centering for feature card titles, especially for accented characters */
   .card-feature .heading-tertiary {
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     position: relative;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    /* Force text to center within flex container */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Additional specificity for the problematic title with accented characters */
+  .card-feature .heading-tertiary:nth-of-type(1) {
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
   }
 
   .card-testimonial {
