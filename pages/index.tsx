@@ -26,8 +26,8 @@ export default function Home({ pageData }: HomeProps) {
             <div className="space-calm-xl animate-fade-in-up">
               <div className="space-y-8">
                 <h1 className="heading-primary text-shadow-gold">
-                  {pageData.app.name}<br />
-                  <span className="text-gold-primary gold-accent-static">
+                  <span className="title-goldwen-animated">{pageData.app.name}</span><br />
+                  <span className="text-gold-primary gold-accent-animated">
                     {pageData.app.tagline}
                   </span>
                 </h1>

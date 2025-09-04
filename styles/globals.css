@@ -275,7 +275,224 @@
     transform: translateX(-50%);
   }
 
-  /* Static version of gold-accent without any animations or transitions */
+  /* Beautiful animated gold accent for main title */
+  .gold-accent-animated {
+    position: relative;
+    padding-bottom: 20px;
+    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 25%, #F4E99A 50%, #E8D484 75%, #B8941F 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer-text 3s ease-in-out infinite;
+    text-shadow: none;
+  }
+
+  .gold-accent-animated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.5);
+    animation: expand-line 2s ease-out 0.5s forwards;
+  }
+
+  .gold-accent-animated::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    border-radius: 15px;
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  /* Enhanced main title "GoldWen" with elegant effects */
+  .title-goldwen-animated {
+    position: relative;
+    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 25%, #F4E99A 50%, #E8D484 75%, #B8941F 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title-shimmer 4s ease-in-out infinite;
+    text-shadow: none;
+    display: inline-block;
+    transition: all 0.6s ease;
+  }
+
+  .title-goldwen-animated::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      rgba(212, 175, 55, 0.1) 25%, 
+      rgba(244, 233, 154, 0.15) 50%, 
+      rgba(212, 175, 55, 0.1) 75%, 
+      transparent 100%);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    animation: title-glow 5s ease-in-out infinite;
+  }
+
+  .title-goldwen-animated:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.4));
+  }
+
+  .title-goldwen-animated:hover::before {
+    opacity: 1;
+  }
+
+  @keyframes title-shimmer {
+    0%, 100% { 
+      background-position: 0% 50%; 
+    }
+    25% { 
+      background-position: 50% 25%; 
+    }
+    50% { 
+      background-position: 100% 50%; 
+    }
+    75% { 
+      background-position: 50% 75%; 
+    }
+  }
+
+  @keyframes title-glow {
+    0%, 100% { 
+      opacity: 0.2;
+      background-position: 0% 50%; 
+    }
+    50% { 
+      opacity: 0.5;
+      background-position: 100% 50%; 
+    }
+  }
+
+  @keyframes shimmer-text {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes expand-line {
+    0% { width: 0; }
+    100% { width: 120px; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      opacity: 0.3;
+      background-position: 0% 50%; 
+    }
+    50% { 
+      opacity: 0.6;
+      background-position: 100% 50%; 
+    }
+  }
+
+  /* Enhanced navbar logo with beautiful effects */
+  .navbar-logo-animated {
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+    animation: subtle-shimmer 6s ease-in-out infinite;
+  }
+
+  .navbar-logo-animated::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    background-size: 200% 200%;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  .navbar-logo-animated:hover {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
+  }
+
+  .navbar-logo-animated:hover::before {
+    opacity: 1;
+    background-position: 100% 50%;
+    animation: logo-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes subtle-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes logo-glow {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Enhanced logo icon with premium effects */
+  .navbar-logo-icon-animated {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .navbar-logo-icon-animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.8s ease;
+  }
+
+  .navbar-logo-icon-animated:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+      0 8px 25px rgba(212, 175, 55, 0.4),
+      0 0 0 3px rgba(212, 175, 55, 0.2);
+  }
+
+  .navbar-logo-icon-animated:hover::before {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+
+  /* Static version for situations where animation needs to be minimal */
   .gold-accent-static {
     position: relative;
     padding-bottom: 20px;
@@ -290,7 +507,6 @@
     height: 4px;
     background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
     border-radius: 2px;
-    /* Removed box-shadow that might cause visual distraction */
   }
 
   /* Enhanced icon system with premium animations */

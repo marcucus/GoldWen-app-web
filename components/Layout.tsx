@@ -142,13 +142,12 @@ export default function Layout({ children, title, description, keywords, app }: 
               {/* Logo - Enhanced with glow effect */}
               <div className="flex items-center space-x-4">
                 <Link href="/" className="flex items-center space-x-4 group">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-gold-primary via-gold-light to-gold-dark rounded-2xl flex items-center justify-center shadow-gold transition-all duration-500 group-hover:shadow-gold-lg group-hover:scale-110 group-hover:rotate-3">
+                  <div className="relative navbar-logo-icon-animated">
+                    <div className="w-12 h-12 bg-gradient-to-br from-gold-primary via-gold-light to-gold-dark rounded-2xl flex items-center justify-center shadow-gold transition-all duration-500 group-hover:shadow-gold-lg">
                       <span className="text-white font-bold text-lg">G</span>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-primary to-gold-dark rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md"></div>
                   </div>
-                  <span className="font-serif font-bold text-2xl text-gray-text hover:text-gold-primary transition-all duration-500 text-shadow">
+                  <span className="font-serif font-bold text-2xl navbar-logo-animated transition-all duration-500">
                     {app.name}
                   </span>
                 </Link>
