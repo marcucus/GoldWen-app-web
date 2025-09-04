@@ -27,7 +27,7 @@ export default function Home({ pageData }: HomeProps) {
               <div className="space-y-8">
                 <h1 className="heading-primary text-shadow-gold">
                   {pageData.app.name}<br />
-                  <span className="text-gold-primary gold-accent animate-pulse-gold">
+                  <span className="text-gold-primary gold-accent">
                     {pageData.app.tagline}
                   </span>
                 </h1>
