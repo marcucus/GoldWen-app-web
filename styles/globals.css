@@ -326,84 +326,119 @@
     animation: glow-pulse 4s ease-in-out infinite;
   }
 
-  /* Enhanced main title "GoldWen" with elegant effects */
+  /* Enhanced main title "GoldWen" with stylish effects - no blur */
   .title-goldwen-animated {
     position: relative;
-    color: #D4AF37;
-    background: linear-gradient(135deg, #B8941F 0%, #D4AF37 25%, #E8D484 50%, #D4AF37 75%, #B8941F 100%);
+    color: #1F1F1F;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    display: inline-block;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #000000 0%, #1F1F1F 25%, #333333 50%, #1F1F1F 75%, #000000 100%);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: title-shimmer 4s ease-in-out infinite;
-    text-shadow: 0 3px 10px rgba(212, 175, 55, 0.5);
-    filter: drop-shadow(0 2px 4px rgba(184, 148, 31, 0.6));
-    display: inline-block;
-    transition: all 0.6s ease;
+    animation: title-elegant-shimmer 8s ease-in-out infinite;
+    text-transform: uppercase;
+    position: relative;
+    overflow: visible;
   }
 
   @supports not (-webkit-background-clip: text) {
     .title-goldwen-animated {
       -webkit-text-fill-color: unset;
-      color: #D4AF37;
-      text-shadow: 0 4px 12px rgba(212, 175, 55, 0.7);
+      color: #1F1F1F;
     }
+  }
+
+  .title-goldwen-animated::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #D4AF37 50%, transparent 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: underline-expand 3s ease-in-out infinite;
   }
 
   .title-goldwen-animated::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
+    top: -6px;
+    left: -12px;
+    right: -12px;
+    bottom: -6px;
     background: linear-gradient(45deg, 
       transparent 0%, 
-      rgba(212, 175, 55, 0.1) 25%, 
-      rgba(244, 233, 154, 0.15) 50%, 
-      rgba(212, 175, 55, 0.1) 75%, 
+      rgba(31, 31, 31, 0.05) 25%, 
+      rgba(212, 175, 55, 0.1) 50%, 
+      rgba(31, 31, 31, 0.05) 75%, 
       transparent 100%);
     background-size: 400% 400%;
-    border-radius: 20px;
+    border-radius: 16px;
     z-index: -1;
     opacity: 0;
-    animation: title-glow 5s ease-in-out infinite;
+    animation: title-elegant-glow 6s ease-in-out infinite;
   }
 
   .title-goldwen-animated:hover {
-    transform: scale(1.02);
-    filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.4));
+    transform: scale(1.05) translateY(-2px);
+    background-position: 100% 50%;
   }
 
   .title-goldwen-animated:hover::before {
     opacity: 1;
   }
 
-  @keyframes title-shimmer {
+  .title-goldwen-animated:hover::after {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #D4AF37 100%);
+  }
+
+  @keyframes title-elegant-shimmer {
     0%, 100% { 
       background-position: 0% 50%; 
     }
     25% { 
-      background-position: 50% 25%; 
+      background-position: 100% 25%; 
     }
     50% { 
-      background-position: 100% 50%; 
+      background-position: 200% 50%; 
     }
     75% { 
-      background-position: 50% 75%; 
+      background-position: 100% 75%; 
     }
   }
 
-  @keyframes title-glow {
+  @keyframes title-elegant-glow {
     0%, 100% { 
-      opacity: 0.2;
+      opacity: 0;
       background-position: 0% 50%; 
     }
     50% { 
-      opacity: 0.5;
+      opacity: 0.6;
       background-position: 100% 50%; 
     }
   }
+
+  @keyframes underline-expand {
+    0%, 20% { 
+      transform: scaleX(0); 
+    }
+    40%, 60% { 
+      transform: scaleX(1); 
+    }
+    80%, 100% { 
+      transform: scaleX(0); 
+    }
+  }
+
+
 
   @keyframes shimmer-text {
     0%, 100% { background-position: 0% 50%; }
@@ -426,91 +461,75 @@
     }
   }
 
-  /* Enhanced navbar logo with beautiful effects */
+  /* Enhanced navbar logo with clean, elegant effects */
   .navbar-logo-animated {
     position: relative;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: linear-gradient(135deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: none;
-    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
-    animation: subtle-shimmer 6s ease-in-out infinite;
+    animation: clean-shimmer 8s ease-in-out infinite;
   }
 
   .navbar-logo-animated::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-    background-size: 200% 200%;
-    border-radius: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    border-radius: 8px;
     z-index: -1;
     opacity: 0;
-    transition: all 0.6s ease;
+    transition: opacity 0.4s ease;
   }
 
   .navbar-logo-animated:hover {
     background-position: 100% 50%;
-    transform: scale(1.05);
-    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
+    transform: scale(1.02);
   }
 
   .navbar-logo-animated:hover::before {
     opacity: 1;
-    background-position: 100% 50%;
-    animation: logo-glow 2s ease-in-out infinite;
   }
 
-  @keyframes subtle-shimmer {
+  @keyframes clean-shimmer {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
   }
 
-  @keyframes logo-glow {
-    0%, 100% { 
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% { 
-      opacity: 0.6;
-      transform: scale(1.02);
-    }
-  }
 
-  /* Enhanced logo icon with premium effects */
+
+  /* Enhanced logo icon with clean effects - fixed shadow issue */
   .navbar-logo-icon-animated {
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .navbar-logo-icon-animated::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    transition: transform 0.8s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   .navbar-logo-icon-animated:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 
-      0 8px 25px rgba(212, 175, 55, 0.4),
-      0 0 0 3px rgba(212, 175, 55, 0.2);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   }
 
   .navbar-logo-icon-animated:hover::before {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 1;
   }
 
   /* Static version for situations where animation needs to be minimal */
