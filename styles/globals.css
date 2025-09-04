@@ -86,7 +86,7 @@
     @apply relative inline-flex items-center justify-center font-medium px-10 py-4 text-lg rounded-xl overflow-hidden;
     background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
     color: white;
-    border: 2px solid transparent;
+    border: 2px solid rgba(212, 175, 55, 0.8);
     box-shadow: 
       0 4px 15px rgba(212, 175, 55, 0.4),
       0 2px 4px rgba(0, 0, 0, 0.1),
@@ -114,6 +114,7 @@
 
   .btn-primary:hover {
     transform: translateY(-3px);
+    border-color: rgba(212, 175, 55, 1);
     box-shadow: 
       0 8px 30px rgba(212, 175, 55, 0.5),
       0 4px 8px rgba(0, 0, 0, 0.15),
@@ -128,7 +129,7 @@
     @apply relative inline-flex items-center justify-center font-medium px-10 py-4 text-lg rounded-xl;
     background: transparent;
     color: #D4AF37;
-    border: 2px solid #D4AF37;
+    border: 2px solid rgba(212, 175, 55, 0.8);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1);
   }
@@ -153,7 +154,7 @@
 
   .btn-secondary:hover {
     color: white;
-    border-color: transparent;
+    border-color: rgba(212, 175, 55, 1);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
   }
@@ -279,13 +280,23 @@
   .gold-accent-animated {
     position: relative;
     padding-bottom: 20px;
-    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 25%, #F4E99A 50%, #E8D484 75%, #B8941F 100%);
+    color: #D4AF37;
+    background: linear-gradient(135deg, #B8941F 0%, #D4AF37 25%, #E8D484 50%, #D4AF37 75%, #B8941F 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer-text 3s ease-in-out infinite;
-    text-shadow: none;
+    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+    filter: drop-shadow(0 1px 3px rgba(184, 148, 31, 0.5));
+  }
+
+  @supports not (-webkit-background-clip: text) {
+    .gold-accent-animated {
+      -webkit-text-fill-color: unset;
+      color: #D4AF37;
+      text-shadow: 0 3px 10px rgba(212, 175, 55, 0.6);
+    }
   }
 
   .gold-accent-animated::after {
@@ -318,15 +329,25 @@
   /* Enhanced main title "GoldWen" with elegant effects */
   .title-goldwen-animated {
     position: relative;
-    background: linear-gradient(135deg, #D4AF37 0%, #E8D484 25%, #F4E99A 50%, #E8D484 75%, #B8941F 100%);
+    color: #D4AF37;
+    background: linear-gradient(135deg, #B8941F 0%, #D4AF37 25%, #E8D484 50%, #D4AF37 75%, #B8941F 100%);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: title-shimmer 4s ease-in-out infinite;
-    text-shadow: none;
+    text-shadow: 0 3px 10px rgba(212, 175, 55, 0.5);
+    filter: drop-shadow(0 2px 4px rgba(184, 148, 31, 0.6));
     display: inline-block;
     transition: all 0.6s ease;
+  }
+
+  @supports not (-webkit-background-clip: text) {
+    .title-goldwen-animated {
+      -webkit-text-fill-color: unset;
+      color: #D4AF37;
+      text-shadow: 0 4px 12px rgba(212, 175, 55, 0.7);
+    }
   }
 
   .title-goldwen-animated::before {
@@ -832,7 +853,7 @@
   .download-btn-google-play {
     @apply relative overflow-hidden text-white px-8 py-4 rounded-2xl transition-all duration-500 transform;
     background: linear-gradient(135deg, #01875f 0%, #4285f4 50%, #ea4335 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     min-width: 240px;
     box-shadow: 
