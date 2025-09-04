@@ -131,7 +131,7 @@ export default function Home({ pageData }: HomeProps) {
                 className="card-feature group animate-scale-in"
                 style={{animationDelay: `${index * 0.15}s`}}
               >
-                <div className="icon-large mx-auto mb-8 group-hover:animate-pulse-gold">
+                <div className="icon-large mx-auto mb-8 group-hover:scale-110 group-hover:text-gold-accent transition-all duration-300">
                   <Icon name={feature.icon} />
                 </div>
                 <h3 className="heading-tertiary mb-6 text-shadow">

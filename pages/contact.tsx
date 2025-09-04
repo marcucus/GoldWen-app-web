@@ -49,7 +49,7 @@ export default function Contact({ pageData }: ContactProps) {
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               {/* Email Contact Card */}
               <div className="card-feature group animate-scale-in">
-                <div className="icon-large mx-auto mb-8 group-hover:animate-pulse-gold">
+                <div className="icon-large mx-auto mb-8 group-hover:scale-110 group-hover:text-gold-accent transition-all duration-300">
                   <svg className="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
@@ -66,7 +66,7 @@ export default function Contact({ pageData }: ContactProps) {
 
               {/* Response Time Card */}
               <div className="card-feature group animate-scale-in" style={{animationDelay: '0.15s'}}>
-                <div className="icon-large mx-auto mb-8 group-hover:animate-pulse-gold">
+                <div className="icon-large mx-auto mb-8 group-hover:scale-110 group-hover:text-gold-accent transition-all duration-300">
                   <svg className="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>

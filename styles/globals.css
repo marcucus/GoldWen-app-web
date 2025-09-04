@@ -530,23 +530,24 @@
     border-radius: 2px;
   }
 
-  /* Enhanced icon system with premium animations */
+  /* Enhanced icon system with refined animations */
   .icon {
     @apply w-14 h-14 text-gold-primary;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.2));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
   }
 
   .icon-large {
     @apply w-20 h-20 text-gold-primary;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 6px 12px rgba(212, 175, 55, 0.3));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));
   }
 
   .icon:hover,
   .icon-large:hover {
-    transform: scale(1.2) rotate(5deg);
-    filter: drop-shadow(0 8px 16px rgba(212, 175, 55, 0.4));
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4));
+    color: #E8D484;
   }
 
   /* Elegant hover and interaction effects */
