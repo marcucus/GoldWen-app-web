@@ -2,269 +2,482 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Art Deco Design System for GoldWen */
+/* Enhanced Art Deco Design System for GoldWen */
 @layer base {
-  /* Enhanced font loading */
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap');
+  /* Premium font loading with display optimizations */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
   
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
   
   body {
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings: "kern" 1, "liga" 1, "frac" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
+    background: #FEFEFE;
+    color: #1F1F1F;
+  }
+
+  /* Enhanced typographic scale */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+  }
+
+  p, li {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  /* Premium focus states */
+  *:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+  }
+
+  /* Smooth scrolling anchor offsets */
+  html {
+    scroll-padding-top: 80px;
   }
 }
 
 @layer components {
-  /* Art Deco inspired container */
+  /* Sophisticated container system */
   .container-responsive {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
   }
   
-  /* Art Deco section padding */
+  /* Refined section padding with perfect rhythm */
   .section-padding {
-    @apply py-16 lg:py-24;
+    @apply py-20 lg:py-28;
   }
-  
-  /* Enhanced button styles with Art Deco flair */
+
+  .section-padding-sm {
+    @apply py-12 lg:py-16;
+  }
+
+  /* Premium button system with enhanced visual hierarchy */
   .btn-primary {
-    @apply bg-gradient-to-r from-gold-primary to-gold-dark text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gold-dark;
-    background-image: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    @apply relative inline-flex items-center justify-center font-medium px-10 py-4 text-lg rounded-xl overflow-hidden;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 
+      0 4px 15px rgba(212, 175, 55, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
   }
-  
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #E8D484 0%, #D4AF37 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
+  }
+
   .btn-primary:hover {
-    background-image: linear-gradient(135deg, #E8D484 0%, #D4AF37 100%);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 
+      0 8px 30px rgba(212, 175, 55, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
-  
+
+  .btn-primary:active {
+    transform: translateY(-1px);
+  }
+
   .btn-secondary {
-    @apply bg-transparent border-2 border-gold-primary text-gold-primary font-medium px-8 py-3 rounded-lg hover:bg-gold-primary hover:text-white transition-all duration-300;
+    @apply relative inline-flex items-center justify-center font-medium px-10 py-4 text-lg rounded-xl;
+    background: transparent;
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1);
   }
-  
-  /* Art Deco card design */
+
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  .btn-secondary:hover::before {
+    opacity: 1;
+  }
+
+  .btn-secondary:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  }
+
+  /* Sophisticated card system with layered depth */
   .card {
-    @apply bg-white dark:bg-dark-secondary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-cream-dark dark:border-dark-tertiary;
-    position: relative;
-    overflow: hidden;
+    @apply relative bg-white dark:bg-dark-secondary rounded-2xl p-8 overflow-hidden;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.05),
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
   }
-  
+
   .card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
-  
-  /* Art Deco geometric patterns */
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 8px 16px rgba(212, 175, 55, 0.2),
+      0 0 0 1px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  /* Enhanced card variants */
+  .card-feature {
+    @apply card text-center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(251, 249, 247, 0.9) 100%);
+  }
+
+  .card-feature:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 246, 240, 0.95) 100%);
+  }
+
+  .card-testimonial {
+    @apply card;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(255, 255, 255, 0.95) 100%);
+  }
+
+  /* Art Deco geometric elements */
   .art-deco-border {
     position: relative;
   }
-  
+
   .art-deco-border::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, transparent 0%, #D4AF37 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #D4AF37 20%, #E8D484 50%, #D4AF37 80%, transparent 100%);
+    border-radius: 2px;
+  }
+
+  .art-deco-border::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #B8941F 50%, transparent 100%);
+    border-radius: 1px;
   }
   
-  /* Calm spacing philosophy */
+  /* Premium spacing system */
   .space-calm {
-    @apply space-y-6;
+    @apply space-y-8;
   }
-  
+
   .space-calm-lg {
-    @apply space-y-12;
+    @apply space-y-16;
   }
-  
-  /* Gold accent line */
+
+  .space-calm-xl {
+    @apply space-y-24;
+  }
+
+  /* Sophisticated accent lines */
   .gold-accent {
     position: relative;
-    padding-bottom: 16px;
+    padding-bottom: 20px;
   }
-  
+
   .gold-accent::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #D4AF37 0%, #E8D484 100%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
     border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
   }
-  
-  /* Enhanced icon styling with Art Deco elements */
+
+  .gold-accent-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Enhanced icon system with premium animations */
   .icon {
-    @apply w-12 h-12 text-gold-primary;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
+    @apply w-14 h-14 text-gold-primary;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.2));
   }
-  
+
   .icon-large {
-    @apply w-16 h-16 text-gold-primary;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+    @apply w-20 h-20 text-gold-primary;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 6px 12px rgba(212, 175, 55, 0.3));
   }
-  
+
   .icon:hover,
   .icon-large:hover {
-    transform: scale(1.15) rotate(5deg);
-    filter: drop-shadow(0 6px 12px rgba(212, 175, 55, 0.4));
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 8px 16px rgba(212, 175, 55, 0.4));
   }
-  
-  /* Art Deco inspired hover effects */
+
+  /* Elegant hover and interaction effects */
   .hover-lift {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, box-shadow;
   }
-  
+
   .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(212, 175, 55, 0.2);
+    transform: translateY(-12px);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 10px 20px rgba(212, 175, 55, 0.2);
   }
-  
-  /* Dark mode enhancements */
-  .dark .card {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .dark .card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Improved navbar styling */
+
+  /* Premium navigation styling */
   .navbar-link {
     position: relative;
-    padding: 8px 0;
+    padding: 12px 0;
+    font-weight: 500;
+    letter-spacing: 0.01em;
   }
-  
+
   .navbar-link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
     width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #D4AF37, #B8941F);
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 1px;
+    height: 3px;
+    background: linear-gradient(90deg, #D4AF37, #E8D484, #B8941F);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
   }
-  
+
   .navbar-link:hover::after {
     width: 100%;
   }
-  
-  /* Art Deco inspired animations */
-  .fade-in {
-    @apply opacity-0 translate-y-8;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Sophisticated glass morphism */
+  .glass-effect {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .dark .glass-effect {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   
+  /* Premium animations and micro-interactions */
+  .fade-in {
+    @apply opacity-0 translate-y-12;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .fade-in.visible {
     @apply opacity-100 translate-y-0;
   }
-  
+
   .slide-in-left {
-    @apply opacity-0 -translate-x-8;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    @apply opacity-0 -translate-x-12;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .slide-in-left.visible {
     @apply opacity-100 translate-x-0;
   }
-  
+
   .slide-in-right {
-    @apply opacity-0 translate-x-8;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    @apply opacity-0 translate-x-12;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .slide-in-right.visible {
     @apply opacity-100 translate-x-0;
   }
-  
-  /* Art Deco geometric decoration */
+
+  .scale-in {
+    @apply opacity-0 scale-95;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scale-in.visible {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Sophisticated geometric backgrounds */
   .geometric-bg {
     background-image: 
-      radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(232, 212, 132, 0.1) 0%, transparent 50%);
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(232, 212, 132, 0.06) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(251, 249, 247, 0.8) 0%, rgba(245, 241, 235, 0.9) 100%);
+    background-size: 800px 800px, 600px 600px, 100% 100%;
+    background-position: 0% 0%, 100% 100%, 0% 0%;
   }
-  
+
   .dark .geometric-bg {
     background-image: 
-      radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(232, 212, 132, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(232, 212, 132, 0.03) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(26, 26, 26, 0.98) 100%);
   }
-  
-  /* Enhanced glass effect for navigation */
-  .glass-effect {
-    backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Enhanced pattern overlays */
+  .pattern-overlay {
+    background-image: 
+      linear-gradient(45deg, transparent 35%, rgba(212, 175, 55, 0.03) 35%, rgba(212, 175, 55, 0.03) 65%, transparent 65%),
+      linear-gradient(-45deg, transparent 35%, rgba(232, 212, 132, 0.02) 35%, rgba(232, 212, 132, 0.02) 65%, transparent 65%);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
   }
-  
-  .dark .glass-effect {
-    background: rgba(26, 26, 26, 0.95);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Form styling with Art Deco elements */
+
+  /* Premium form styling */
   .form-input {
-    @apply w-full px-4 py-3 border border-cream-dark dark:border-dark-tertiary rounded-lg bg-white dark:bg-dark-secondary text-gray-text dark:text-dark-text;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    @apply w-full px-6 py-4 text-lg border-2 border-cream-dark dark:border-dark-tertiary rounded-xl;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  
+
   .form-input:focus {
-    @apply outline-none ring-2 ring-gold-primary ring-opacity-50 border-gold-primary;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    @apply outline-none border-gold-primary;
+    box-shadow: 
+      0 0 0 4px rgba(212, 175, 55, 0.1),
+      0 8px 16px rgba(212, 175, 55, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
   }
-  
+
   .form-label {
-    @apply block text-sm font-medium text-gray-text dark:text-dark-text mb-2;
+    @apply block text-base font-semibold text-gray-text dark:text-dark-text mb-3;
+    letter-spacing: 0.01em;
   }
-  
-  /* Art Deco typography enhancements */
+
+  /* Enhanced typography classes */
   .heading-primary {
-    @apply font-serif font-bold text-4xl lg:text-5xl text-gray-text dark:text-dark-text leading-tight;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @apply font-serif font-bold text-gray-text dark:text-dark-text leading-tight;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .heading-secondary {
-    @apply font-serif font-semibold text-2xl lg:text-3xl text-gray-text dark:text-dark-text leading-tight;
+    @apply font-serif font-semibold text-gray-text dark:text-dark-text leading-tight;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   }
-  
+
+  .heading-tertiary {
+    @apply font-serif font-semibold text-gray-text dark:text-dark-text leading-tight;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.005em;
+  }
+
   .text-body {
     @apply text-gray-medium dark:text-dark-text-secondary leading-relaxed;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .text-body-large {
+    @apply text-gray-medium dark:text-dark-text-secondary leading-relaxed;
+    font-size: 1.25rem;
+    line-height: 1.7;
   }
   
   /* Theme toggle enhancements */
   .theme-toggle-active {
     @apply bg-gold-primary text-white;
-  }
-  
-  /* Art Deco pattern overlay */
-  .pattern-overlay {
-    background-image: 
-      linear-gradient(45deg, transparent 35%, rgba(212, 175, 55, 0.05) 35%, rgba(212, 175, 55, 0.05) 65%, transparent 65%),
-      linear-gradient(-45deg, transparent 35%, rgba(232, 212, 132, 0.05) 35%, rgba(232, 212, 132, 0.05) 65%, transparent 65%);
-    background-size: 20px 20px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
   }
 
-  /* Missing gradient classes */
+  /* Premium gradient backgrounds */
   .bg-gradient-cream {
     background: linear-gradient(135deg, #FBF9F7 0%, #F5F1EB 50%, #EDE7DB 100%);
   }
@@ -273,24 +486,68 @@
     background: linear-gradient(135deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
   }
 
-  .gradient-cream {
-    background: linear-gradient(135deg, #FBF9F7 0%, #F5F1EB 50%, #EDE7DB 100%);
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, 
+      rgba(251, 249, 247, 0.95) 0%, 
+      rgba(245, 241, 235, 0.9) 40%, 
+      rgba(232, 212, 132, 0.1) 100%);
   }
 
-  /* Animation classes that might be missing */
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8941F 50%, #8B7816 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-gradient-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.1) 70%, transparent 70%);
+    background-size: 20px 20px;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Enhanced utility animations */
   .animate-pulse-slow {
-    animation: pulse 3s ease-in-out infinite;
+    animation: pulse 4s ease-in-out infinite;
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    75% { transform: translateY(-5px) rotate(-1deg); }
   }
 
+  @keyframes glow {
+    0% { 
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      filter: brightness(1);
+    }
+    100% { 
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+      filter: brightness(1.1);
+    }
+  }
+
+  /* Text effects */
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -299,42 +556,104 @@
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   }
 
-  /* Enhanced Download Button Styles */
+  .text-shadow-gold {
+    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Premium download buttons */
   .download-btn-app-store {
-    @apply bg-black text-white px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+    @apply relative overflow-hidden text-white px-8 py-4 rounded-2xl transition-all duration-500 transform;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     border: 2px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    min-width: 220px;
+    min-width: 240px;
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .download-btn-app-store::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .download-btn-app-store:hover::before {
+    left: 100%;
   }
 
   .download-btn-app-store:hover {
+    transform: translateY(-4px) scale(1.05);
     background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 15px 30px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
   }
 
   .download-btn-google-play {
-    @apply text-white px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+    @apply relative overflow-hidden text-white px-8 py-4 rounded-2xl transition-all duration-500 transform;
     background: linear-gradient(135deg, #01875f 0%, #4285f4 50%, #ea4335 100%);
     border: 2px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    min-width: 220px;
+    min-width: 240px;
+    box-shadow: 
+      0 8px 20px rgba(66, 133, 244, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .download-btn-google-play::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .download-btn-google-play:hover::before {
+    left: 100%;
   }
 
   .download-btn-google-play:hover {
+    transform: translateY(-4px) scale(1.05);
     background: linear-gradient(135deg, #019858 0%, #5396f5 50%, #eb5545 100%);
-    box-shadow: 0 20px 40px rgba(66, 133, 244, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 15px 30px rgba(66, 133, 244, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
   }
 
   .download-icon-wrapper {
-    @apply w-12 h-12 flex items-center justify-center rounded-xl;
-    background: rgba(255, 255, 255, 0.1);
+    @apply w-14 h-14 flex items-center justify-center rounded-xl transition-all duration-300;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
   }
 
   .download-btn-app-store:hover .download-icon-wrapper,
   .download-btn-google-play:hover .download-icon-wrapper {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  /* Dark mode enhancements */
+  .dark .card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(42, 42, 42, 0.9) 100%);
+    border-color: rgba(212, 175, 55, 0.15);
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(212, 175, 55, 0.1);
+  }
+
+  .dark .card:hover {
+    background: linear-gradient(135deg, rgba(42, 42, 42, 0.95) 0%, rgba(58, 58, 58, 0.9) 100%);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(212, 175, 55, 0.2);
   }
 }
