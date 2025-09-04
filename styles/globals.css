@@ -275,6 +275,24 @@
     transform: translateX(-50%);
   }
 
+  /* Static version of gold-accent without any animations or transitions */
+  .gold-accent-static {
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  .gold-accent-static::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37 0%, #E8D484 50%, #B8941F 100%);
+    border-radius: 2px;
+    /* Removed box-shadow that might cause visual distraction */
+  }
+
   /* Enhanced icon system with premium animations */
   .icon {
     @apply w-14 h-14 text-gold-primary;
@@ -598,7 +616,7 @@
   .download-btn-google-play {
     @apply relative overflow-hidden text-white px-8 py-4 rounded-2xl transition-all duration-500 transform;
     background: linear-gradient(135deg, #01875f 0%, #4285f4 50%, #ea4335 100%);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     min-width: 240px;
     box-shadow: 
