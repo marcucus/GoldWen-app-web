@@ -1,14 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16">
-  <g clip-path="url(#a)">
-    <path fill="#012169" d="M0 0h24v16H0z"/>
-    <path fill="#FFF" d="m0 0 24 16m0-16L0 16"/>
-    <path fill="#C8102E" stroke="#FFF" stroke-width=".5" d="m0 0 24 16m0-16L0 16"/>
-    <path fill="#FFF" d="M10 0v16M0 5.5h24M0 10.5h24"/>
-    <path fill="#C8102E" d="M11 0v16M0 7h24M0 9h24"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" style="border-radius: 3px;">
   <defs>
-    <clipPath id="a">
-      <path fill="#FFF" d="M0 0h24v16H0z"/>
-    </clipPath>
+    <linearGradient id="ukBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#012169;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001a5a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ukRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8102E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b00d25;stop-opacity:1" />
+    </linearGradient>
   </defs>
+  <rect width="24" height="16" fill="url(#ukBlue)" rx="2"/>
+  
+  <!-- White diagonals -->
+  <path d="M0 0 L24 16 M24 0 L0 16" stroke="white" stroke-width="3.2" opacity="0.9"/>
+  
+  <!-- Red diagonals -->
+  <path d="M0 0 L24 16 M24 0 L0 16" stroke="url(#ukRed)" stroke-width="1.6"/>
+  
+  <!-- White cross -->
+  <rect x="10.4" y="0" width="3.2" height="16" fill="white" opacity="0.95"/>
+  <rect x="0" y="6.4" width="24" height="3.2" fill="white" opacity="0.95"/>
+  
+  <!-- Red cross -->
+  <rect x="11.2" y="0" width="1.6" height="16" fill="url(#ukRed)"/>
+  <rect x="0" y="7.2" width="24" height="1.6" fill="url(#ukRed)"/>
+  
+  <rect width="24" height="16" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5" rx="2"/>
 </svg>

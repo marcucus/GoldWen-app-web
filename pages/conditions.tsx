@@ -32,7 +32,7 @@ export default function Terms({ seoData }: TermsProps) {
       app={appData}
     >
       {/* Hero Section - Enhanced with sophisticated design */}
-      <section className="section-padding bg-gradient-hero geometric-bg relative overflow-hidden">
+      <section className="section-padding bg-gradient-hero dark:bg-dark-primary geometric-bg relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-gold-primary opacity-10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-48 h-48 bg-gold-light opacity-8 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
@@ -40,10 +40,10 @@ export default function Terms({ seoData }: TermsProps) {
         <div className="container-responsive relative z-10">
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
-            <h1 className="heading-primary text-shadow-gold mb-8">
+            <h1 className="heading-primary text-shadow-gold mb-8 dark:text-dark-text">
               {t('title')}
             </h1>
-            <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
+            <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm dark:text-dark-text-secondary">
               {t('subtitle')}
             </p>
           </div>
@@ -51,39 +51,39 @@ export default function Terms({ seoData }: TermsProps) {
       </section>
 
       {/* Content Section - Enhanced with premium design */}
-      <section className="section-padding bg-cream-lightest pattern-overlay">
+      <section className="section-padding bg-cream-lightest dark:bg-dark-secondary pattern-overlay dark:pattern-overlay-dark">
         <div className="container-responsive">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
+              <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8 dark:text-dark-text">
                 {t('help_section.title')}
               </h2>
-              <p className="text-body-large text-gray-warm">
+              <p className="text-body-large text-gray-warm dark:text-dark-text-secondary">
                 {t('help_section.subtitle')}
               </p>
             </div>
             
             <div className="space-y-8">
               {/* Coming Soon Card */}
-              <div className="card group animate-fade-in-up">
+              <div className="card group animate-fade-in-up bg-white dark:bg-dark-tertiary border border-cream-dark dark:border-dark-border">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-gold group-hover:animate-glow">
                     <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                   </div>
-                  <h3 className="heading-tertiary mb-6 text-shadow">
+                  <h3 className="heading-tertiary mb-6 text-shadow dark:text-dark-text">
                     {t('coming_soon.title')}
                   </h3>
-                  <p className="text-body text-gray-warm leading-relaxed mb-8">
+                  <p className="text-body text-gray-warm dark:text-dark-text-secondary leading-relaxed mb-8">
                     {t('coming_soon.description')}
                   </p>
                 </div>
               </div>
 
               {/* Principles Card */}
-              <div className="card group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                <h3 className="heading-tertiary mb-8 text-shadow text-center">
+              <div className="card group animate-fade-in-up bg-white dark:bg-dark-tertiary border border-cream-dark dark:border-dark-border" style={{animationDelay: '0.2s'}}>
+                <h3 className="heading-tertiary mb-8 text-shadow text-center dark:text-dark-text">
                   {t('principles.title')}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
@@ -116,8 +116,8 @@ export default function Terms({ seoData }: TermsProps) {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-text mb-2">{principle.title}</h4>
-                        <p className="text-gray-warm text-sm leading-relaxed">{principle.description}</p>
+                        <h4 className="font-semibold text-gray-text dark:text-dark-text mb-2">{principle.title}</h4>
+                        <p className="text-gray-warm dark:text-dark-text-secondary text-sm leading-relaxed">{principle.description}</p>
                       </div>
                     </div>
                   ))}
@@ -125,12 +125,12 @@ export default function Terms({ seoData }: TermsProps) {
               </div>
 
               {/* Contact Card */}
-              <div className="card group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="card group animate-fade-in-up bg-white dark:bg-dark-tertiary border border-cream-dark dark:border-dark-border" style={{animationDelay: '0.4s'}}>
                 <div className="text-center">
-                  <h3 className="heading-tertiary mb-6 text-shadow">
+                  <h3 className="heading-tertiary mb-6 text-shadow dark:text-dark-text">
                     {t('contact.title')}
                   </h3>
-                  <p className="text-body text-gray-warm leading-relaxed mb-8">
+                  <p className="text-body text-gray-warm dark:text-dark-text-secondary leading-relaxed mb-8">
                     {t('contact.description')}
                   </p>
                   <a href="/contact" className="btn-primary hover-lift group animate-scale-in">

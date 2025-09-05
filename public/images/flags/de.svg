@@ -1,5 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16">
-  <rect width="8" height="16" fill="#000000"/>
-  <rect x="8" width="8" height="16" fill="#DD0000"/>
-  <rect x="16" width="8" height="16" fill="#FFCE00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" style="border-radius: 3px;">
+  <defs>
+    <linearGradient id="deBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="deRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dd0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c50000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="deYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffce00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0c000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="24" height="16" fill="url(#deBlack)" rx="2"/>
+  <rect x="0" y="5.33" width="24" height="5.33" fill="url(#deRed)"/>
+  <rect x="0" y="10.67" width="24" height="5.33" fill="url(#deYellow)" rx="0 0 2 2"/>
+  <rect width="24" height="16" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5" rx="2"/>
 </svg>

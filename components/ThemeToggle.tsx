@@ -15,58 +15,53 @@ export default function ThemeToggle() {
 
   return (
     <div className="relative">
-      {/* Theme Toggle Button */}
+      {/* Theme Toggle Button - Now matches language selector style */}
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        className="text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-2 rounded-lg hover:bg-cream-dark dark:hover:bg-dark-secondary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-50"
-        aria-label="Toggle theme"
+        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm"
+        aria-label="Change theme"
       >
-        <div className="flex items-center space-x-2">
-          <span className="text-lg">{currentThemeData.icon}</span>
-          <svg
-            className={`w-4 h-4 transition-transform duration-200 ${
-              isDropdownOpen ? 'rotate-180' : ''
-            }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
+        <span className="text-lg">{currentThemeData.icon}</span>
+        <span className="hidden sm:inline">{currentThemeData.label}</span>
+        <svg
+          className={`w-4 h-4 transition-transform ${
+            isDropdownOpen ? 'rotate-180' : ''
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
 
-      {/* Theme Dropdown */}
+      {/* Theme Dropdown - Now matches language selector style */}
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-dark-secondary rounded-lg shadow-lg border border-cream-dark dark:border-dark-tertiary z-50">
-          <div className="py-1">
-            {themes.map((themeOption) => (
-              <button
-                key={themeOption.key}
-                onClick={() => {
-                  setTheme(themeOption.key);
-                  setIsDropdownOpen(false);
-                }}
-                className={`flex items-center w-full px-4 py-2 text-sm transition-colors ${
-                  theme === themeOption.key
-                    ? 'bg-gold-primary text-white'
-                    : 'text-gray-text dark:text-dark-text hover:bg-cream-light dark:hover:bg-dark-tertiary'
-                }`}
-              >
-                <span className="mr-3 text-lg">{themeOption.icon}</span>
-                {themeOption.label}
-                {theme === themeOption.key && (
-                  <svg className="ml-auto w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-              </button>
-            ))}
-          </div>
+        <div className="absolute top-full right-0 mt-2 py-1 bg-white dark:bg-dark-secondary rounded-lg shadow-lg border border-gray-200 dark:border-dark-border z-50 min-w-[120px]">
+          {themes.map((themeOption) => (
+            <button
+              key={themeOption.key}
+              onClick={() => {
+                setTheme(themeOption.key);
+                setIsDropdownOpen(false);
+              }}
+              className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
+                theme === themeOption.key ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
+              }`}
+            >
+              <span className="text-lg">{themeOption.icon}</span>
+              <span>{themeOption.label}</span>
+              {theme === themeOption.key && (
+                <svg className="ml-auto w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              )}
+            </button>
+          ))}
         </div>
       )}
 

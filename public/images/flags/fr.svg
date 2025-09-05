@@ -1,5 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16">
-  <rect width="8" height="16" fill="#002654"/>
-  <rect x="8" width="8" height="16" fill="#FFFFFF"/>
-  <rect x="16" width="8" height="16" fill="#ED2939"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" style="border-radius: 3px;">
+  <defs>
+    <linearGradient id="frBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#002395;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001a75;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="frWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f8f8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="frRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ed2939;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d61e2b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="24" height="16" fill="url(#frBlue)" rx="2"/>
+  <rect x="8" width="8" height="16" fill="url(#frWhite)"/>
+  <rect x="16" width="8" height="16" fill="url(#frRed)" rx="0 2 2 0"/>
+  <rect width="24" height="16" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5" rx="2"/>
 </svg>
