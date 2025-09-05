@@ -1,0 +1,38 @@
+{
+  "title": "Nutzungsbedingungen",
+  "subtitle": "Transparente und faire Nutzungsbedingungen für GoldWen, entworfen mit Respekt für deine Rechte und Privatsphäre.",
+  "help_section": {
+    "title": "Allgemeine Bedingungen",
+    "subtitle": "Transparenz und Respekt: unsere Verpflichtungen dir gegenüber."
+  },
+  "coming_soon": {
+    "title": "Detaillierte Bedingungen bald verfügbar",
+    "description": "Die vollständigen und detaillierten Nutzungsbedingungen werden mit dem offiziellen Start der GoldWen-Anwendung verfügbar sein. Wir verpflichten uns, transparente und faire Bedingungen bereitzustellen."
+  },
+  "principles": {
+    "title": "Unsere Grundprinzipien",
+    "items": {
+      "privacy": {
+        "title": "Respekt der Privatsphäre",
+        "description": "Deine persönlichen Daten sind geschützt und werden niemals an Dritte verkauft."
+      },
+      "transparency": {
+        "title": "Transparenz",
+        "description": "Klare Bedingungen, ohne versteckte oder irreführende Klauseln."
+      },
+      "security": {
+        "title": "Sicherheit",
+        "description": "Sichere Umgebung mit Profilverifizierung und aktiver Moderation."
+      },
+      "fairness": {
+        "title": "Fairness",
+        "description": "Faire Nutzungsbedingungen für alle Benutzer."
+      }
+    }
+  },
+  "contact": {
+    "title": "Fragen zu unseren Bedingungen?",
+    "description": "Während wir auf die Veröffentlichung unserer vollständigen Bedingungen warten, zögere nicht, uns für Fragen oder Klarstellungen zu kontaktieren.",
+    "button": "Kontaktiere uns"
+  }
+}
