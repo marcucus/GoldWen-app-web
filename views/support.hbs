@@ -20,20 +20,44 @@
     
     <!-- CSS -->
     <link href="/css/styles.css" rel="stylesheet">
+    
+    <!-- Theme Detection Script - Must be in head to prevent FOUC -->
+    <script>
+        // Theme detection and application - prevents FOUC
+        (function() {
+            const getTheme = () => {
+                const saved = localStorage.getItem('goldwen-theme');
+                if (saved && saved !== 'system') return saved;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+            
+            const applyTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            };
+            
+            // Apply theme immediately
+            const currentTheme = getTheme();
+            applyTheme(currentTheme);
+            
+            // Set initial theme preference
+            window.__goldwen_theme = localStorage.getItem('goldwen-theme') || 'system';
+        })();
+    </script>
 </head>
-<body class="font-sans text-gray-text bg-cream-light">
+<body class="font-sans text-gray-text bg-cream-light dark:text-dark-text dark:bg-dark-primary transition-colors duration-300">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-cream-dark transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 glass-effect bg-white/95 dark:bg-dark-secondary/95 border-b border-cream-dark dark:border-dark-tertiary transition-all duration-300">
         <div class="container-responsive">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
                     <a href="/" class="flex items-center space-x-3 group">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
-                            <span class="text-white font-bold text-sm">G</span>
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
+                            <img src="/images/logo_light.png" alt="GoldWen Logo" class="w-10 h-10 object-contain dark:hidden">
+                            <img src="/images/logo_dark.png" alt="GoldWen Logo" class="w-10 h-10 object-contain hidden dark:block">
                         </div>
-                        <span class="font-serif font-bold text-xl text-gray-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
+                        <span class="font-serif font-bold text-xl text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors duration-300">{{app.name}}</span>
                     </a>
                 </div>
                 
@@ -232,8 +256,8 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">G</span>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center">
+                            <img src="/images/logo_light.png" alt="GoldWen Logo" class="w-8 h-8 object-contain">
                         </div>
                         <span class="font-serif font-bold text-xl">{{app.name}}</span>
                     </div>

@@ -164,7 +164,7 @@ export default function Home({ seoData }: HomeProps) {
       </section>
 
       {/* Features Section - Enhanced with premium card design */}
-      <section id="features" className="section-padding bg-cream-lightest pattern-overlay">
+      <section id="features" className="section-padding bg-cream-lightest dark:bg-dark-secondary pattern-overlay">
         <div className="container-responsive">
           <div className="text-center mb-24 animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
@@ -202,7 +202,7 @@ export default function Home({ seoData }: HomeProps) {
       </section>
 
       {/* About/Philosophy Section - Enhanced with sophisticated layout */}
-      <section id="about" className="section-padding bg-white geometric-bg relative">
+      <section id="about" className="section-padding bg-white dark:bg-dark-primary geometric-bg relative">
         {/* Decorative elements */}
         <div className="absolute top-10 right-10 w-24 h-24 border-2 border-gold-primary/20 rounded-full animate-rotate-slow"></div>
         <div className="absolute bottom-10 left-10 w-16 h-16 bg-gold-primary/10 rounded-full animate-pulse-slow"></div>
@@ -274,7 +274,7 @@ export default function Home({ seoData }: HomeProps) {
       </section>
 
       {/* Personas Section - Enhanced with elegant personas cards */}
-      <section className="section-padding bg-cream-light pattern-overlay">
+      <section className="section-padding bg-cream-light dark:bg-dark-tertiary pattern-overlay">
         <div className="container-responsive">
           <div className="text-center mb-20 animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>

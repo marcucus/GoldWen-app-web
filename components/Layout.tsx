@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { AppData } from '../lib/app-service';
 import LanguageSelector from './LanguageSelector';
+import ThemeToggle from './ThemeToggle';
 
 interface LayoutProps {
   children: ReactNode;
@@ -147,15 +148,24 @@ export default function Layout({ children, title, description, keywords, app }: 
       </Head>
 
       {/* Navigation - Enhanced with premium styling */}
-        <nav className="fixed top-0 w-full z-50 glass-effect border-b border-gold-primary/10 transition-all duration-500 backdrop-blur-xl">
+        <nav className="fixed top-0 w-full z-50 glass-effect border-b border-gold-primary/10 dark:border-dark-tertiary transition-all duration-500 backdrop-blur-xl bg-white/95 dark:bg-dark-secondary/95">
           <div className="container-responsive">
             <div className="flex items-center justify-between h-20">
-              {/* Logo - Enhanced with glow effect */}
+              {/* Logo - Enhanced with actual logo images and theme support */}
               <div className="flex items-center space-x-4">
                 <Link href="/" className="flex items-center space-x-4 group">
                   <div className="relative navbar-logo-icon-animated">
-                    <div className="w-12 h-12 bg-gradient-to-br from-gold-primary via-gold-light to-gold-dark rounded-2xl flex items-center justify-center shadow-gold transition-all duration-500 group-hover:shadow-gold-lg">
-                      <span className="text-white font-bold text-lg">G</span>
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-gold transition-all duration-500 group-hover:shadow-gold-lg">
+                      <img 
+                        src="/images/logo_light.png" 
+                        alt="GoldWen Logo" 
+                        className="w-12 h-12 object-contain dark:hidden"
+                      />
+                      <img 
+                        src="/images/logo_dark.png" 
+                        alt="GoldWen Logo" 
+                        className="w-12 h-12 object-contain hidden dark:block"
+                      />
                     </div>
                   </div>
                   <span className="font-serif font-bold text-2xl navbar-logo-animated transition-all duration-500">
@@ -168,25 +178,28 @@ export default function Layout({ children, title, description, keywords, app }: 
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
                   href="/" 
-                  className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
                 >
                   {t('nav.home')}
                 </Link>
                 <Link 
                   href="/support" 
-                  className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
                 >
                   {t('nav.support')}
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
                 >
                   {t('nav.contact')}
                 </Link>
                 
                 {/* Language Selector */}
                 <LanguageSelector />
+                
+                {/* Theme Toggle */}
+                <ThemeToggle />
                 
                 <a 
                   href="/#download" 
@@ -202,7 +215,7 @@ export default function Layout({ children, title, description, keywords, app }: 
               {/* Mobile menu button - Enhanced */}
               <button 
                 onClick={toggleMobileMenu}
-                className="md:hidden text-gray-text hover:text-gold-primary transition-all duration-300 p-3 rounded-xl hover:bg-cream-light focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-30 hover-lift"
+                className="md:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-3 rounded-xl hover:bg-cream-light dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-30 hover-lift"
               >
                 {!isMobileMenuOpen ? (
                   <svg className="w-7 h-7 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,24 +237,24 @@ export default function Layout({ children, title, description, keywords, app }: 
                   : 'opacity-0 max-h-0 -translate-y-4'
               } overflow-hidden`}
             >
-              <div className="px-2 pt-4 pb-6 space-y-2 bg-gradient-to-br from-white via-cream-light to-cream-default backdrop-blur-xl rounded-2xl mt-4 border border-gold-primary/20 shadow-2xl">
+              <div className="px-2 pt-4 pb-6 space-y-2 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl rounded-2xl mt-4 border border-gold-primary/20 dark:border-dark-tertiary shadow-2xl">
                 <Link 
                   href="/" 
-                  className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
+                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.home')}
                 </Link>
                 <Link 
                   href="/support" 
-                  className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
+                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.support')}
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
+                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.contact')}
@@ -250,6 +263,11 @@ export default function Layout({ children, title, description, keywords, app }: 
                 {/* Language Selector in Mobile Menu */}
                 <div className="px-6 py-2">
                   <LanguageSelector />
+                </div>
+                
+                {/* Theme Toggle in Mobile Menu */}
+                <div className="px-6 py-2">
+                  <ThemeToggle />
                 </div>
                 
                 <div className="px-6 pt-2">
@@ -291,8 +309,12 @@ export default function Layout({ children, title, description, keywords, app }: 
                 <div className="col-span-2 space-y-6">
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-gold-primary via-gold-light to-gold-dark rounded-2xl flex items-center justify-center shadow-gold animate-glow">
-                        <span className="text-white font-bold text-xl">G</span>
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-gold animate-glow">
+                        <img 
+                          src="/images/logo_light.png" 
+                          alt="GoldWen Logo" 
+                          className="w-16 h-16 object-contain"
+                        />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-br from-gold-primary to-gold-dark rounded-2xl opacity-30 blur-lg"></div>
                     </div>

@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 import { appWithTranslation } from 'next-i18next'
 import { useBrowserLanguageDetection } from '../lib/useBrowserLanguageDetection'
+import { ThemeProvider } from '../components/ThemeProvider'
 
 
 function App({ Component, pageProps }: AppProps) {
@@ -18,9 +19,11 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <link href="/css/styles.css" rel="stylesheet" />
       </Head>
-      <div className="font-sans text-gray-text bg-cream-light min-h-screen">
-        <Component {...pageProps} />
-      </div>
+      <ThemeProvider>
+        <div className="font-sans text-gray-text bg-cream-light dark:text-dark-text dark:bg-dark-primary min-h-screen transition-colors duration-300">
+          <Component {...pageProps} />
+        </div>
+      </ThemeProvider>
     </>
   )
 }
