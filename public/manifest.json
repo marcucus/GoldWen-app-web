@@ -1,0 +1,22 @@
+{
+  "name": "GoldWen",
+  "short_name": "GoldWen",
+  "description": "L'application de rencontres qui privilégie la qualité des connexions grâce à la 'Calm Technology'",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
