@@ -21,7 +21,7 @@ export default function ThemeToggle() {
         className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm"
         aria-label="Change theme"
       >
-        <span className="text-lg">{currentThemeData.icon}</span>
+        <span className="w-5 h-4 flex items-center justify-center text-sm">{currentThemeData.icon}</span>
         <span className="hidden sm:inline">{currentThemeData.label}</span>
         <svg
           className={`w-4 h-4 transition-transform ${
@@ -49,7 +49,7 @@ export default function ThemeToggle() {
                 theme === themeOption.key ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
               }`}
             >
-              <span className="text-lg">{themeOption.icon}</span>
+              <span className="w-5 h-4 flex items-center justify-center text-sm">{themeOption.icon}</span>
               <span>{themeOption.label}</span>
               {theme === themeOption.key && (
                 <svg className="ml-auto w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
