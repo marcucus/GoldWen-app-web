@@ -2,7 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { AppData } from '../lib/app-service';
+import LanguageSelector from './LanguageSelector';
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +16,7 @@ interface LayoutProps {
 
 export default function Layout({ children, title, description, keywords, app }: LayoutProps) {
   const router = useRouter();
+  const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -154,25 +157,29 @@ export default function Layout({ children, title, description, keywords, app }: 
               </div>
               
               {/* Desktop menu - Enhanced with premium navigation */}
-              <div className="hidden md:flex items-center space-x-10">
+              <div className="hidden md:flex items-center space-x-8">
                 <Link 
                   href="/" 
                   className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
                 >
-                  Accueil
+                  {t('nav.home')}
                 </Link>
                 <Link 
                   href="/support" 
                   className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
                 >
-                  Support
+                  {t('nav.support')}
                 </Link>
                 <Link 
                   href="/contact" 
                   className="navbar-link text-gray-text hover:text-gold-primary font-medium text-lg"
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
+                
+                {/* Language Selector */}
+                <LanguageSelector />
+                
                 <a 
                   href="/#download" 
                   className="btn-primary text-base px-8 py-3 hover-lift group"
@@ -180,7 +187,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
-                  Télécharger
+                  {t('nav.download')}
                 </a>
               </div>
               
@@ -215,22 +222,28 @@ export default function Layout({ children, title, description, keywords, app }: 
                   className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Accueil
+                  {t('nav.home')}
                 </Link>
                 <Link 
                   href="/support" 
                   className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Support
+                  {t('nav.support')}
                 </Link>
                 <Link 
                   href="/contact" 
                   className="block px-6 py-4 text-gray-text hover:text-gold-primary hover:bg-cream-light transition-all duration-300 rounded-xl font-medium text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
+                
+                {/* Language Selector in Mobile Menu */}
+                <div className="px-6 py-2">
+                  <LanguageSelector />
+                </div>
+                
                 <div className="px-6 pt-2">
                   <a 
                     href="/#download" 
@@ -240,7 +253,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                     <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                     </svg>
-                    Télécharger
+                    {t('nav.download')}
                   </a>
                 </div>
               </div>
@@ -286,8 +299,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                   </p>
                   
                   <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-                    L&apos;application de rencontre qui privilégie la qualité des connexions 
-                    pour des relations authentiques et durables.
+                    {t('footer.description')}
                   </p>
 
                   {/* Social proof */}
@@ -316,22 +328,22 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <ul className="space-y-3">
                     <li>
                       <Link href="/" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Accueil
+                        {t('nav.home')}
                       </Link>
                     </li>
                     <li>
                       <a href="/#features" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Fonctionnalités
+                        {t('nav.features')}
                       </a>
                     </li>
                     <li>
                       <a href="/#about" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        À propos
+                        {t('nav.about')}
                       </a>
                     </li>
                     <li>
                       <Link href="/support" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Support
+                        {t('nav.support')}
                       </Link>
                     </li>
                   </ul>
@@ -346,22 +358,22 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <ul className="space-y-3">
                     <li>
                       <Link href="/confidentialite" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Confidentialité
+                        {t('nav.privacy')}
                       </Link>
                     </li>
                     <li>
                       <Link href="/conditions" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Conditions d&apos;utilisation
+                        {t('nav.terms')}
                       </Link>
                     </li>
                     <li>
                       <Link href="/mentions-legales" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Mentions légales
+                        {t('nav.legal')}
                       </Link>
                     </li>
                     <li>
                       <Link href="/contact" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
-                        Contact
+                        {t('nav.contact')}
                       </Link>
                     </li>
                   </ul>
@@ -373,14 +385,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                 <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                   <div className="flex items-center space-x-4">
                     <p className="text-gray-400 text-lg">
-                      &copy; 2025 {app.name}. Tous droits réservés.
+                      &copy; 2025 {app.name}. {t('footer.copyright')}
                     </p>
                   </div>
                   
                   <div className="flex items-center space-x-6">
-                    <span className="text-gray-400 text-sm">Fait avec</span>
+                    <span className="text-gray-400 text-sm">{t('footer.made_with')}</span>
                     <div className="w-4 h-4 bg-gradient-to-br from-red-400 to-red-600 rounded-full animate-pulse-slow"></div>
-                    <span className="text-gray-400 text-sm">à Paris</span>
+                    <span className="text-gray-400 text-sm">{t('footer.in_paris')}</span>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,106 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Designed to be uninstalled",
+    "tagline": "Quality over quantity",
+    "description": "GoldWen revolutionizes online dating by offering an intentional and calming approach. No more endless swiping, make way for meaningful connections."
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About",
+    "support": "Support",
+    "download": "Download",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "legal": "Legal"
+  },
+  "hero": {
+    "title": "A revolutionary approach to dating",
+    "subtitle": "No more endless swiping and anxiety. GoldWen offers a calming and intentional experience for authentic connections.",
+    "cta": {
+      "primary": "Download the app",
+      "secondary": "Discover features"
+    }
+  },
+  "features": {
+    "title": "A revolutionary approach to dating",
+    "subtitle": "No more endless swiping and anxiety. GoldWen offers a calming and intentional experience for authentic connections.",
+    "items": {
+      "daily_selection": {
+        "title": "Daily Selection",
+        "description": "Receive 3 to 5 carefully selected profiles every day at noon."
+      },
+      "smart_matching": {
+        "title": "Smart Matching",
+        "description": "Our algorithm prioritizes compatibility of values and personalities."
+      },
+      "ephemeral_conversations": {
+        "title": "Ephemeral Conversations",
+        "description": "Discussions limited to 24 hours to encourage authentic exchanges."
+      },
+      "calm_design": {
+        "title": "Calming Design",
+        "description": "Minimalist interface inspired by \"Calm Technology\" to reduce anxiety."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "The \"Calm Technology\" philosophy",
+    "description": "GoldWen adopts the principles of \"Calm Technology\" to create a soothing experience that reduces anxiety related to traditional dating apps.",
+    "subtitle1": "Our minimalist interface, generous spaces and predictable interactions allow you to focus on what matters: creating authentic connections.",
+    "subtitle2": "With only one notification per day and time-limited conversations, we encourage more intentional and less compulsive exchanges.",
+    "items": {
+      "minimal_design": {
+        "title": "Minimalist Design",
+        "description": "Clean interfaces without superfluous elements for a serene experience."
+      },
+      "predictable_interactions": {
+        "title": "Predictable Interactions",
+        "description": "Each action is clear and reassuring, you always know what's happening."
+      },
+      "limited_notifications": {
+        "title": "Limited Notifications",
+        "description": "One notification per day, no artificially created dependency."
+      }
+    }
+  },
+  "personas": {
+    "title": "Who is GoldWen designed for?",
+    "subtitle": "Our app is for people who are looking for authentic connections and are tired of traditional dating apps.",
+    "sophie": {
+      "name": "Sophie, the Intentional",
+      "age": "29 years old",
+      "description": "Urban professional, tired of superficiality. Looking for a serious relationship and values compatibility of values."
+    },
+    "marc": {
+      "name": "Marc, the Ambitious Professional",
+      "age": "34 years old",
+      "description": "Demanding career, little free time. Optimizes his search by focusing on serious profiles."
+    }
+  },
+  "download": {
+    "title": "Ready to experience a different kind of dating?",
+    "subtitle": "Join GoldWen and discover how quality can transform your online dating. Download the app today.",
+    "app_store": "Download on the",
+    "google_play": "Get it on",
+    "coming_soon": "Coming soon on iOS and Android",
+    "stats": {
+      "waiting_list": "On waiting list",
+      "user_rating": "User reviews",
+      "satisfaction": "Satisfaction"
+    }
+  },
+  "footer": {
+    "description": "The dating app that prioritizes the quality of connections for authentic and lasting relationships.",
+    "made_with": "Made with",
+    "in_paris": "in Paris",
+    "copyright": "All rights reserved."
+  },
+  "language": {
+    "switch": "Switch language",
+    "french": "Français",
+    "english": "English"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Conçue pour être désinstallée",
+    "tagline": "La qualité plutôt que la quantité",
+    "description": "GoldWen révolutionne les rencontres en ligne en proposant une approche intentionnelle et apaisante. Fini le swipe incessant, place aux connexions significatives."
+  },
+  "nav": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "about": "À propos",
+    "support": "Support",
+    "download": "Télécharger",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "legal": "Mentions légales"
+  },
+  "hero": {
+    "title": "Une approche révolutionnaire des rencontres",
+    "subtitle": "Fini le swipe incessant et l'anxiété. GoldWen propose une expérience apaisante et intentionnelle pour des connexions authentiques.",
+    "cta": {
+      "primary": "Télécharger l'application",
+      "secondary": "Découvrir les fonctionnalités"
+    }
+  },
+  "features": {
+    "title": "Une approche révolutionnaire des rencontres",
+    "subtitle": "Fini le swipe incessant et l'anxiété. GoldWen propose une expérience apaisante et intentionnelle pour des connexions authentiques.",
+    "items": {
+      "daily_selection": {
+        "title": "Sélection Quotidienne",
+        "description": "Recevez 3 à 5 profils soigneusement sélectionnés chaque jour à midi."
+      },
+      "smart_matching": {
+        "title": "Matching Intelligent", 
+        "description": "Notre algorithme privilégie la compatibilité des valeurs et des personnalités."
+      },
+      "ephemeral_conversations": {
+        "title": "Conversations Éphémères",
+        "description": "Discussions limitées à 24h pour encourager des échanges authentiques."
+      },
+      "calm_design": {
+        "title": "Design Apaisant",
+        "description": "Interface minimaliste inspirée de la \"Calm Technology\" pour réduire l'anxiété."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "La philosophie \"Calm Technology\"",
+    "description": "GoldWen adopte les principes de la \"Calm Technology\" pour créer une expérience apaisante qui réduit l'anxiété liée aux applications de rencontre traditionnelles.",
+    "subtitle1": "Notre interface minimaliste, nos espaces généreux et nos interactions prévisibles vous permettent de vous concentrer sur l'essentiel : créer des connexions authentiques.",
+    "subtitle2": "Avec une seule notification par jour et des conversations limitées dans le temps, nous encourageons des échanges plus intentionnels et moins compulsifs.",
+    "items": {
+      "minimal_design": {
+        "title": "Design Minimaliste",
+        "description": "Interfaces épurées sans éléments superflus pour une expérience sereine."
+      },
+      "predictable_interactions": {
+        "title": "Interactions Prévisibles",
+        "description": "Chaque action est claire et rassurante, vous savez toujours ce qui se passe."
+      },
+      "limited_notifications": {
+        "title": "Notifications Limitées", 
+        "description": "Une seule notification par jour, pas de dépendance créée artificiellement."
+      }
+    }
+  },
+  "personas": {
+    "title": "Pour qui GoldWen est-elle conçue ?",
+    "subtitle": "Notre application s'adresse aux personnes qui recherchent des connexions authentiques et qui sont fatiguées des applications de rencontre traditionnelles.",
+    "sophie": {
+      "name": "Sophie, l'Intentionnelle",
+      "age": "29 ans",
+      "description": "Professionnelle urbaine, fatiguée de la superficialité. Cherche une relation sérieuse et valorise la compatibilité des valeurs."
+    },
+    "marc": {
+      "name": "Marc, le Professionnel Ambitieux",
+      "age": "34 ans", 
+      "description": "Carrière exigeante, peu de temps libre. Optimise sa recherche en se concentrant sur des profils sérieux."
+    }
+  },
+  "download": {
+    "title": "Prêt(e) à vivre une expérience de rencontre différente ?",
+    "subtitle": "Rejoignez GoldWen et découvrez comment la qualité peut transformer vos rencontres en ligne. Téléchargez l'application dès aujourd'hui.",
+    "app_store": "Télécharger sur l'",
+    "google_play": "Disponible sur",
+    "coming_soon": "Disponible prochainement sur iOS et Android",
+    "stats": {
+      "waiting_list": "En liste d'attente",
+      "user_rating": "Avis utilisateurs", 
+      "satisfaction": "Satisfaction"
+    }
+  },
+  "footer": {
+    "description": "L'application de rencontre qui privilégie la qualité des connexions pour des relations authentiques et durables.",
+    "made_with": "Fait avec",
+    "in_paris": "à Paris",
+    "copyright": "Tous droits réservés."
+  },
+  "language": {
+    "switch": "Changer de langue",
+    "french": "Français",
+    "english": "English"
+  }
+}

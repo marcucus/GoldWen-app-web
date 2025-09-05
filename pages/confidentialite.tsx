@@ -1,17 +1,34 @@
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
-import { appService, PageData } from '../lib/app-service';
+import { appService } from '../lib/app-service';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface PrivacyProps {
-  pageData: PageData;
+  seoData: {
+    title: string;
+    description: string;
+    keywords?: string;
+  };
 }
 
-export default function Privacy({ pageData }: PrivacyProps) {
+export default function Privacy({ seoData }: PrivacyProps) {
+  const { t } = useTranslation('common');
+
+  // Get app data from translations
+  const appData = {
+    name: t('app.name'),
+    slogan: t('app.slogan'),
+    tagline: t('app.tagline'),
+    description: t('app.description')
+  };
+
   return (
     <Layout 
-      title={pageData.title}
-      description={pageData.description}
-      app={pageData.app}
+      title={seoData.title}
+      description={seoData.description}
+      keywords={seoData.keywords}
+      app={appData}
     >
       {/* Hero Section - Enhanced with sophisticated design */}
       <section className="section-padding bg-gradient-hero geometric-bg relative overflow-hidden">
@@ -179,12 +196,13 @@ export default function Privacy({ pageData }: PrivacyProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const pageData = appService.getPrivacyPageData();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const seoData = appService.getPrivacyPageSEO(locale);
   
   return {
     props: {
-      pageData,
+      seoData,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
   };
 };

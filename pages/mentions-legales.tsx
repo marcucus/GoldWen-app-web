@@ -1,17 +1,34 @@
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
-import { appService, PageData } from '../lib/app-service';
+import { appService } from '../lib/app-service';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface LegalProps {
-  pageData: PageData;
+  seoData: {
+    title: string;
+    description: string;
+    keywords?: string;
+  };
 }
 
-export default function Legal({ pageData }: LegalProps) {
+export default function Legal({ seoData }: LegalProps) {
+  const { t } = useTranslation('common');
+
+  // Get app data from translations
+  const appData = {
+    name: t('app.name'),
+    slogan: t('app.slogan'),
+    tagline: t('app.tagline'),
+    description: t('app.description')
+  };
+
   return (
     <Layout 
-      title={pageData.title}
-      description={pageData.description}
-      app={pageData.app}
+      title={seoData.title}
+      description={seoData.description}
+      keywords={seoData.keywords}
+      app={appData}
     >
       {/* Hero Section - Enhanced with sophisticated design */}
       <section className="section-padding bg-gradient-hero geometric-bg relative overflow-hidden">
@@ -173,12 +190,13 @@ export default function Legal({ pageData }: LegalProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const pageData = appService.getLegalPageData();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const seoData = appService.getLegalPageSEO(locale);
   
   return {
     props: {
-      pageData,
+      seoData,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
   };
 };
