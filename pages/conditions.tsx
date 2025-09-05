@@ -13,14 +13,15 @@ interface TermsProps {
 }
 
 export default function Terms({ seoData }: TermsProps) {
-  const { t } = useTranslation('common');
+  const { t: tCommon } = useTranslation('common');
+  const { t } = useTranslation('terms');
 
   // Get app data from translations
   const appData = {
-    name: t('app.name'),
-    slogan: t('app.slogan'),
-    tagline: t('app.tagline'),
-    description: t('app.description')
+    name: tCommon('app.name'),
+    slogan: tCommon('app.slogan'),
+    tagline: tCommon('app.tagline'),
+    description: tCommon('app.description')
   };
 
   return (
@@ -40,11 +41,10 @@ export default function Terms({ seoData }: TermsProps) {
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h1 className="heading-primary text-shadow-gold mb-8">
-              Conditions d&apos;Utilisation
+              {t('title')}
             </h1>
             <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
-              Les conditions d&apos;utilisation transparentes et équitables de GoldWen, 
-              conçues dans le respect de vos droits et de votre vie privée.
+              {t('subtitle')}
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@ export default function Terms({ seoData }: TermsProps) {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-                Conditions générales
+                {t('help_section.title')}
               </h2>
               <p className="text-body-large text-gray-warm">
-                Transparence et respect : nos engagements envers vous.
+                {t('help_section.subtitle')}
               </p>
             </div>
             
@@ -73,12 +73,10 @@ export default function Terms({ seoData }: TermsProps) {
                     </svg>
                   </div>
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Conditions détaillées disponibles prochainement
+                    {t('coming_soon.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-8">
-                    Les conditions d&apos;utilisation complètes et détaillées seront disponibles 
-                    avec le lancement officiel de l&apos;application GoldWen. Nous nous engageons 
-                    à fournir des conditions transparentes et équitables.
+                    {t('coming_soon.description')}
                   </p>
                 </div>
               </div>
@@ -86,28 +84,28 @@ export default function Terms({ seoData }: TermsProps) {
               {/* Principles Card */}
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 <h3 className="heading-tertiary mb-8 text-shadow text-center">
-                  Nos principes fondamentaux
+                  {t('principles.title')}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
-                      title: "Respect de la vie privée",
-                      description: "Vos données personnelles sont protégées et ne sont jamais vendues à des tiers.",
+                      title: t('principles.items.privacy.title'),
+                      description: t('principles.items.privacy.description'),
                       icon: "🔒"
                     },
                     {
-                      title: "Transparence",
-                      description: "Des conditions claires, sans clauses cachées ou piégeuses.",
+                      title: t('principles.items.transparency.title'),
+                      description: t('principles.items.transparency.description'),
                       icon: "🔍"
                     },
                     {
-                      title: "Sécurité",
-                      description: "Environnement sûr avec vérification des profils et modération active.",
+                      title: t('principles.items.security.title'),
+                      description: t('principles.items.security.description'),
                       icon: "🛡️"
                     },
                     {
-                      title: "Équité",
-                      description: "Conditions d'utilisation équitables pour tous les utilisateurs.",
+                      title: t('principles.items.fairness.title'),
+                      description: t('principles.items.fairness.description'),
                       icon: "⚖️"
                     }
                   ].map((principle, index) => (
@@ -130,17 +128,16 @@ export default function Terms({ seoData }: TermsProps) {
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 <div className="text-center">
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Questions sur nos conditions ?
+                    {t('contact.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-8">
-                    En attendant la publication de nos conditions complètes, n&apos;hésitez pas 
-                    à nous contacter pour toute question ou clarification.
+                    {t('contact.description')}
                   </p>
                   <a href="/contact" className="btn-primary hover-lift group animate-scale-in">
                     <svg className="w-6 h-6 mr-3 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    Nous contacter
+                    {t('contact.button')}
                   </a>
                 </div>
               </div>
@@ -158,7 +155,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       seoData,
-      ...(await serverSideTranslations(locale!, ['common'])),
+      ...(await serverSideTranslations(locale!, ['common', 'terms'])),
     },
   };
 };

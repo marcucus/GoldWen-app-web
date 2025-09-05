@@ -1,0 +1,63 @@
+{
+  "title": "Datenschutzrichtlinie",
+  "subtitle": "Ihre Privatsphäre ist unsere absolute Priorität. Entdecken Sie unser Engagement für den Schutz Ihrer persönlichen Daten.",
+  "main_section": {
+    "title": "Unser Engagement für Ihre Privatsphäre",
+    "subtitle": "Maximaler Schutz, völlige Transparenz."
+  },
+  "commitment": {
+    "title": "Ihre Privatsphäre, unser Engagement",
+    "description": "Bei GoldWen verpflichten wir uns, Ihre persönlichen Daten zu schützen und Ihre Privatsphäre zu respektieren. Unsere Praktiken folgen den höchsten Industriestandards und entsprechen der DSGVO."
+  },
+  "principles": {
+    "title": "Unsere Datenschutzprinzipien",
+    "items": {
+      "minimal_data": {
+        "title": "Minimale Daten",
+        "description": "Wir sammeln nur Daten, die für die Funktionalität der Anwendung unbedingt erforderlich sind."
+      },
+      "encryption": {
+        "title": "Vollständige Verschlüsselung",
+        "description": "Alle Ihre Daten werden bei der Übertragung und Speicherung mit den neuesten Technologien verschlüsselt."
+      },
+      "no_selling": {
+        "title": "Kein Datenverkauf",
+        "description": "Ihre persönlichen Informationen werden niemals verkauft oder an Dritte weitergegeben."
+      },
+      "user_control": {
+        "title": "Benutzerkontrolle",
+        "description": "Sie behalten die vollständige Kontrolle über Ihre Daten und können sie jederzeit löschen."
+      },
+      "transparency": {
+        "title": "Völlige Transparenz",
+        "description": "Wir erklären klar, wie wir Ihre Daten verwenden, ohne technischen Jargon."
+      },
+      "gdpr_compliance": {
+        "title": "DSGVO-Konformität",
+        "description": "Strikte Einhaltung der europäischen Datenschutz-Grundverordnung."
+      }
+    }
+  },
+  "security": {
+    "title": "Erweiterte Sicherheitsmaßnahmen",
+    "features": {
+      "authentication": {
+        "title": "Sichere Authentifizierung",
+        "description": "Sichere Anmeldung mit optionaler Zwei-Faktor-Authentifizierung."
+      },
+      "secure_servers": {
+        "title": "Sichere Server",
+        "description": "Infrastruktur in ISO 27001-zertifizierten Rechenzentren gehostet."
+      },
+      "regular_audits": {
+        "title": "Regelmäßige Audits",
+        "description": "Regelmäßige Sicherheitsaudits durch unabhängige Experten."
+      }
+    }
+  },
+  "coming_soon": {
+    "title": "Vollständige Richtlinie bald verfügbar",
+    "description": "Die detaillierte Datenschutzrichtlinie wird mit dem Start der Anwendung veröffentlicht. Sie wird unsere Datenschutzpraktiken genau beschreiben.",
+    "button": "Fragen zum Datenschutz?"
+  }
+}

@@ -13,14 +13,15 @@ interface PrivacyProps {
 }
 
 export default function Privacy({ seoData }: PrivacyProps) {
-  const { t } = useTranslation('common');
+  const { t: tCommon } = useTranslation('common');
+  const { t } = useTranslation('privacy');
 
   // Get app data from translations
   const appData = {
-    name: t('app.name'),
-    slogan: t('app.slogan'),
-    tagline: t('app.tagline'),
-    description: t('app.description')
+    name: tCommon('app.name'),
+    slogan: tCommon('app.slogan'),
+    tagline: tCommon('app.tagline'),
+    description: tCommon('app.description')
   };
 
   return (
@@ -40,11 +41,10 @@ export default function Privacy({ seoData }: PrivacyProps) {
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h1 className="heading-primary text-shadow-gold mb-8">
-              Politique de Confidentialité
+              {t('title')}
             </h1>
             <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
-              Votre confidentialité est notre priorité absolue. Découvrez notre engagement 
-              pour la protection de vos données personnelles.
+              {t('subtitle')}
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@ export default function Privacy({ seoData }: PrivacyProps) {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-                Notre engagement pour votre confidentialité
+                {t('main_section.title')}
               </h2>
               <p className="text-body-large text-gray-warm">
-                Protection maximale, transparence totale.
+                {t('main_section.subtitle')}
               </p>
             </div>
             
@@ -73,12 +73,10 @@ export default function Privacy({ seoData }: PrivacyProps) {
                     </svg>
                   </div>
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Votre vie privée, notre engagement
+                    {t('commitment.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-8">
-                    Chez GoldWen, nous nous engageons à protéger vos données personnelles et à respecter 
-                    votre vie privée. Nos pratiques suivent les standards les plus élevés de l&apos;industrie 
-                    et sont conformes au RGPD.
+                    {t('commitment.description')}
                   </p>
                 </div>
               </div>
@@ -86,38 +84,38 @@ export default function Privacy({ seoData }: PrivacyProps) {
               {/* Privacy Principles */}
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 <h3 className="heading-tertiary mb-8 text-shadow text-center">
-                  Nos principes de confidentialité
+                  {t('principles.title')}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
-                      title: "Données minimales",
-                      description: "Nous ne collectons que les données strictement nécessaires au fonctionnement de l'application.",
+                      title: t('principles.items.minimal_data.title'),
+                      description: t('principles.items.minimal_data.description'),
                       icon: "📊"
                     },
                     {
-                      title: "Chiffrement complet",
-                      description: "Toutes vos données sont chiffrées en transit et au repos avec les dernières technologies.",
+                      title: t('principles.items.encryption.title'),
+                      description: t('principles.items.encryption.description'),
                       icon: "🔐"
                     },
                     {
-                      title: "Aucune vente de données",
-                      description: "Vos informations personnelles ne sont jamais vendues ou partagées avec des tiers.",
+                      title: t('principles.items.no_selling.title'),
+                      description: t('principles.items.no_selling.description'),
                       icon: "🚫"
                     },
                     {
-                      title: "Contrôle utilisateur",
-                      description: "Vous gardez le contrôle total sur vos données et pouvez les supprimer à tout moment.",
+                      title: t('principles.items.user_control.title'),
+                      description: t('principles.items.user_control.description'),
                       icon: "⚙️"
                     },
                     {
-                      title: "Transparence totale",
-                      description: "Nous expliquons clairement comment nous utilisons vos données, sans jargon technique.",
+                      title: t('principles.items.transparency.title'),
+                      description: t('principles.items.transparency.description'),
                       icon: "💡"
                     },
                     {
-                      title: "Conformité RGPD",
-                      description: "Respect strict du Règlement Général sur la Protection des Données européen.",
+                      title: t('principles.items.gdpr_compliance.title'),
+                      description: t('principles.items.gdpr_compliance.description'),
                       icon: "🇪🇺"
                     }
                   ].map((principle, index) => (
@@ -139,23 +137,23 @@ export default function Privacy({ seoData }: PrivacyProps) {
               {/* Security Features */}
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 <h3 className="heading-tertiary mb-8 text-shadow text-center">
-                  Mesures de sécurité avancées
+                  {t('security.title')}
                 </h3>
                 <div className="grid sm:grid-cols-3 gap-6 text-center">
                   {[
                     {
-                      title: "Authentification sécurisée",
-                      description: "Connexion sécurisée avec authentification à deux facteurs optionnelle.",
+                      title: t('security.features.authentication.title'),
+                      description: t('security.features.authentication.description'),
                       icon: "🔑"
                     },
                     {
-                      title: "Serveurs sécurisés",
-                      description: "Infrastructure hébergée dans des centres de données certifiés ISO 27001.",
+                      title: t('security.features.secure_servers.title'),
+                      description: t('security.features.secure_servers.description'),
                       icon: "🏢"
                     },
                     {
-                      title: "Audits réguliers",
-                      description: "Audits de sécurité réguliers par des experts indépendants.",
+                      title: t('security.features.regular_audits.title'),
+                      description: t('security.features.regular_audits.description'),
                       icon: "🔍"
                     }
                   ].map((feature, index) => (
@@ -174,17 +172,16 @@ export default function Privacy({ seoData }: PrivacyProps) {
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.6s'}}>
                 <div className="text-center">
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Politique complète disponible prochainement
+                    {t('coming_soon.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-8">
-                    La politique de confidentialité détaillée sera publiée avec le lancement de l&apos;application. 
-                    Elle détaillera précisément nos pratiques de protection des données.
+                    {t('coming_soon.description')}
                   </p>
                   <a href="/contact" className="btn-primary hover-lift group animate-scale-in">
                     <svg className="w-6 h-6 mr-3 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    Questions sur la confidentialité ?
+                    {t('coming_soon.button')}
                   </a>
                 </div>
               </div>
@@ -202,7 +199,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       seoData,
-      ...(await serverSideTranslations(locale!, ['common'])),
+      ...(await serverSideTranslations(locale!, ['common', 'privacy'])),
     },
   };
 };

@@ -1,0 +1,63 @@
+{
+  "title": "Privacy Policy",
+  "subtitle": "Your privacy is our absolute priority. Discover our commitment to protecting your personal data.",
+  "main_section": {
+    "title": "Our commitment to your privacy",
+    "subtitle": "Maximum protection, total transparency."
+  },
+  "commitment": {
+    "title": "Your privacy, our commitment",
+    "description": "At GoldWen, we are committed to protecting your personal data and respecting your privacy. Our practices follow the highest industry standards and comply with GDPR."
+  },
+  "principles": {
+    "title": "Our privacy principles",
+    "items": {
+      "minimal_data": {
+        "title": "Minimal data",
+        "description": "We only collect data strictly necessary for the application's functionality."
+      },
+      "encryption": {
+        "title": "Complete encryption",
+        "description": "All your data is encrypted in transit and at rest with the latest technologies."
+      },
+      "no_selling": {
+        "title": "No data selling",
+        "description": "Your personal information is never sold or shared with third parties."
+      },
+      "user_control": {
+        "title": "User control",
+        "description": "You maintain total control over your data and can delete it at any time."
+      },
+      "transparency": {
+        "title": "Total transparency",
+        "description": "We clearly explain how we use your data, without technical jargon."
+      },
+      "gdpr_compliance": {
+        "title": "GDPR compliance",
+        "description": "Strict compliance with the European General Data Protection Regulation."
+      }
+    }
+  },
+  "security": {
+    "title": "Advanced security measures",
+    "features": {
+      "authentication": {
+        "title": "Secure authentication",
+        "description": "Secure login with optional two-factor authentication."
+      },
+      "secure_servers": {
+        "title": "Secure servers",
+        "description": "Infrastructure hosted in ISO 27001 certified data centers."
+      },
+      "regular_audits": {
+        "title": "Regular audits",
+        "description": "Regular security audits by independent experts."
+      }
+    }
+  },
+  "coming_soon": {
+    "title": "Complete policy available soon",
+    "description": "The detailed privacy policy will be published with the application launch. It will precisely detail our data protection practices.",
+    "button": "Questions about privacy?"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "title": "Aviso Legal",
+  "subtitle": "Información legal y transparencia: nuestro compromiso por un servicio conforme y responsable.",
+  "main_section": {
+    "title": "Información legal",
+    "subtitle": "Cumplimiento legal y transparencia total."
+  },
+  "coming_soon": {
+    "title": "Aviso legal completo disponible pronto",
+    "description": "Los avisos legales detallados se publicarán con el lanzamiento oficial de la aplicación GoldWen. Incluirán toda la información legal requerida por la regulación francesa y europea."
+  },
+  "commitment": {
+    "title": "Nuestro compromiso legal",
+    "items": {
+      "gdpr_compliance": {
+        "title": "Cumplimiento del RGPD",
+        "description": "Cumplimiento total del Reglamento General de Protección de Datos."
+      },
+      "french_law": {
+        "title": "Derecho francés",
+        "description": "Aplicación conforme al derecho francés y las regulaciones aplicables."
+      },
+      "transparency": {
+        "title": "Transparencia",
+        "description": "Información clara sobre el editor, alojamiento y responsabilidades."
+      },
+      "user_protection": {
+        "title": "Protección del usuario",
+        "description": "Respeto de los derechos de los usuarios y las obligaciones legales."
+      }
+    }
+  },
+  "future_info": {
+    "title": "Información por venir",
+    "publisher": {
+      "title": "Editor",
+      "items": [
+        "Razón social de la empresa",
+        "Dirección de la sede social",
+        "Número SIRET",
+        "Capital social"
+      ]
+    },
+    "hosting": {
+      "title": "Alojamiento",
+      "items": [
+        "Nombre del proveedor de hosting",
+        "Dirección del proveedor de hosting",
+        "Datos de contacto técnicos",
+        "Ubicación de los servidores"
+      ]
+    }
+  },
+  "contact": {
+    "title": "¿Preguntas legales?",
+    "description": "Para cualquier pregunta sobre los aspectos legales de GoldWen, contacta a nuestro equipo legal.",
+    "email": "legal@goldwen.app",
+    "button": "Formulario de contacto"
+  }
+}

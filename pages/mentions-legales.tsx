@@ -13,14 +13,15 @@ interface LegalProps {
 }
 
 export default function Legal({ seoData }: LegalProps) {
-  const { t } = useTranslation('common');
+  const { t: tCommon } = useTranslation('common');
+  const { t } = useTranslation('legal');
 
   // Get app data from translations
   const appData = {
-    name: t('app.name'),
-    slogan: t('app.slogan'),
-    tagline: t('app.tagline'),
-    description: t('app.description')
+    name: tCommon('app.name'),
+    slogan: tCommon('app.slogan'),
+    tagline: tCommon('app.tagline'),
+    description: tCommon('app.description')
   };
 
   return (
@@ -40,11 +41,10 @@ export default function Legal({ seoData }: LegalProps) {
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h1 className="heading-primary text-shadow-gold mb-8">
-              Mentions Légales
+              {t('title')}
             </h1>
             <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
-              Informations légales et transparence : notre engagement pour un service 
-              conforme et responsable.
+              {t('subtitle')}
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@ export default function Legal({ seoData }: LegalProps) {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-                Informations légales
+                {t('main_section.title')}
               </h2>
               <p className="text-body-large text-gray-warm">
-                Conformité légale et transparence totale.
+                {t('main_section.subtitle')}
               </p>
             </div>
             
@@ -73,12 +73,10 @@ export default function Legal({ seoData }: LegalProps) {
                     </svg>
                   </div>
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Mentions légales complètes disponibles prochainement
+                    {t('coming_soon.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-8">
-                    Les mentions légales détaillées seront publiées avec le lancement officiel 
-                    de l&apos;application GoldWen. Elles incluront toutes les informations 
-                    légales requises par la réglementation française et européenne.
+                    {t('coming_soon.description')}
                   </p>
                 </div>
               </div>
@@ -86,28 +84,28 @@ export default function Legal({ seoData }: LegalProps) {
               {/* Legal Compliance */}
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 <h3 className="heading-tertiary mb-8 text-shadow text-center">
-                  Notre engagement légal
+                  {t('commitment.title')}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
-                      title: "Conformité RGPD",
-                      description: "Respect total du Règlement Général sur la Protection des Données.",
+                      title: t('commitment.items.gdpr_compliance.title'),
+                      description: t('commitment.items.gdpr_compliance.description'),
                       icon: "🇪🇺"
                     },
                     {
-                      title: "Droit français",
-                      description: "Application conforme au droit français et aux réglementations applicables.",
+                      title: t('commitment.items.french_law.title'),
+                      description: t('commitment.items.french_law.description'),
                       icon: "🇫🇷"
                     },
                     {
-                      title: "Transparence",
-                      description: "Informations claires sur l'éditeur, l'hébergement et les responsabilités.",
+                      title: t('commitment.items.transparency.title'),
+                      description: t('commitment.items.transparency.description'),
                       icon: "📋"
                     },
                     {
-                      title: "Protection utilisateur",
-                      description: "Respect des droits des utilisateurs et des obligations légales.",
+                      title: t('commitment.items.user_protection.title'),
+                      description: t('commitment.items.user_protection.description'),
                       icon: "🛡️"
                     }
                   ].map((item, index) => (
@@ -129,25 +127,23 @@ export default function Legal({ seoData }: LegalProps) {
               {/* Future Legal Info */}
               <div className="card group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 <h3 className="heading-tertiary mb-8 text-shadow text-center">
-                  Informations à venir
+                  {t('future_info.title')}
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-text">Éditeur</h4>
+                    <h4 className="font-semibold text-gray-text">{t('future_info.publisher.title')}</h4>
                     <ul className="text-gray-warm space-y-2 text-sm">
-                      <li>• Raison sociale de la société</li>
-                      <li>• Adresse du siège social</li>
-                      <li>• Numéro SIRET</li>
-                      <li>• Capital social</li>
+                      {(t('future_info.publisher.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-text">Hébergement</h4>
+                    <h4 className="font-semibold text-gray-text">{t('future_info.hosting.title')}</h4>
                     <ul className="text-gray-warm space-y-2 text-sm">
-                      <li>• Nom de l&apos;hébergeur</li>
-                      <li>• Adresse de l&apos;hébergeur</li>
-                      <li>• Coordonnées techniques</li>
-                      <li>• Localisation des serveurs</li>
+                      {(t('future_info.hosting.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -162,21 +158,20 @@ export default function Legal({ seoData }: LegalProps) {
                     </svg>
                   </div>
                   <h3 className="heading-tertiary mb-4 text-shadow">
-                    Questions légales ?
+                    {t('contact.title')}
                   </h3>
                   <p className="text-body text-gray-warm leading-relaxed mb-6">
-                    Pour toute question concernant les aspects légaux de GoldWen, 
-                    contactez notre équipe juridique.
+                    {t('contact.description')}
                   </p>
                   <div className="space-y-4">
                     <p className="text-gold-primary font-semibold">
-                      <a href="mailto:legal@goldwen.app" className="hover:text-gold-dark transition-colors duration-300">
-                        legal@goldwen.app
+                      <a href={`mailto:${t('contact.email')}`} className="hover:text-gold-dark transition-colors duration-300">
+                        {t('contact.email')}
                       </a>
                     </p>
                     <div className="pt-4">
                       <a href="/contact" className="btn-secondary hover-lift">
-                        Formulaire de contact
+                        {t('contact.button')}
                       </a>
                     </div>
                   </div>
@@ -196,7 +191,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       seoData,
-      ...(await serverSideTranslations(locale!, ['common'])),
+      ...(await serverSideTranslations(locale!, ['common', 'legal'])),
     },
   };
 };

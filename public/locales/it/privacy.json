@@ -1,0 +1,63 @@
+{
+  "title": "Informativa sulla Privacy",
+  "subtitle": "La tua privacy è la nostra priorità assoluta. Scopri il nostro impegno per proteggere i tuoi dati personali.",
+  "main_section": {
+    "title": "Il nostro impegno per la tua privacy",
+    "subtitle": "Protezione massima, trasparenza totale."
+  },
+  "commitment": {
+    "title": "La tua privacy, il nostro impegno",
+    "description": "In GoldWen, ci impegniamo a proteggere i tuoi dati personali e rispettare la tua privacy. Le nostre pratiche seguono i più alti standard del settore e sono conformi al GDPR."
+  },
+  "principles": {
+    "title": "I nostri principi di privacy",
+    "items": {
+      "minimal_data": {
+        "title": "Dati minimi",
+        "description": "Raccogliamo solo i dati strettamente necessari per il funzionamento dell'applicazione."
+      },
+      "encryption": {
+        "title": "Crittografia completa",
+        "description": "Tutti i tuoi dati sono crittografati in transito e a riposo con le tecnologie più recenti."
+      },
+      "no_selling": {
+        "title": "Nessuna vendita di dati",
+        "description": "Le tue informazioni personali non vengono mai vendute o condivise con terze parti."
+      },
+      "user_control": {
+        "title": "Controllo utente",
+        "description": "Mantieni il controllo totale sui tuoi dati e puoi eliminarli in qualsiasi momento."
+      },
+      "transparency": {
+        "title": "Trasparenza totale",
+        "description": "Spieghiamo chiaramente come utilizziamo i tuoi dati, senza gergo tecnico."
+      },
+      "gdpr_compliance": {
+        "title": "Conformità GDPR",
+        "description": "Rigorosa conformità al Regolamento Generale sulla Protezione dei Dati europeo."
+      }
+    }
+  },
+  "security": {
+    "title": "Misure di sicurezza avanzate",
+    "features": {
+      "authentication": {
+        "title": "Autenticazione sicura",
+        "description": "Accesso sicuro con autenticazione a due fattori opzionale."
+      },
+      "secure_servers": {
+        "title": "Server sicuri",
+        "description": "Infrastruttura ospitata in data center certificati ISO 27001."
+      },
+      "regular_audits": {
+        "title": "Audit regolari",
+        "description": "Audit di sicurezza regolari da parte di esperti indipendenti."
+      }
+    }
+  },
+  "coming_soon": {
+    "title": "Politica completa disponibile presto",
+    "description": "L'informativa sulla privacy dettagliata sarà pubblicata con il lancio dell'applicazione. Descriverà precisamente le nostre pratiche di protezione dei dati.",
+    "button": "Domande sulla privacy?"
+  }
+}

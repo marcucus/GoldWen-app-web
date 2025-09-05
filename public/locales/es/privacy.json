@@ -1,0 +1,63 @@
+{
+  "title": "Política de Privacidad",
+  "subtitle": "Tu privacidad es nuestra prioridad absoluta. Descubre nuestro compromiso para proteger tus datos personales.",
+  "main_section": {
+    "title": "Nuestro compromiso con tu privacidad",
+    "subtitle": "Protección máxima, transparencia total."
+  },
+  "commitment": {
+    "title": "Tu privacidad, nuestro compromiso",
+    "description": "En GoldWen, nos comprometemos a proteger tus datos personales y respetar tu privacidad. Nuestras prácticas siguen los estándares más altos de la industria y cumplen con el RGPD."
+  },
+  "principles": {
+    "title": "Nuestros principios de privacidad",
+    "items": {
+      "minimal_data": {
+        "title": "Datos mínimos",
+        "description": "Solo recopilamos los datos estrictamente necesarios para el funcionamiento de la aplicación."
+      },
+      "encryption": {
+        "title": "Cifrado completo",
+        "description": "Todos tus datos están cifrados en tránsito y en reposo con las últimas tecnologías."
+      },
+      "no_selling": {
+        "title": "No venta de datos",
+        "description": "Tu información personal nunca se vende o comparte con terceros."
+      },
+      "user_control": {
+        "title": "Control del usuario",
+        "description": "Mantienes el control total sobre tus datos y puedes eliminarlos en cualquier momento."
+      },
+      "transparency": {
+        "title": "Transparencia total",
+        "description": "Explicamos claramente cómo usamos tus datos, sin jerga técnica."
+      },
+      "gdpr_compliance": {
+        "title": "Cumplimiento del RGPD",
+        "description": "Cumplimiento estricto del Reglamento General de Protección de Datos europeo."
+      }
+    }
+  },
+  "security": {
+    "title": "Medidas de seguridad avanzadas",
+    "features": {
+      "authentication": {
+        "title": "Autenticación segura",
+        "description": "Inicio de sesión seguro con autenticación de dos factores opcional."
+      },
+      "secure_servers": {
+        "title": "Servidores seguros",
+        "description": "Infraestructura alojada en centros de datos certificados ISO 27001."
+      },
+      "regular_audits": {
+        "title": "Auditorías regulares",
+        "description": "Auditorías de seguridad regulares por expertos independientes."
+      }
+    }
+  },
+  "coming_soon": {
+    "title": "Política completa disponible pronto",
+    "description": "La política de privacidad detallada se publicará con el lanzamiento de la aplicación. Detallará precisamente nuestras prácticas de protección de datos.",
+    "button": "¿Preguntas sobre privacidad?"
+  }
+}

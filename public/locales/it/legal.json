@@ -1,0 +1,60 @@
+{
+  "title": "Note Legali",
+  "subtitle": "Informazioni legali e trasparenza: il nostro impegno per un servizio conforme e responsabile.",
+  "main_section": {
+    "title": "Informazioni legali",
+    "subtitle": "Conformità legale e trasparenza totale."
+  },
+  "coming_soon": {
+    "title": "Note legali complete disponibili presto",
+    "description": "Le note legali dettagliate saranno pubblicate con il lancio ufficiale dell'applicazione GoldWen. Includeranno tutte le informazioni legali richieste dalla normativa francese ed europea."
+  },
+  "commitment": {
+    "title": "Il nostro impegno legale",
+    "items": {
+      "gdpr_compliance": {
+        "title": "Conformità GDPR",
+        "description": "Piena conformità al Regolamento Generale sulla Protezione dei Dati."
+      },
+      "french_law": {
+        "title": "Diritto francese",
+        "description": "Applicazione conforme al diritto francese e alle normative applicabili."
+      },
+      "transparency": {
+        "title": "Trasparenza",
+        "description": "Informazioni chiare sull'editore, hosting e responsabilità."
+      },
+      "user_protection": {
+        "title": "Protezione utente",
+        "description": "Rispetto dei diritti degli utenti e degli obblighi legali."
+      }
+    }
+  },
+  "future_info": {
+    "title": "Informazioni in arrivo",
+    "publisher": {
+      "title": "Editore",
+      "items": [
+        "Ragione sociale della società",
+        "Indirizzo della sede sociale",
+        "Numero SIRET",
+        "Capitale sociale"
+      ]
+    },
+    "hosting": {
+      "title": "Hosting",
+      "items": [
+        "Nome del provider di hosting",
+        "Indirizzo del provider di hosting",
+        "Dati di contatto tecnici",
+        "Ubicazione dei server"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Domande legali?",
+    "description": "Per qualsiasi domanda riguardante gli aspetti legali di GoldWen, contatta il nostro team legale.",
+    "email": "legal@goldwen.app",
+    "button": "Modulo di contatto"
+  }
+}
