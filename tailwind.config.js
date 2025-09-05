@@ -41,15 +41,16 @@ module.exports = {
           'soft': '#8B8B8B',
           'warm': '#706B65',
         },
-        // Enhanced dark theme colors
+        // Enhanced dark theme colors with improved contrast
         'dark': {
           'primary': '#0F0F0F', // Deep black
           'secondary': '#1A1A1A', // Dark gray
           'tertiary': '#2A2A2A', // Medium dark gray
           'quaternary': '#3A3A3A', // Lighter dark gray
-          'text': '#F5F5F5', // Light text
-          'text-secondary': '#B0B0B0', // Muted text
-          'text-tertiary': '#8A8A8A', // More muted text
+          'text': '#F8F8F8', // Brighter light text for better contrast
+          'text-secondary': '#C5C5C5', // Improved muted text contrast
+          'text-tertiary': '#A0A0A0', // Better muted text contrast
+          'border': '#404040', // Better border visibility in dark mode
         },
         // Sophisticated Art Deco inspired colors
         'artdeco': {

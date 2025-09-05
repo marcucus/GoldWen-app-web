@@ -17,11 +17,11 @@ export default function LanguageSelector() {
   };
 
   const languages = [
-    { code: 'fr', name: t('language.french'), flag: '🇫🇷' },
-    { code: 'en', name: t('language.english'), flag: '🇬🇧' },
-    { code: 'es', name: t('language.spanish'), flag: '🇪🇸' },
-    { code: 'de', name: t('language.german'), flag: '🇩🇪' },
-    { code: 'it', name: t('language.italian'), flag: '🇮🇹' }
+    { code: 'fr', name: t('language.french'), flag: '/images/flags/fr.svg' },
+    { code: 'en', name: t('language.english'), flag: '/images/flags/en.svg' },
+    { code: 'es', name: t('language.spanish'), flag: '/images/flags/es.svg' },
+    { code: 'de', name: t('language.german'), flag: '/images/flags/de.svg' },
+    { code: 'it', name: t('language.italian'), flag: '/images/flags/it.svg' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === router.locale);
@@ -33,7 +33,13 @@ export default function LanguageSelector() {
         className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm"
         aria-label={t('language.switch')}
       >
-        <span>{currentLanguage?.flag}</span>
+        <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+          <img 
+            src={currentLanguage?.flag} 
+            alt={`${currentLanguage?.name} flag`}
+            className="w-full h-full object-cover"
+          />
+        </span>
         <span className="hidden sm:inline">{currentLanguage?.name}</span>
         <svg 
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
@@ -55,7 +61,13 @@ export default function LanguageSelector() {
                 router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
               }`}
             >
-              <span>{language.flag}</span>
+              <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+                <img 
+                  src={language.flag} 
+                  alt={`${language.name} flag`}
+                  className="w-full h-full object-cover"
+                />
+              </span>
               <span>{language.name}</span>
             </button>
           ))}

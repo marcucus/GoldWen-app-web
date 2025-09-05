@@ -50,7 +50,7 @@ export default function Support({ seoData }: SupportProps) {
       </section>
 
       {/* FAQ Section - Enhanced with premium card design */}
-      <section className="section-padding bg-cream-lightest pattern-overlay">
+      <section className="section-padding bg-cream-lightest dark:bg-dark-secondary pattern-overlay">
         <div className="container-responsive">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-20 animate-fade-in-up">

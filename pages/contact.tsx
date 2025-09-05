@@ -51,7 +51,7 @@ export default function Contact({ seoData }: ContactProps) {
       </section>
 
       {/* Contact Section - Enhanced with premium card design */}
-      <section className="section-padding bg-cream-lightest pattern-overlay">
+      <section className="section-padding bg-cream-lightest dark:bg-dark-secondary pattern-overlay">
         <div className="container-responsive">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
