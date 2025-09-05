@@ -1,0 +1,60 @@
+{
+  "title": "Legal Notice",
+  "subtitle": "Legal information and transparency: our commitment to compliant and responsible service.",
+  "main_section": {
+    "title": "Legal information",
+    "subtitle": "Legal compliance and total transparency."
+  },
+  "coming_soon": {
+    "title": "Complete legal notice available soon",
+    "description": "Detailed legal notices will be published with the official launch of the GoldWen application. They will include all legal information required by French and European regulations."
+  },
+  "commitment": {
+    "title": "Our legal commitment",
+    "items": {
+      "gdpr_compliance": {
+        "title": "GDPR compliance",
+        "description": "Full compliance with the General Data Protection Regulation."
+      },
+      "french_law": {
+        "title": "French law",
+        "description": "Application compliant with French law and applicable regulations."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Clear information about the publisher, hosting, and responsibilities."
+      },
+      "user_protection": {
+        "title": "User protection",
+        "description": "Respect for user rights and legal obligations."
+      }
+    }
+  },
+  "future_info": {
+    "title": "Information to come",
+    "publisher": {
+      "title": "Publisher",
+      "items": [
+        "Company name",
+        "Headquarters address",
+        "SIRET number",
+        "Share capital"
+      ]
+    },
+    "hosting": {
+      "title": "Hosting",
+      "items": [
+        "Host name",
+        "Host address",
+        "Technical contact details",
+        "Server location"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Legal questions?",
+    "description": "For any questions regarding the legal aspects of GoldWen, contact our legal team.",
+    "email": "legal@goldwen.app",
+    "button": "Contact form"
+  }
+}

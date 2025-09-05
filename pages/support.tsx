@@ -1,17 +1,34 @@
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
-import { appService, PageData } from '../lib/app-service';
+import { appService } from '../lib/app-service';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface SupportProps {
-  pageData: PageData;
+  seoData: {
+    title: string;
+    description: string;
+    keywords?: string;
+  };
 }
 
-export default function Support({ pageData }: SupportProps) {
+export default function Support({ seoData }: SupportProps) {
+  const { t } = useTranslation(['common', 'support']);
+
+  // Get app data from translations
+  const appData = {
+    name: t('common:app.name'),
+    slogan: t('common:app.slogan'),
+    tagline: t('common:app.tagline'),
+    description: t('common:app.description')
+  };
+
   return (
     <Layout 
-      title={pageData.title}
-      description={pageData.description}
-      app={pageData.app}
+      title={seoData.title}
+      description={seoData.description}
+      keywords={seoData.keywords}
+      app={appData}
     >
       {/* Hero Section - Enhanced with sophisticated design */}
       <section className="section-padding bg-gradient-hero geometric-bg relative overflow-hidden">
@@ -23,11 +40,10 @@ export default function Support({ pageData }: SupportProps) {
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h1 className="heading-primary text-shadow-gold mb-8">
-              Centre d&apos;Aide et Support
+              {t('support:title')}
             </h1>
             <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
-              Trouvez rapidement des réponses à vos questions sur GoldWen et découvrez 
-              comment tirer le meilleur parti de votre expérience.
+              {t('support:subtitle')}
             </p>
           </div>
         </div>
@@ -40,38 +56,38 @@ export default function Support({ pageData }: SupportProps) {
             <div className="text-center mb-20 animate-fade-in-up">
               <div className="art-deco-border mb-8"></div>
               <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-                Questions Fréquentes
+                {t('support:faq.title')}
               </h2>
               <p className="text-body-large text-gray-warm">
-                Les réponses aux questions les plus courantes sur GoldWen.
+                {t('support:faq.subtitle')}
               </p>
             </div>
             
             <div className="space-y-8">
               {[
                 {
-                  question: "Comment fonctionne la sélection quotidienne ?",
-                  answer: "Chaque jour à midi, notre algorithme vous propose 3 à 5 profils soigneusement sélectionnés en fonction de vos préférences, de votre compatibilité et de vos valeurs. Cette approche privilégie la qualité sur la quantité pour des rencontres plus significatives.",
+                  question: t('support:faq.items.daily_selection.question'),
+                  answer: t('support:faq.items.daily_selection.answer'),
                   icon: "🎯"
                 },
                 {
-                  question: "Pourquoi les conversations disparaissent-elles après 24h ?",
-                  answer: "Cette fonctionnalité encourage des échanges spontanés et authentiques, évitant l'accumulation de conversations non actives. Elle pousse à créer des connexions réelles rapidement et réduit l'anxiété liée aux messages en attente.",
+                  question: t('support:faq.items.conversations_24h.question'),
+                  answer: t('support:faq.items.conversations_24h.answer'),
                   icon: "⏰"
                 },
                 {
-                  question: "Comment le matching intelligent fonctionne-t-il ?",
-                  answer: "Notre algorithme analyse vos valeurs, personnalité et préférences pour identifier les profils les plus compatibles. Nous privilégions la compatibilité profonde plutôt que les critères superficiels.",
+                  question: t('support:faq.items.smart_matching.question'),
+                  answer: t('support:faq.items.smart_matching.answer'),
                   icon: "🧠"
                 },
                 {
-                  question: "Qu'est-ce que la philosophie 'Calm Technology' ?",
-                  answer: "GoldWen adopte les principes de la 'Calm Technology' : interface minimaliste, interactions prévisibles, notifications limitées. L'objectif est de réduire l'anxiété et créer une expérience apaisante.",
+                  question: t('support:faq.items.calm_technology.question'),
+                  answer: t('support:faq.items.calm_technology.answer'),
                   icon: "🧘"
                 },
                 {
-                  question: "Comment contacter le support ?",
-                  answer: "Vous pouvez nous contacter via notre page de contact ou directement par email à support@goldwen.app. Nous répondons généralement sous 24h avec des solutions personnalisées.",
+                  question: t('support:faq.items.contact_support.question'),
+                  answer: t('support:faq.items.contact_support.answer'),
                   icon: "💬"
                 }
               ].map((faq, index) => (
@@ -106,17 +122,16 @@ export default function Support({ pageData }: SupportProps) {
                     </svg>
                   </div>
                   <h3 className="heading-tertiary mb-6 text-shadow">
-                    Vous ne trouvez pas la réponse ?
+                    {t('support:contact_section.title')}
                   </h3>
                   <p className="text-body text-gray-warm mb-8">
-                    Notre équipe est là pour vous aider personnellement. 
-                    N&apos;hésitez pas à nous contacter directement.
+                    {t('support:contact_section.description')}
                   </p>
                   <a href="/contact" className="btn-primary hover-lift group animate-scale-in">
                     <svg className="w-6 h-6 mr-3 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    Contactez-nous
+                    {t('support:contact_section.button')}
                   </a>
                 </div>
               </div>
@@ -128,12 +143,13 @@ export default function Support({ pageData }: SupportProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const pageData = appService.getSupportPageData();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const seoData = appService.getSupportPageSEO(locale);
   
   return {
     props: {
-      pageData,
+      seoData,
+      ...(await serverSideTranslations(locale!, ['common', 'support'])),
     },
   };
 };

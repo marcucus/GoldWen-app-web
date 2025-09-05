@@ -1,0 +1,109 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Entwickelt, um deinstalliert zu werden",
+    "tagline": "Qualität vor Quantität",
+    "description": "GoldWen revolutioniert Online-Dating durch einen bewussten und beruhigenden Ansatz. Schluss mit endlosem Swipen, Platz für bedeutungsvolle Verbindungen."
+  },
+  "nav": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "about": "Über",
+    "support": "Support",
+    "download": "Herunterladen",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen",
+    "legal": "Rechtliches"
+  },
+  "hero": {
+    "title": "Ein revolutionärer Ansatz beim Dating",
+    "subtitle": "Schluss mit endlosem Swipen und Angst. GoldWen bietet eine beruhigende und bewusste Erfahrung für authentische Verbindungen.",
+    "cta": {
+      "primary": "App herunterladen",
+      "secondary": "Funktionen entdecken"
+    }
+  },
+  "features": {
+    "title": "Ein revolutionärer Ansatz beim Dating",
+    "subtitle": "Schluss mit endlosem Swipen und Angst. GoldWen bietet eine beruhigende und bewusste Erfahrung für authentische Verbindungen.",
+    "items": {
+      "daily_selection": {
+        "title": "Tägliche Auswahl",
+        "description": "Erhalte jeden Tag um 12 Uhr 3 bis 5 sorgfältig ausgewählte Profile."
+      },
+      "smart_matching": {
+        "title": "Intelligentes Matching",
+        "description": "Unser Algorithmus priorisiert die Kompatibilität von Werten und Persönlichkeiten."
+      },
+      "ephemeral_conversations": {
+        "title": "Vergängliche Gespräche",
+        "description": "Diskussionen auf 24 Stunden begrenzt, um authentischen Austausch zu fördern."
+      },
+      "calm_design": {
+        "title": "Beruhigendes Design",
+        "description": "Minimalistische Benutzeroberfläche inspiriert von \"Calm Technology\" zur Angstreduktion."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "Die \"Calm Technology\" Philosophie",
+    "description": "GoldWen übernimmt die Prinzipien der \"Calm Technology\", um eine beruhigende Erfahrung zu schaffen, die Angst im Zusammenhang mit traditionellen Dating-Apps reduziert.",
+    "subtitle1": "Unsere minimalistische Benutzeroberfläche, großzügige Räume und vorhersagbare Interaktionen ermöglichen es dir, dich auf das Wesentliche zu konzentrieren: authentische Verbindungen zu schaffen.",
+    "subtitle2": "Mit nur einer Benachrichtigung pro Tag und zeitlich begrenzten Gesprächen fördern wir bewussteren und weniger zwanghaften Austausch.",
+    "items": {
+      "minimal_design": {
+        "title": "Minimalistisches Design",
+        "description": "Saubere Benutzeroberflächen ohne überflüssige Elemente für eine ruhige Erfahrung."
+      },
+      "predictable_interactions": {
+        "title": "Vorhersagbare Interaktionen",
+        "description": "Jede Aktion ist klar und beruhigend, du weißt immer, was passiert."
+      },
+      "limited_notifications": {
+        "title": "Begrenzte Benachrichtigungen",
+        "description": "Eine Benachrichtigung pro Tag, keine künstlich geschaffene Abhängigkeit."
+      }
+    }
+  },
+  "personas": {
+    "title": "Für wen ist GoldWen entwickelt?",
+    "subtitle": "Unsere App richtet sich an Menschen, die authentische Verbindungen suchen und müde von traditionellen Dating-Apps sind.",
+    "sophie": {
+      "name": "Sophie, die Bewusste",
+      "age": "29 Jahre alt",
+      "description": "Städtische Berufstätige, müde von Oberflächlichkeit. Sucht eine ernsthafte Beziehung und schätzt Wertekompatibilität."
+    },
+    "marc": {
+      "name": "Marc, der ehrgeizige Profi",
+      "age": "34 Jahre alt",
+      "description": "Anspruchsvolle Karriere, wenig Freizeit. Optimiert seine Suche durch Fokus auf ernsthafte Profile."
+    }
+  },
+  "download": {
+    "title": "Bereit für eine andere Art des Datings?",
+    "subtitle": "Tritt GoldWen bei und entdecke, wie Qualität dein Online-Dating transformieren kann. Lade die App heute herunter.",
+    "app_store": "Herunterladen im",
+    "google_play": "Erhältlich bei",
+    "coming_soon": "Bald verfügbar für iOS und Android",
+    "stats": {
+      "waiting_list": "Auf der Warteliste",
+      "user_rating": "Nutzerbewertungen",
+      "satisfaction": "Zufriedenheit"
+    }
+  },
+  "footer": {
+    "description": "Die Dating-App, die die Qualität der Verbindungen für authentische und dauerhafte Beziehungen priorisiert.",
+    "made_with": "Gemacht mit",
+    "in_paris": "in Paris",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "language": {
+    "switch": "Sprache wechseln",
+    "french": "Français",
+    "english": "English",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "italian": "Italiano"
+  }
+}

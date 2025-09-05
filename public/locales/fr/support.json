@@ -1,0 +1,35 @@
+{
+  "title": "Centre d'Aide et Support",
+  "subtitle": "Trouvez rapidement des réponses à vos questions sur GoldWen et découvrez comment tirer le meilleur parti de votre expérience.",
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Les réponses aux questions les plus courantes sur GoldWen.",
+    "items": {
+      "daily_selection": {
+        "question": "Comment fonctionne la sélection quotidienne ?",
+        "answer": "Chaque jour à midi, notre algorithme vous propose 3 à 5 profils soigneusement sélectionnés en fonction de vos préférences, de votre compatibilité et de vos valeurs. Cette approche privilégie la qualité sur la quantité pour des rencontres plus significatives."
+      },
+      "conversations_24h": {
+        "question": "Pourquoi les conversations disparaissent-elles après 24h ?",
+        "answer": "Cette fonctionnalité encourage des échanges spontanés et authentiques, évitant l'accumulation de conversations non actives. Elle pousse à créer des connexions réelles rapidement et réduit l'anxiété liée aux messages en attente."
+      },
+      "smart_matching": {
+        "question": "Comment le matching intelligent fonctionne-t-il ?",
+        "answer": "Notre algorithme analyse vos valeurs, personnalité et préférences pour identifier les profils les plus compatibles. Nous privilégions la compatibilité profonde plutôt que les critères superficiels."
+      },
+      "calm_technology": {
+        "question": "Qu'est-ce que la philosophie 'Calm Technology' ?",
+        "answer": "GoldWen adopte les principes de la 'Calm Technology' : interface minimaliste, interactions prévisibles, notifications limitées. L'objectif est de réduire l'anxiété et créer une expérience apaisante."
+      },
+      "contact_support": {
+        "question": "Comment contacter le support ?",
+        "answer": "Vous pouvez nous contacter via notre page de contact ou directement par email à support@goldwen.app. Nous répondons généralement sous 24h avec des solutions personnalisées."
+      }
+    }
+  },
+  "contact_section": {
+    "title": "Vous ne trouvez pas la réponse ?",
+    "description": "Notre équipe est là pour vous aider personnellement. N'hésitez pas à nous contacter directement.",
+    "button": "Contactez-nous"
+  }
+}

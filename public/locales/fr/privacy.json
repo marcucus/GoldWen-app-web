@@ -1,0 +1,63 @@
+{
+  "title": "Politique de Confidentialité",
+  "subtitle": "Votre confidentialité est notre priorité absolue. Découvrez notre engagement pour la protection de vos données personnelles.",
+  "main_section": {
+    "title": "Notre engagement pour votre confidentialité",
+    "subtitle": "Protection maximale, transparence totale."
+  },
+  "commitment": {
+    "title": "Votre vie privée, notre engagement",
+    "description": "Chez GoldWen, nous nous engageons à protéger vos données personnelles et à respecter votre vie privée. Nos pratiques suivent les standards les plus élevés de l'industrie et sont conformes au RGPD."
+  },
+  "principles": {
+    "title": "Nos principes de confidentialité",
+    "items": {
+      "minimal_data": {
+        "title": "Données minimales",
+        "description": "Nous ne collectons que les données strictement nécessaires au fonctionnement de l'application."
+      },
+      "encryption": {
+        "title": "Chiffrement complet",
+        "description": "Toutes vos données sont chiffrées en transit et au repos avec les dernières technologies."
+      },
+      "no_selling": {
+        "title": "Aucune vente de données",
+        "description": "Vos informations personnelles ne sont jamais vendues ou partagées avec des tiers."
+      },
+      "user_control": {
+        "title": "Contrôle utilisateur",
+        "description": "Vous gardez le contrôle total sur vos données et pouvez les supprimer à tout moment."
+      },
+      "transparency": {
+        "title": "Transparence totale",
+        "description": "Nous expliquons clairement comment nous utilisons vos données, sans jargon technique."
+      },
+      "gdpr_compliance": {
+        "title": "Conformité RGPD",
+        "description": "Respect strict du Règlement Général sur la Protection des Données européen."
+      }
+    }
+  },
+  "security": {
+    "title": "Mesures de sécurité avancées",
+    "features": {
+      "authentication": {
+        "title": "Authentification sécurisée",
+        "description": "Connexion sécurisée avec authentification à deux facteurs optionnelle."
+      },
+      "secure_servers": {
+        "title": "Serveurs sécurisés",
+        "description": "Infrastructure hébergée dans des centres de données certifiés ISO 27001."
+      },
+      "regular_audits": {
+        "title": "Audits réguliers",
+        "description": "Audits de sécurité réguliers par des experts indépendants."
+      }
+    }
+  },
+  "coming_soon": {
+    "title": "Politique complète disponible prochainement",
+    "description": "La politique de confidentialité détaillée sera publiée avec le lancement de l'application. Elle détaillera précisément nos pratiques de protection des données.",
+    "button": "Questions sur la confidentialité ?"
+  }
+}

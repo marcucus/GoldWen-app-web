@@ -1,19 +1,72 @@
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';
-import { appService, HomePageData } from '../lib/app-service';
+import { appService } from '../lib/app-service';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface HomeProps {
-  pageData: HomePageData;
+  seoData: {
+    title: string;
+    description: string;
+    keywords?: string;
+  };
 }
 
-export default function Home({ pageData }: HomeProps) {
+export default function Home({ seoData }: HomeProps) {
+  const { t } = useTranslation('common');
+  // Get app data from translations
+  const appData = {
+    name: t('app.name'),
+    slogan: t('app.slogan'),
+    tagline: t('app.tagline'),
+    description: t('app.description')
+  };
+
+  // Get features data from translations with icons
+  const features = [
+    {
+      title: t('features.items.daily_selection.title'),
+      description: t('features.items.daily_selection.description'),
+      icon: 'calendar'
+    },
+    {
+      title: t('features.items.smart_matching.title'),
+      description: t('features.items.smart_matching.description'),
+      icon: 'heart'
+    },
+    {
+      title: t('features.items.ephemeral_conversations.title'),
+      description: t('features.items.ephemeral_conversations.description'),
+      icon: 'chat'
+    },
+    {
+      title: t('features.items.calm_design.title'),
+      description: t('features.items.calm_design.description'),
+      icon: 'zen'
+    }
+  ];
+
+  // Get personas data from translations
+  const personas = [
+    {
+      name: t('personas.sophie.name'),
+      age: t('personas.sophie.age'),
+      description: t('personas.sophie.description')
+    },
+    {
+      name: t('personas.marc.name'),
+      age: t('personas.marc.age'),
+      description: t('personas.marc.description')
+    }
+  ];
+
   return (
     <Layout 
-      title={pageData.title}
-      description={pageData.description}
-      keywords={pageData.keywords}
-      app={pageData.app}
+      title={seoData.title}
+      description={seoData.description}
+      keywords={seoData.keywords}
+      app={appData}
     >
       {/* Hero Section - Enhanced with sophisticated design */}
       <section className="section-padding bg-gradient-hero geometric-bg relative overflow-hidden">
@@ -26,17 +79,17 @@ export default function Home({ pageData }: HomeProps) {
             <div className="space-calm-xl animate-fade-in-up">
               <div className="space-y-8">
                 <h1 className="heading-primary text-shadow-gold">
-                  <span className="title-goldwen-animated">{pageData.app.name}</span><br />
+                  <span className="title-goldwen-animated">{appData.name}</span><br />
                   <span className="text-gold-primary gold-accent-animated">
-                    {pageData.app.tagline}
+                    {appData.tagline}
                   </span>
                 </h1>
                 <p className="text-body-large max-w-2xl leading-relaxed">
-                  {pageData.app.description}
+                  {appData.description}
                 </p>
                 <div className="inline-block">
                   <p className="text-xl font-medium text-gold-rich italic text-shadow px-6 py-3 bg-gradient-to-r from-gold-primary/10 to-gold-light/10 rounded-2xl border border-gold-primary/20">
-                    &quot;{pageData.app.slogan}&quot;
+                    &quot;{appData.slogan}&quot;
                   </p>
                 </div>
               </div>
@@ -46,10 +99,10 @@ export default function Home({ pageData }: HomeProps) {
                   <svg className="w-6 h-6 mr-3 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
-                  Télécharger l&apos;application
+                  {t('hero.cta.primary')}
                 </a>
                 <a href="#features" className="btn-secondary hover-lift animate-scale-in" style={{animationDelay: '0.5s'}}>
-                  Découvrir les fonctionnalités
+                  {t('hero.cta.secondary')}
                 </a>
               </div>
             </div>
@@ -116,16 +169,15 @@ export default function Home({ pageData }: HomeProps) {
           <div className="text-center mb-24 animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-              Une approche révolutionnaire des rencontres
+              {t('features.title')}
             </h2>
             <p className="text-body-large max-w-4xl mx-auto leading-relaxed text-gray-warm">
-              Fini le swipe incessant et l&apos;anxiété. {pageData.app.name} propose une expérience apaisante 
-              et intentionnelle pour des connexions authentiques.
+              {t('features.subtitle')}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {pageData.features.map((feature, index) => (
+            {features.map((feature, index) => (
               <div 
                 key={feature.title}
                 className="card-feature group animate-scale-in"
@@ -160,23 +212,20 @@ export default function Home({ pageData }: HomeProps) {
             <div className="space-calm-xl animate-slide-right">
               <div className="art-deco-border mb-8"></div>
               <h2 className="heading-secondary gold-accent text-shadow-lg mb-12">
-                La philosophie &quot;Calm Technology&quot;
+                {t('calm_tech.title')}
               </h2>
               <div className="space-calm-lg">
                 <div className="relative">
                   <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-gold-primary to-gold-light rounded-full"></div>
                   <div className="pl-8 space-y-8">
                     <p className="text-body-large leading-relaxed text-gray-warm">
-                      {pageData.app.name} adopte les principes de la &quot;Calm Technology&quot; pour créer une expérience 
-                      apaisante qui réduit l&apos;anxiété liée aux applications de rencontre traditionnelles.
+                      {t('calm_tech.description')}
                     </p>
                     <p className="text-body-large leading-relaxed text-gray-warm">
-                      Notre interface minimaliste, nos espaces généreux et nos interactions prévisibles 
-                      vous permettent de vous concentrer sur l&apos;essentiel : créer des connexions authentiques.
+                      {t('calm_tech.subtitle1')}
                     </p>
                     <p className="text-body-large leading-relaxed text-gray-warm">
-                      Avec une seule notification par jour et des conversations limitées dans le temps, 
-                      nous encourageons des échanges plus intentionnels et moins compulsifs.
+                      {t('calm_tech.subtitle2')}
                     </p>
                   </div>
                 </div>
@@ -186,18 +235,18 @@ export default function Home({ pageData }: HomeProps) {
             <div className="space-y-8 animate-slide-left">
               {[
                 {
-                  title: "Design Minimaliste",
-                  description: "Interfaces épurées sans éléments superflus pour une expérience sereine.",
+                  title: t('calm_tech.items.minimal_design.title'),
+                  description: t('calm_tech.items.minimal_design.description'),
                   icon: "✨"
                 },
                 {
-                  title: "Interactions Prévisibles", 
-                  description: "Chaque action est claire et rassurante, vous savez toujours ce qui se passe.",
+                  title: t('calm_tech.items.predictable_interactions.title'), 
+                  description: t('calm_tech.items.predictable_interactions.description'),
                   icon: "🎯"
                 },
                 {
-                  title: "Notifications Limitées",
-                  description: "Une seule notification par jour, pas de dépendance créée artificiellement.",
+                  title: t('calm_tech.items.limited_notifications.title'),
+                  description: t('calm_tech.items.limited_notifications.description'),
                   icon: "🔔"
                 }
               ].map((item, index) => (
@@ -230,16 +279,15 @@ export default function Home({ pageData }: HomeProps) {
           <div className="text-center mb-20 animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-              Pour qui {pageData.app.name} est-elle conçue ?
+              {t('personas.title')}
             </h2>
             <p className="text-body-large max-w-4xl mx-auto text-gray-warm">
-              Notre application s&apos;adresse aux personnes qui recherchent des connexions authentiques 
-              et qui sont fatiguées des applications de rencontre traditionnelles.
+              {t('personas.subtitle')}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            {pageData.personas.map((persona, index) => (
+            {personas.map((persona, index) => (
               <div key={persona.name} className={`card group animate-fade-in-${index % 2 === 0 ? 'left' : 'right'}`} style={{animationDelay: `${index * 0.3}s`}}>
                 <div className="relative">
                   {/* Background decoration */}
@@ -260,7 +308,7 @@ export default function Home({ pageData }: HomeProps) {
                       <div className="flex-1">
                         <h3 className="heading-tertiary text-shadow mb-2">{persona.name}</h3>
                         <div className="flex items-center space-x-2">
-                          <span className="text-gold-rich font-semibold text-lg">{persona.age} ans</span>
+                          <span className="text-gold-rich font-semibold text-lg">{persona.age}</span>
                           <div className="w-2 h-2 bg-gold-primary rounded-full"></div>
                           <span className="text-gray-soft text-sm">Profil vérifié</span>
                         </div>
@@ -313,11 +361,10 @@ export default function Home({ pageData }: HomeProps) {
             <div className="animate-fade-in-up">
               <div className="art-deco-border mb-12"></div>
               <h2 className="heading-secondary mb-8 text-shadow-lg">
-                Prêt(e) à vivre une expérience de rencontre différente ?
+                {t('download.title')}
               </h2>
               <p className="text-xl mb-16 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Rejoignez {pageData.app.name} et découvrez comment la qualité peut transformer vos rencontres en ligne. 
-                Téléchargez l&apos;application dès aujourd&apos;hui.
+                {t('download.subtitle')}
               </p>
             </div>
             
@@ -330,7 +377,7 @@ export default function Home({ pageData }: HomeProps) {
                     </svg>
                   </div>
                   <div className="text-left">
-                    <div className="text-sm opacity-80">Télécharger sur l&apos;</div>
+                    <div className="text-sm opacity-80">{t('download.app_store')}</div>
                     <div className="text-xl font-semibold">App Store</div>
                   </div>
                 </div>
@@ -344,7 +391,7 @@ export default function Home({ pageData }: HomeProps) {
                     </svg>
                   </div>
                   <div className="text-left">
-                    <div className="text-sm opacity-80">Disponible sur</div>
+                    <div className="text-sm opacity-80">{t('download.google_play')}</div>
                     <div className="text-xl font-semibold">Google Play</div>
                   </div>
                 </div>
@@ -353,24 +400,24 @@ export default function Home({ pageData }: HomeProps) {
             
             <div className="animate-fade-in" style={{animationDelay: '0.5s'}}>
               <p className="text-sm opacity-75 mb-8">
-                Disponible prochainement sur iOS et Android
+                {t('download.coming_soon')}
               </p>
               
               {/* Social proof or additional info */}
               <div className="flex items-center justify-center space-x-8 text-center">
                 <div className="space-y-1">
                   <div className="text-2xl font-bold">10K+</div>
-                  <div className="text-xs opacity-70">En liste d&apos;attente</div>
+                  <div className="text-xs opacity-70">{t('download.stats.waiting_list')}</div>
                 </div>
                 <div className="w-px h-8 bg-white/30"></div>
                 <div className="space-y-1">
                   <div className="text-2xl font-bold">4.9★</div>
-                  <div className="text-xs opacity-70">Avis utilisateurs</div>
+                  <div className="text-xs opacity-70">{t('download.stats.user_rating')}</div>
                 </div>
                 <div className="w-px h-8 bg-white/30"></div>
                 <div className="space-y-1">
                   <div className="text-2xl font-bold">95%</div>
-                  <div className="text-xs opacity-70">Satisfaction</div>
+                  <div className="text-xs opacity-70">{t('download.stats.satisfaction')}</div>
                 </div>
               </div>
             </div>
@@ -381,12 +428,13 @@ export default function Home({ pageData }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const pageData = appService.getHomePageData();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const seoData = appService.getHomePageSEO(locale);
   
   return {
     props: {
-      pageData,
+      seoData,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
   };
 };
