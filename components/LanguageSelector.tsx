@@ -8,13 +8,20 @@ export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (locale: string) => {
+    // Save user's choice to localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredLocale', locale);
+    }
     router.push(router.asPath, router.asPath, { locale });
     setIsOpen(false);
   };
 
   const languages = [
     { code: 'fr', name: t('language.french'), flag: '🇫🇷' },
-    { code: 'en', name: t('language.english'), flag: '🇬🇧' }
+    { code: 'en', name: t('language.english'), flag: '🇬🇧' },
+    { code: 'es', name: t('language.spanish'), flag: '🇪🇸' },
+    { code: 'de', name: t('language.german'), flag: '🇩🇪' },
+    { code: 'it', name: t('language.italian'), flag: '🇮🇹' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === router.locale);

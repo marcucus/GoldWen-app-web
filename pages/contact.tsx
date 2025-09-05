@@ -14,6 +14,7 @@ interface ContactProps {
 
 export default function Contact({ seoData }: ContactProps) {
   const { t } = useTranslation('common');
+  const { t: tContact } = useTranslation('contact');
 
   // Get app data from translations
   const appData = {
@@ -40,11 +41,10 @@ export default function Contact({ seoData }: ContactProps) {
           <div className="text-center max-w-4xl mx-auto space-calm-xl animate-fade-in-up">
             <div className="art-deco-border mb-8"></div>
             <h1 className="heading-primary text-shadow-gold mb-8">
-              Contactez-nous
+              {tContact('title')}
             </h1>
             <p className="text-body-large max-w-2xl mx-auto leading-relaxed text-gray-warm">
-              Une question ? Une suggestion ? Notre équipe est là pour vous accompagner 
-              dans votre expérience GoldWen.
+              {tContact('subtitle')}
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@ export default function Contact({ seoData }: ContactProps) {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-                Nous sommes là pour vous aider
+                {tContact('help_section.title')}
               </h2>
               <p className="text-body-large text-gray-warm">
-                Notre équipe s&apos;engage à vous répondre rapidement et avec attention.
+                {tContact('help_section.subtitle')}
               </p>
             </div>
             
@@ -71,12 +71,12 @@ export default function Contact({ seoData }: ContactProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
                 </div>
-                <h3 className="heading-tertiary mb-6 text-shadow">Email</h3>
+                <h3 className="heading-tertiary mb-6 text-shadow">{tContact('email_card.title')}</h3>
                 <p className="text-body text-gray-warm mb-6">
-                  Écrivez-nous directement pour toute question ou suggestion.
+                  {tContact('email_card.description')}
                 </p>
                 <a href="mailto:support@goldwen.app" className="text-gold-primary font-semibold text-lg hover:text-gold-dark transition-colors duration-300">
-                  support@goldwen.app
+                  {tContact('email_card.email')}
                 </a>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
@@ -88,12 +88,12 @@ export default function Contact({ seoData }: ContactProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
-                <h3 className="heading-tertiary mb-6 text-shadow">Temps de Réponse</h3>
+                <h3 className="heading-tertiary mb-6 text-shadow">{tContact('response_time_card.title')}</h3>
                 <p className="text-body text-gray-warm mb-6">
-                  Nous nous engageons à vous répondre rapidement.
+                  {tContact('response_time_card.description')}
                 </p>
                 <p className="text-gold-primary font-semibold text-lg">
-                  Généralement sous 24h
+                  {tContact('response_time_card.time')}
                 </p>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
@@ -102,7 +102,7 @@ export default function Contact({ seoData }: ContactProps) {
             {/* Additional Contact Information */}
             <div className="card group animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <div className="text-center">
-                <h3 className="heading-tertiary mb-8 text-shadow">Autres moyens de nous joindre</h3>
+                <h3 className="heading-tertiary mb-8 text-shadow">{tContact('other_contact.title')}</h3>
                 
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-4">
@@ -113,8 +113,8 @@ export default function Contact({ seoData }: ContactProps) {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-text mb-2">Adresse</h4>
-                      <p className="text-gray-warm">Paris, France</p>
+                      <h4 className="font-semibold text-gray-text mb-2">{tContact('other_contact.address.title')}</h4>
+                      <p className="text-gray-warm">{tContact('other_contact.address.value')}</p>
                     </div>
                   </div>
                   
@@ -125,10 +125,10 @@ export default function Contact({ seoData }: ContactProps) {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-text mb-2">Support</h4>
+                      <h4 className="font-semibold text-gray-text mb-2">{tContact('other_contact.support.title')}</h4>
                       <p className="text-gray-warm">
                         <a href="/support" className="text-gold-primary hover:text-gold-dark transition-colors duration-300">
-                          Consultez notre FAQ
+                          {tContact('other_contact.support.link_text')}
                         </a>
                       </p>
                     </div>
@@ -149,7 +149,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       seoData,
-      ...(await serverSideTranslations(locale!, ['common'])),
+      ...(await serverSideTranslations(locale!, ['common', 'contact'])),
     },
   };
 };

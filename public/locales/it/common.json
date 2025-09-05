@@ -1,0 +1,109 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Progettata per essere disinstallata",
+    "tagline": "Qualità prima della quantità",
+    "description": "GoldWen rivoluziona gli incontri online offrendo un approccio intenzionale e rassicurante. Basta swipe infiniti, spazio alle connessioni significative."
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Caratteristiche",
+    "about": "Chi siamo",
+    "support": "Supporto",
+    "download": "Scarica",
+    "contact": "Contatti",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "legal": "Legale"
+  },
+  "hero": {
+    "title": "Un approccio rivoluzionario agli incontri",
+    "subtitle": "Basta swipe infiniti e ansia. GoldWen offre un'esperienza rassicurante e intenzionale per connessioni autentiche.",
+    "cta": {
+      "primary": "Scarica l'app",
+      "secondary": "Scopri le caratteristiche"
+    }
+  },
+  "features": {
+    "title": "Un approccio rivoluzionario agli incontri",
+    "subtitle": "Basta swipe infiniti e ansia. GoldWen offre un'esperienza rassicurante e intenzionale per connessioni autentiche.",
+    "items": {
+      "daily_selection": {
+        "title": "Selezione Giornaliera",
+        "description": "Ricevi da 3 a 5 profili accuratamente selezionati ogni giorno a mezzogiorno."
+      },
+      "smart_matching": {
+        "title": "Matching Intelligente",
+        "description": "Il nostro algoritmo priorizza la compatibilità di valori e personalità."
+      },
+      "ephemeral_conversations": {
+        "title": "Conversazioni Effimere",
+        "description": "Discussioni limitate a 24 ore per incoraggiare scambi autentici."
+      },
+      "calm_design": {
+        "title": "Design Rassicurante",
+        "description": "Interfaccia minimalista ispirata alla \"Calm Technology\" per ridurre l'ansia."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "La filosofia \"Calm Technology\"",
+    "description": "GoldWen adotta i principi della \"Calm Technology\" per creare un'esperienza rassicurante che riduce l'ansia legata alle app di incontri tradizionali.",
+    "subtitle1": "La nostra interfaccia minimalista, spazi generosi e interazioni prevedibili ti permettono di concentrarti sull'essenziale: creare connessioni autentiche.",
+    "subtitle2": "Con una sola notifica al giorno e conversazioni limitate nel tempo, incoraggiamo scambi più intenzionali e meno compulsivi.",
+    "items": {
+      "minimal_design": {
+        "title": "Design Minimalista",
+        "description": "Interfacce pulite senza elementi superflui per un'esperienza serena."
+      },
+      "predictable_interactions": {
+        "title": "Interazioni Prevedibili",
+        "description": "Ogni azione è chiara e rassicurante, sai sempre cosa sta succedendo."
+      },
+      "limited_notifications": {
+        "title": "Notifiche Limitate",
+        "description": "Una notifica al giorno, nessuna dipendenza creata artificialmente."
+      }
+    }
+  },
+  "personas": {
+    "title": "Per chi è progettata GoldWen?",
+    "subtitle": "La nostra app è rivolta a persone che cercano connessioni autentiche e sono stanche delle app di incontri tradizionali.",
+    "sophie": {
+      "name": "Sophie, l'Intenzionale",
+      "age": "29 anni",
+      "description": "Professionista urbana, stanca della superficialità. Cerca una relazione seria e apprezza la compatibilità dei valori."
+    },
+    "marc": {
+      "name": "Marc, il Professionista Ambizioso",
+      "age": "34 anni",
+      "description": "Carriera impegnativa, poco tempo libero. Ottimizza la sua ricerca concentrandosi su profili seri."
+    }
+  },
+  "download": {
+    "title": "Pronto a vivere un'esperienza di incontri diversa?",
+    "subtitle": "Unisciti a GoldWen e scopri come la qualità può trasformare i tuoi incontri online. Scarica l'app oggi.",
+    "app_store": "Scarica su",
+    "google_play": "Disponibile su",
+    "coming_soon": "Presto disponibile su iOS e Android",
+    "stats": {
+      "waiting_list": "In lista d'attesa",
+      "user_rating": "Recensioni utenti",
+      "satisfaction": "Soddisfazione"
+    }
+  },
+  "footer": {
+    "description": "L'app di incontri che priorizza la qualità delle connessioni per relazioni autentiche e durature.",
+    "made_with": "Fatto con",
+    "in_paris": "a Parigi",
+    "copyright": "Tutti i diritti riservati."
+  },
+  "language": {
+    "switch": "Cambia lingua",
+    "french": "Français",
+    "english": "English",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "italian": "Italiano"
+  }
+}

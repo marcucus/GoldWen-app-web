@@ -1,0 +1,109 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Diseñada para ser desinstalada",
+    "tagline": "Calidad sobre cantidad",
+    "description": "GoldWen revoluciona las citas en línea ofreciendo un enfoque intencional y tranquilo. Se acabó el deslizar infinito, da paso a conexiones significativas."
+  },
+  "nav": {
+    "home": "Inicio",
+    "features": "Características",
+    "about": "Acerca de",
+    "support": "Soporte",
+    "download": "Descargar",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "legal": "Legal"
+  },
+  "hero": {
+    "title": "Un enfoque revolucionario de las citas",
+    "subtitle": "Se acabó el deslizar infinito y la ansiedad. GoldWen ofrece una experiencia tranquila e intencional para conexiones auténticas.",
+    "cta": {
+      "primary": "Descargar la aplicación",
+      "secondary": "Descubrir características"
+    }
+  },
+  "features": {
+    "title": "Un enfoque revolucionario de las citas",
+    "subtitle": "Se acabó el deslizar infinito y la ansiedad. GoldWen ofrece una experiencia tranquila e intencional para conexiones auténticas.",
+    "items": {
+      "daily_selection": {
+        "title": "Selección Diaria",
+        "description": "Recibe de 3 a 5 perfiles cuidadosamente seleccionados cada día al mediodía."
+      },
+      "smart_matching": {
+        "title": "Emparejamiento Inteligente",
+        "description": "Nuestro algoritmo prioriza la compatibilidad de valores y personalidades."
+      },
+      "ephemeral_conversations": {
+        "title": "Conversaciones Efímeras",
+        "description": "Discusiones limitadas a 24 horas para fomentar intercambios auténticos."
+      },
+      "calm_design": {
+        "title": "Diseño Tranquilo",
+        "description": "Interfaz minimalista inspirada en la \"Calm Technology\" para reducir la ansiedad."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "La filosofía \"Calm Technology\"",
+    "description": "GoldWen adopta los principios de la \"Calm Technology\" para crear una experiencia tranquila que reduce la ansiedad relacionada con las aplicaciones de citas tradicionales.",
+    "subtitle1": "Nuestra interfaz minimalista, espacios generosos e interacciones predecibles te permiten concentrarte en lo esencial: crear conexiones auténticas.",
+    "subtitle2": "Con solo una notificación por día y conversaciones limitadas en el tiempo, fomentamos intercambios más intencionales y menos compulsivos.",
+    "items": {
+      "minimal_design": {
+        "title": "Diseño Minimalista",
+        "description": "Interfaces limpias sin elementos superfluos para una experiencia serena."
+      },
+      "predictable_interactions": {
+        "title": "Interacciones Predecibles",
+        "description": "Cada acción es clara y tranquilizadora, siempre sabes lo que está pasando."
+      },
+      "limited_notifications": {
+        "title": "Notificaciones Limitadas",
+        "description": "Una notificación por día, sin dependencia creada artificialmente."
+      }
+    }
+  },
+  "personas": {
+    "title": "¿Para quién está diseñada GoldWen?",
+    "subtitle": "Nuestra aplicación está dirigida a personas que buscan conexiones auténticas y están cansadas de las aplicaciones de citas tradicionales.",
+    "sophie": {
+      "name": "Sophie, la Intencional",
+      "age": "29 años",
+      "description": "Profesional urbana, cansada de la superficialidad. Busca una relación seria y valora la compatibilidad de valores."
+    },
+    "marc": {
+      "name": "Marc, el Profesional Ambicioso",
+      "age": "34 años",
+      "description": "Carrera exigente, poco tiempo libre. Optimiza su búsqueda centrándose en perfiles serios."
+    }
+  },
+  "download": {
+    "title": "¿Listo para vivir una experiencia de citas diferente?",
+    "subtitle": "Únete a GoldWen y descubre cómo la calidad puede transformar tus citas en línea. Descarga la aplicación hoy.",
+    "app_store": "Descargar en",
+    "google_play": "Disponible en",
+    "coming_soon": "Próximamente en iOS y Android",
+    "stats": {
+      "waiting_list": "En lista de espera",
+      "user_rating": "Reseñas de usuarios",
+      "satisfaction": "Satisfacción"
+    }
+  },
+  "footer": {
+    "description": "La aplicación de citas que prioriza la calidad de las conexiones para relaciones auténticas y duraderas.",
+    "made_with": "Hecho con",
+    "in_paris": "en París",
+    "copyright": "Todos los derechos reservados."
+  },
+  "language": {
+    "switch": "Cambiar idioma",
+    "french": "Français",
+    "english": "English",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "italian": "Italiano"
+  }
+}

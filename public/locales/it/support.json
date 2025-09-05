@@ -1,0 +1,35 @@
+{
+  "title": "Centro Assistenza e Supporto",
+  "subtitle": "Trova rapidamente risposte alle tue domande su GoldWen e scopri come ottenere il massimo dalla tua esperienza.",
+  "faq": {
+    "title": "Domande Frequenti",
+    "subtitle": "Risposte alle domande più comuni su GoldWen.",
+    "items": {
+      "daily_selection": {
+        "question": "Come funziona la selezione giornaliera?",
+        "answer": "Ogni giorno a mezzogiorno, il nostro algoritmo ti suggerisce da 3 a 5 profili accuratamente selezionati in base alle tue preferenze, compatibilità e valori. Questo approccio priorizza la qualità sulla quantità per incontri più significativi."
+      },
+      "conversations_24h": {
+        "question": "Perché le conversazioni scompaiono dopo 24 ore?",
+        "answer": "Questa funzione incoraggia scambi spontanei e autentici, evitando l'accumulo di conversazioni inattive. Spinge a creare connessioni reali rapidamente e riduce l'ansia legata ai messaggi in sospeso."
+      },
+      "smart_matching": {
+        "question": "Come funziona il matching intelligente?",
+        "answer": "Il nostro algoritmo analizza i tuoi valori, personalità e preferenze per identificare i profili più compatibili. Priorizziamo la compatibilità profonda rispetto ai criteri superficiali."
+      },
+      "calm_technology": {
+        "question": "Cos'è la filosofia 'Calm Technology'?",
+        "answer": "GoldWen adotta i principi della 'Calm Technology': interfaccia minimalista, interazioni prevedibili, notifiche limitate. L'obiettivo è ridurre l'ansia e creare un'esperienza rassicurante."
+      },
+      "contact_support": {
+        "question": "Come contattare il supporto?",
+        "answer": "Puoi contattarci attraverso la nostra pagina di contatto o direttamente via email a support@goldwen.app. Rispondiamo generalmente entro 24 ore con soluzioni personalizzate."
+      }
+    }
+  },
+  "contact_section": {
+    "title": "Non trovi la risposta?",
+    "description": "Il nostro team è qui per aiutarti personalmente. Non esitare a contattarci direttamente.",
+    "button": "Contattaci"
+  }
+}

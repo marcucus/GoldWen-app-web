@@ -101,6 +101,9 @@
   "language": {
     "switch": "Switch language",
     "french": "Français",
-    "english": "English"
+    "english": "English",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "italian": "Italiano"
   }
 }

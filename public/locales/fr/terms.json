@@ -1,0 +1,38 @@
+{
+  "title": "Conditions d'Utilisation",
+  "subtitle": "Les conditions d'utilisation transparentes et équitables de GoldWen, conçues dans le respect de vos droits et de votre vie privée.",
+  "help_section": {
+    "title": "Conditions générales",
+    "subtitle": "Transparence et respect : nos engagements envers vous."
+  },
+  "coming_soon": {
+    "title": "Conditions détaillées disponibles prochainement",
+    "description": "Les conditions d'utilisation complètes et détaillées seront disponibles avec le lancement officiel de l'application GoldWen. Nous nous engageons à fournir des conditions transparentes et équitables."
+  },
+  "principles": {
+    "title": "Nos principes fondamentaux",
+    "items": {
+      "privacy": {
+        "title": "Respect de la vie privée",
+        "description": "Vos données personnelles sont protégées et ne sont jamais vendues à des tiers."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Des conditions claires, sans clauses cachées ou piégeuses."
+      },
+      "security": {
+        "title": "Sécurité",
+        "description": "Environnement sûr avec vérification des profils et modération active."
+      },
+      "fairness": {
+        "title": "Équité",
+        "description": "Conditions d'utilisation équitables pour tous les utilisateurs."
+      }
+    }
+  },
+  "contact": {
+    "title": "Questions sur nos conditions ?",
+    "description": "En attendant la publication de nos conditions complètes, n'hésitez pas à nous contacter pour toute question ou clarification.",
+    "button": "Nous contacter"
+  }
+}

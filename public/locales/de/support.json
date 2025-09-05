@@ -1,0 +1,35 @@
+{
+  "title": "Hilfe- und Support-Center",
+  "subtitle": "Finde schnell Antworten auf deine Fragen zu GoldWen und entdecke, wie du das Beste aus deiner Erfahrung herausholst.",
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf die häufigsten Fragen zu GoldWen.",
+    "items": {
+      "daily_selection": {
+        "question": "Wie funktioniert die tägliche Auswahl?",
+        "answer": "Jeden Tag um 12 Uhr schlägt unser Algorithmus dir 3 bis 5 sorgfältig ausgewählte Profile basierend auf deinen Präferenzen, Kompatibilität und Werten vor. Dieser Ansatz priorisiert Qualität über Quantität für bedeutungsvollere Begegnungen."
+      },
+      "conversations_24h": {
+        "question": "Warum verschwinden Gespräche nach 24 Stunden?",
+        "answer": "Diese Funktion fördert spontanen und authentischen Austausch und vermeidet die Ansammlung inaktiver Gespräche. Sie drängt dazu, schnell echte Verbindungen zu schaffen und reduziert Angst im Zusammenhang mit ausstehenden Nachrichten."
+      },
+      "smart_matching": {
+        "question": "Wie funktioniert intelligentes Matching?",
+        "answer": "Unser Algorithmus analysiert deine Werte, Persönlichkeit und Präferenzen, um die kompatiblesten Profile zu identifizieren. Wir priorisieren tiefe Kompatibilität über oberflächliche Kriterien."
+      },
+      "calm_technology": {
+        "question": "Was ist die 'Calm Technology' Philosophie?",
+        "answer": "GoldWen übernimmt die Prinzipien der 'Calm Technology': minimalistische Benutzeroberfläche, vorhersagbare Interaktionen, begrenzte Benachrichtigungen. Das Ziel ist es, Angst zu reduzieren und eine beruhigende Erfahrung zu schaffen."
+      },
+      "contact_support": {
+        "question": "Wie kontaktiere ich den Support?",
+        "answer": "Du kannst uns über unsere Kontaktseite oder direkt per E-Mail an support@goldwen.app kontaktieren. Wir antworten normalerweise innerhalb von 24 Stunden mit personalisierten Lösungen."
+      }
+    }
+  },
+  "contact_section": {
+    "title": "Findest du die Antwort nicht?",
+    "description": "Unser Team ist da, um dir persönlich zu helfen. Zögere nicht, uns direkt zu kontaktieren.",
+    "button": "Kontaktiere uns"
+  }
+}

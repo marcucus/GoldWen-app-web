@@ -4,9 +4,13 @@ import Head from 'next/head'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 import { appWithTranslation } from 'next-i18next'
+import { useBrowserLanguageDetection } from '../lib/useBrowserLanguageDetection'
 
 
 function App({ Component, pageProps }: AppProps) {
+  // Detect and redirect to browser language
+  useBrowserLanguageDetection();
+
   return (
     <>
     <SpeedInsights />
