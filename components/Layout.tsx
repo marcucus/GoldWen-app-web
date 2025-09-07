@@ -229,48 +229,63 @@ export default function Layout({ children, title, description, keywords, app }: 
               </button>
             </div>
             
-            {/* Mobile menu - Enhanced with better animations */}
+            {/* Mobile menu - Enhanced with better animations and fixed positioning */}
             <div 
               className={`md:hidden transition-all duration-500 ease-out ${
                 isMobileMenuOpen 
-                  ? 'opacity-100 max-h-96 translate-y-0' 
+                  ? 'opacity-100 max-h-screen translate-y-0' 
                   : 'opacity-0 max-h-0 -translate-y-4'
               } overflow-hidden`}
             >
-              <div className="px-2 pt-4 pb-6 space-y-2 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl rounded-2xl mt-4 border border-gold-primary/20 dark:border-dark-tertiary shadow-2xl">
-                <Link 
-                  href="/" 
-                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.home')}
-                </Link>
-                <Link 
-                  href="/support" 
-                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.support')}
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="block px-6 py-4 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.contact')}
-                </Link>
-                
-                {/* Language Selector in Mobile Menu */}
-                <div className="px-6 py-2">
-                  <LanguageSelector />
+              <div className="px-2 pt-4 pb-6 space-y-3 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl rounded-2xl mt-4 border border-gold-primary/20 dark:border-dark-tertiary shadow-2xl">
+                {/* Navigation Links - Centered */}
+                <div className="space-y-1">
+                  <Link 
+                    href="/" 
+                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {t('nav.home')}
+                  </Link>
+                  <Link 
+                    href="/support" 
+                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {t('nav.support')}
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {t('nav.contact')}
+                  </Link>
                 </div>
                 
-                {/* Theme Toggle in Mobile Menu */}
-                <div className="px-6 py-2">
-                  <ThemeToggle />
+                {/* Settings Section - Language and Theme */}
+                <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-4 space-y-3">
+                  <div className="text-center text-sm text-gray-medium dark:text-dark-text-secondary font-medium mb-3">
+                    {t('nav.settings')}
+                  </div>
+                  
+                  {/* Language Selector in Mobile Menu - Centered with better spacing */}
+                  <div className="flex justify-center px-6 py-2">
+                    <div className="w-full max-w-xs">
+                      <LanguageSelector />
+                    </div>
+                  </div>
+                  
+                  {/* Theme Toggle in Mobile Menu - Centered with better spacing */}
+                  <div className="flex justify-center px-6 py-2">
+                    <div className="w-full max-w-xs">
+                      <ThemeToggle />
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="px-6 pt-2">
+                {/* Download Button */}
+                <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-4 px-6">
                   <a 
                     href="/#download" 
                     className="block text-center btn-primary text-base py-4 rounded-xl hover-lift group"

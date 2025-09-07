@@ -30,7 +30,7 @@ export default function LanguageSelector() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm"
+        className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm font-medium"
         aria-label={t('language.switch')}
       >
         <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
@@ -40,7 +40,7 @@ export default function LanguageSelector() {
             className="w-full h-full object-cover"
           />
         </span>
-        <span className="hidden sm:inline">{currentLanguage?.name}</span>
+        <span>{currentLanguage?.name}</span>
         <svg 
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
           fill="none" 
@@ -52,26 +52,44 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 py-1 bg-white dark:bg-dark-secondary rounded-lg shadow-lg border border-gray-200 dark:border-dark-border z-50 min-w-[120px]">
-          {languages.map((language) => (
-            <button
-              key={language.code}
-              onClick={() => changeLanguage(language.code)}
-              className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
-                router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
-              }`}
-            >
-              <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
-                <img 
-                  src={language.flag} 
-                  alt={`${language.name} flag`}
-                  className="w-full h-full object-cover"
-                />
-              </span>
-              <span>{language.name}</span>
-            </button>
-          ))}
-        </div>
+        <>
+          {/* Backdrop for mobile to close dropdown */}
+          <div 
+            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+          />
+          
+          {/* Dropdown menu with better positioning for mobile */}
+          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-50 max-h-60 overflow-y-auto">
+            {languages.map((language) => (
+              <button
+                key={language.code}
+                onClick={() => changeLanguage(language.code)}
+                className={`w-full flex items-center justify-center space-x-3 px-4 py-3 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
+                  router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
+                }`}
+              >
+                <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+                  <img 
+                    src={language.flag} 
+                    alt={`${language.name} flag`}
+                    className="w-full h-full object-cover"
+                  />
+                </span>
+                <span className="font-medium">{language.name}</span>
+                {router.locale === language.code && (
+                  <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                )}
+              </button>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
