@@ -175,7 +175,7 @@ export default function Layout({ children, title, description, keywords, app }: 
               </div>
               
               {/* Desktop menu - Enhanced with premium navigation */}
-              <div className="hidden md:flex items-center space-x-8">
+              <div className="hidden lg:flex items-center space-x-8">
                 <Link 
                   href="/" 
                   className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
@@ -215,7 +215,7 @@ export default function Layout({ children, title, description, keywords, app }: 
               {/* Mobile menu button - Enhanced */}
               <button 
                 onClick={toggleMobileMenu}
-                className="md:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-3 rounded-xl hover:bg-cream-light dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-30 hover-lift"
+                className="lg:hidden text-gray-text dark:text-dark-text hover:text-gold-primary transition-all duration-300 p-3 rounded-xl hover:bg-cream-light dark:hover:bg-dark-tertiary focus:outline-none focus:ring-2 focus:ring-gold-primary focus:ring-opacity-30 hover-lift"
               >
                 {!isMobileMenuOpen ? (
                   <svg className="w-7 h-7 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,7 +231,7 @@ export default function Layout({ children, title, description, keywords, app }: 
             
             {/* Mobile menu - Enhanced with better animations and fixed positioning */}
             <div 
-              className={`md:hidden transition-all duration-500 ease-out ${
+              className={`lg:hidden transition-all duration-500 ease-out ${
                 isMobileMenuOpen 
                   ? 'opacity-100 max-h-screen translate-y-0' 
                   : 'opacity-0 max-h-0 -translate-y-4'

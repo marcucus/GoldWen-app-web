@@ -45,7 +45,7 @@ export default function ThemeToggle() {
           />
           
           {/* Dropdown menu */}
-          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-50">
+          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-50 max-h-60 overflow-y-auto">
             {themes.map((themeOption) => (
               <button
                 key={themeOption.key}
