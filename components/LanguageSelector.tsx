@@ -1,11 +1,29 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function LanguageSelector() {
   const router = useRouter();
   const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const changeLanguage = (locale: string) => {
     // Save user's choice to localStorage
@@ -27,7 +45,7 @@ export default function LanguageSelector() {
   const currentLanguage = languages.find(lang => lang.code === router.locale);
 
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm font-medium"
@@ -55,7 +73,7 @@ export default function LanguageSelector() {
         <>
           {/* Backdrop for mobile to close dropdown */}
           <div 
-            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/20 xl:hidden"
             onClick={() => setIsOpen(false)}
           />
           

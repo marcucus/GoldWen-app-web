@@ -1,9 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTheme } from './ThemeProvider';
 
 export default function ThemeToggle() {
   const { theme, setTheme, actualTheme } = useTheme();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   const themes = [
     { key: 'light' as const, label: 'Clair', icon: '☀️' },
@@ -14,7 +32,7 @@ export default function ThemeToggle() {
   const currentThemeData = themes.find(t => t.key === theme) || themes[2];
 
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       {/* Theme Toggle Button - Enhanced for mobile */}
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -40,7 +58,7 @@ export default function ThemeToggle() {
         <>
           {/* Backdrop for mobile to close dropdown */}
           <div
-            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/20 xl:hidden"
             onClick={() => setIsDropdownOpen(false)}
           />
           
