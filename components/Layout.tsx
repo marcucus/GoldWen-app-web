@@ -113,11 +113,11 @@ export default function Layout({ children, title, description, keywords, app }: 
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="author" content={`${app.name} Team`} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://goldwen.app" />
+        <link rel="canonical" href={`https://goldwen.app${router.asPath}`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://goldwen.app" />
+        <meta property="og:url" content={`https://goldwen.app${router.asPath}`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://goldwen.app/images/og-image.png" />
@@ -127,7 +127,7 @@ export default function Layout({ children, title, description, keywords, app }: 
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://goldwen.app" />
+        <meta property="twitter:url" content={`https://goldwen.app${router.asPath}`} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content="https://goldwen.app/images/og-image.png" />
