@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
 import { AppData } from '../lib/app-service';
 import LanguageSelector from './LanguageSelector';
@@ -19,6 +19,7 @@ export default function Layout({ children, title, description, keywords, app }: 
   const router = useRouter();
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const initNavbarScroll = () => {
@@ -77,6 +78,23 @@ export default function Layout({ children, title, description, keywords, app }: 
       cleanupAnimations();
     };
   }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -231,7 +249,10 @@ export default function Layout({ children, title, description, keywords, app }: 
             
             {/* Mobile menu - Full height scrollable container */}
             {isMobileMenuOpen && (
-              <div className="xl:hidden fixed top-0 left-0 right-0 bottom-0 z-[100] bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl overflow-y-auto">
+              <div 
+                ref={mobileMenuRef}
+                className="xl:hidden fixed top-0 left-0 right-0 bottom-0 z-[100] bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl overflow-y-auto"
+              >
                 <div className="container-responsive">
                   <div className="px-2 pt-24 pb-6 space-y-6">
                     {/* Navigation Links - Centered */}
