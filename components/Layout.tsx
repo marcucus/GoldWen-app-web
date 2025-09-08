@@ -269,18 +269,10 @@ export default function Layout({ children, title, description, keywords, app }: 
                     {t('nav.settings')}
                   </div>
                   
-                  {/* Language Selector in Mobile Menu - Centered with better spacing */}
-                  <div className="flex justify-center px-6 py-2">
-                    <div className="w-full max-w-xs">
-                      <LanguageSelector />
-                    </div>
-                  </div>
-                  
-                  {/* Theme Toggle in Mobile Menu - Centered with better spacing */}
-                  <div className="flex justify-center px-6 py-2">
-                    <div className="w-full max-w-xs">
-                      <ThemeToggle />
-                    </div>
+                  {/* Language and Theme Selectors in Mobile Menu - Side by side for icon-only display */}
+                  <div className="flex justify-center items-center space-x-4 px-6 py-2">
+                    <LanguageSelector />
+                    <ThemeToggle />
                   </div>
                 </div>
                 

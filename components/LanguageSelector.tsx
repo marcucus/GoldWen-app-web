@@ -48,25 +48,16 @@ export default function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors text-sm font-medium"
+        className="w-auto flex items-center justify-center p-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors"
         aria-label={t('language.switch')}
       >
-        <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+        <span className="w-6 h-5 rounded-sm overflow-hidden">
           <img 
             src={currentLanguage?.flag} 
             alt={`${currentLanguage?.name} flag`}
             className="w-full h-full object-cover"
           />
         </span>
-        <span>{currentLanguage?.name}</span>
-        <svg 
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
       </button>
 
       {isOpen && (
