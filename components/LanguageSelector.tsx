@@ -62,7 +62,7 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 py-3 bg-white/95 dark:bg-dark-secondary/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gold-primary/20 dark:border-gold-accent/30 z-[999] min-w-[220px] max-h-[50vh] overflow-y-auto">
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 py-3 bg-white/95 dark:bg-dark-secondary/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gold-primary/20 dark:border-gold-accent/30 z-[9999] min-w-[220px] max-h-[50vh] overflow-y-auto">
           <div className="px-3 pb-2 mb-2 border-b border-gold-primary/10 dark:border-gold-accent/20">
             <span className="text-xs font-medium text-gold-primary dark:text-gold-accent uppercase tracking-wider">
               {t('language.select')}

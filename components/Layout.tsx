@@ -246,7 +246,7 @@ export default function Layout({ children, title, description, keywords, app }: 
             {isMobileMenuOpen && (
               <div 
                 ref={mobileMenuRef}
-                className="xl:hidden fixed inset-0 z-50 bg-gradient-to-br from-cream-light via-white to-cream-light dark:from-dark-secondary dark:via-dark-primary dark:to-dark-secondary"
+                className="xl:hidden fixed inset-0 z-50 bg-white dark:bg-dark-secondary"
               >
                 {/* Decorative Background Elements */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -344,9 +344,6 @@ export default function Layout({ children, title, description, keywords, app }: 
                     
                     {/* Language Selector */}
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-600 dark:text-dark-text-secondary mb-2">
-                        Language / Langue
-                      </label>
                       <div className="flex justify-center">
                         <LanguageSelector />
                       </div>
@@ -354,9 +351,6 @@ export default function Layout({ children, title, description, keywords, app }: 
 
                     {/* Theme Toggle */}
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 dark:text-dark-text-secondary mb-2">
-                        Theme / Thème
-                      </label>
                       <div className="flex justify-center">
                         <ThemeToggle />
                       </div>
