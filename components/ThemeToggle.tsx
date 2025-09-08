@@ -3,14 +3,12 @@ import { useTheme } from './ThemeProvider';
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
-  // Cycle through themes: system -> light -> dark -> system
+  // Cycle through themes: light -> dark -> light
   const cycleTheme = () => {
-    if (theme === 'system') {
-      setTheme('light');
-    } else if (theme === 'light') {
+    if (theme === 'light' || theme === 'system') {
       setTheme('dark');
     } else {
-      setTheme('system');
+      setTheme('light');
     }
   };
 
@@ -23,7 +21,7 @@ export default function ThemeToggle() {
         return '🌙';
       case 'system':
       default:
-        return '💻';
+        return '☀️'; // Default to light when system
     }
   };
 
@@ -36,7 +34,7 @@ export default function ThemeToggle() {
         return 'Dark theme';
       case 'system':
       default:
-        return 'System theme';
+        return 'Light theme'; // Default to light when system
     }
   };
 

@@ -79,8 +79,8 @@ export default function Home({ seoData }: HomeProps) {
             <div className="space-calm-xl animate-fade-in-up">
               <div className="space-y-8">
                 <h1 className="heading-primary text-shadow-gold">
-                  <span className="title-goldwen-animated">{appData.name}</span><br />
-                  <span className="text-gold-primary gold-accent-animated">
+                  <span className="title-goldwen-animated block mb-4 sm:mb-2">{appData.name}</span>
+                  <span className="text-gold-primary gold-accent-animated block">
                     {appData.tagline}
                   </span>
                 </h1>
