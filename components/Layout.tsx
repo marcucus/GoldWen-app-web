@@ -246,7 +246,7 @@ export default function Layout({ children, title, description, keywords, app }: 
             {isMobileMenuOpen && (
               <div 
                 ref={mobileMenuRef}
-                className="xl:hidden fixed inset-0 z-50 bg-white dark:bg-dark-secondary"
+                className="xl:hidden fixed inset-0 z-50 bg-white dark:bg-gray-900"
               >
                 {/* Decorative Background Elements */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
