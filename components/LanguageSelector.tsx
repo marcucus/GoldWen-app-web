@@ -64,12 +64,12 @@ export default function LanguageSelector() {
         <>
           {/* Backdrop for mobile to close dropdown */}
           <div 
-            className="fixed inset-0 z-40 bg-black/20 xl:hidden"
+            className="fixed inset-0 z-[998] bg-black/20 xl:hidden"
             onClick={() => setIsOpen(false)}
           />
           
-          {/* Dropdown menu with better positioning for mobile */}
-          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-50 max-h-60 overflow-y-auto min-w-[200px] xl:min-w-[240px]">
+          {/* Dropdown menu with better positioning and z-index for mobile */}
+          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-[999] max-h-[40vh] xl:max-h-60 overflow-y-auto min-w-[200px] xl:min-w-[240px]">
             {languages.map((language) => (
               <button
                 key={language.code}
