@@ -367,7 +367,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <div className="bg-gradient-to-br from-gold-primary/10 via-gold-accent/5 to-gold-light/10 dark:from-gold-primary/20 dark:via-gold-accent/10 dark:to-gold-light/20 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gold-primary/20 dark:border-gold-accent/30">
                     <div className="text-center mb-4">
                       <h3 className="font-serif font-bold text-xl text-gold-primary dark:text-gold-accent mb-2">
-                        Téléchargez l'App
+                        Téléchargez l&apos;App
                       </h3>
                       <p className="text-gray-600 dark:text-dark-text-secondary text-sm">
                         Commencez votre voyage vers des connexions authentiques
