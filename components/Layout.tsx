@@ -231,9 +231,9 @@ export default function Layout({ children, title, description, keywords, app }: 
             
             {/* Mobile menu - Full height scrollable container */}
             {isMobileMenuOpen && (
-              <div className="xl:hidden fixed top-20 left-0 right-0 bottom-0 z-40 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl overflow-y-auto">
+              <div className="xl:hidden fixed top-0 left-0 right-0 bottom-0 z-[100] bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl overflow-y-auto">
                 <div className="container-responsive">
-                  <div className="px-2 pt-6 pb-6 space-y-6">
+                  <div className="px-2 pt-24 pb-6 space-y-6">
                     {/* Navigation Links - Centered */}
                     <div className="space-y-2">
                       <Link 
