@@ -61,44 +61,35 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <>
-          {/* Backdrop for mobile to close dropdown */}
-          <div 
-            className="fixed inset-0 z-[998] bg-black/20 xl:hidden"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          {/* Dropdown menu with better positioning and z-index for mobile */}
-          <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-[999] max-h-[40vh] xl:max-h-60 overflow-y-auto min-w-[200px] xl:min-w-[240px]">
-            {languages.map((language) => (
-              <button
-                key={language.code}
-                onClick={() => changeLanguage(language.code)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
-                  router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
-                }`}
-              >
-                <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
-                  <img 
-                    src={language.flag} 
-                    alt={`${language.name} flag`}
-                    className="w-full h-full object-cover"
+        <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-50 min-w-[200px] xl:min-w-[240px]">
+          {languages.map((language) => (
+            <button
+              key={language.code}
+              onClick={() => changeLanguage(language.code)}
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
+                router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
+              }`}
+            >
+              <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+                <img 
+                  src={language.flag} 
+                  alt={`${language.name} flag`}
+                  className="w-full h-full object-cover"
+                />
+              </span>
+              <span className="font-medium">{language.name}</span>
+              {router.locale === language.code && (
+                <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
                   />
-                </span>
-                <span className="font-medium">{language.name}</span>
-                {router.locale === language.code && (
-                  <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-              </button>
-            ))}
-          </div>
-        </>
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );

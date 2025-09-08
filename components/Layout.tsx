@@ -229,68 +229,66 @@ export default function Layout({ children, title, description, keywords, app }: 
               </button>
             </div>
             
-            {/* Mobile menu - Enhanced with better animations and fixed positioning */}
-            <div 
-              className={`xl:hidden transition-all duration-500 ease-out ${
-                isMobileMenuOpen 
-                  ? 'opacity-100 max-h-screen translate-y-0' 
-                  : 'opacity-0 max-h-0 -translate-y-4'
-              } overflow-hidden`}
-            >
-              <div className="px-2 pt-4 pb-6 space-y-3 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl rounded-2xl mt-4 border border-gold-primary/20 dark:border-dark-tertiary shadow-2xl">
-                {/* Navigation Links - Centered */}
-                <div className="space-y-1">
-                  <Link 
-                    href="/" 
-                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('nav.home')}
-                  </Link>
-                  <Link 
-                    href="/support" 
-                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('nav.support')}
-                  </Link>
-                  <Link 
-                    href="/contact" 
-                    className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('nav.contact')}
-                  </Link>
-                </div>
-                
-                {/* Settings Section - Language and Theme */}
-                <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-4 space-y-3">
-                  <div className="text-center text-sm text-gray-medium dark:text-dark-text-secondary font-medium mb-3">
-                    {t('nav.settings')}
+            {/* Mobile menu - Full height scrollable container */}
+            {isMobileMenuOpen && (
+              <div className="xl:hidden fixed top-20 left-0 right-0 bottom-0 z-40 bg-gradient-to-br from-white via-cream-light to-cream-default dark:from-dark-secondary dark:via-dark-tertiary dark:to-dark-quaternary backdrop-blur-xl overflow-y-auto">
+                <div className="container-responsive">
+                  <div className="px-2 pt-6 pb-6 space-y-6">
+                    {/* Navigation Links - Centered */}
+                    <div className="space-y-2">
+                      <Link 
+                        href="/" 
+                        className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {t('nav.home')}
+                      </Link>
+                      <Link 
+                        href="/support" 
+                        className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {t('nav.support')}
+                      </Link>
+                      <Link 
+                        href="/contact" 
+                        className="block px-6 py-4 text-center text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-cream-light dark:hover:bg-dark-tertiary transition-all duration-300 rounded-xl font-medium text-lg"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {t('nav.contact')}
+                      </Link>
+                    </div>
+                    
+                    {/* Settings Section - Language and Theme */}
+                    <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-6 space-y-4">
+                      <div className="text-center text-sm text-gray-medium dark:text-dark-text-secondary font-medium mb-4">
+                        {t('nav.settings')}
+                      </div>
+                      
+                      {/* Language and Theme Selectors in Mobile Menu - Side by side for icon-only display */}
+                      <div className="flex justify-center items-center space-x-4 px-6 py-2">
+                        <LanguageSelector />
+                        <ThemeToggle />
+                      </div>
+                    </div>
+                    
+                    {/* Download Button */}
+                    <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-6 px-6">
+                      <a 
+                        href="/#download" 
+                        className="block text-center btn-primary text-base py-4 rounded-xl hover-lift group"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        {t('nav.download')}
+                      </a>
+                    </div>
                   </div>
-                  
-                  {/* Language and Theme Selectors in Mobile Menu - Side by side for icon-only display */}
-                  <div className="flex justify-center items-center space-x-4 px-6 py-2">
-                    <LanguageSelector />
-                    <ThemeToggle />
-                  </div>
-                </div>
-                
-                {/* Download Button */}
-                <div className="border-t border-gold-primary/20 dark:border-dark-tertiary pt-4 px-6">
-                  <a 
-                    href="/#download" 
-                    className="block text-center btn-primary text-base py-4 rounded-xl hover-lift group"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                    {t('nav.download')}
-                  </a>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </nav>
 
