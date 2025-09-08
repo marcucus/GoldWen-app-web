@@ -48,38 +48,44 @@ export default function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-auto flex items-center justify-center p-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors"
+        className="group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cream-dark to-cream-light dark:from-dark-tertiary dark:to-dark-secondary text-gray-text dark:text-dark-text hover:from-gold-primary hover:to-gold-accent hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gold/50 border border-gold-primary/20"
         aria-label={t('language.switch')}
       >
-        <span className="w-6 h-5 rounded-sm overflow-hidden">
+        <span className="w-7 h-5 rounded-md overflow-hidden border border-white/20 transition-transform group-hover:scale-110">
           <img 
             src={currentLanguage?.flag} 
             alt={`${currentLanguage?.name} flag`}
             className="w-full h-full object-cover"
           />
         </span>
+        <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-gold-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 py-2 bg-white dark:bg-dark-secondary rounded-lg shadow-xl border border-gray-200 dark:border-dark-border z-[999] min-w-[200px] xl:min-w-[240px] max-h-[40vh] overflow-y-auto">
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 py-3 bg-white/95 dark:bg-dark-secondary/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gold-primary/20 dark:border-gold-accent/30 z-[999] min-w-[220px] max-h-[50vh] overflow-y-auto">
+          <div className="px-3 pb-2 mb-2 border-b border-gold-primary/10 dark:border-gold-accent/20">
+            <span className="text-xs font-medium text-gold-primary dark:text-gold-accent uppercase tracking-wider">
+              {t('language.select')}
+            </span>
+          </div>
           {languages.map((language) => (
             <button
               key={language.code}
               onClick={() => changeLanguage(language.code)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gold-primary hover:text-white transition-colors text-sm ${
-                router.locale === language.code ? 'bg-gold-primary/10 text-gold-primary' : 'text-gray-text dark:text-dark-text'
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gradient-to-r hover:from-gold-primary/10 hover:to-gold-accent/10 hover:text-gold-primary dark:hover:text-gold-accent transition-all duration-200 text-sm group ${
+                router.locale === language.code ? 'bg-gradient-to-r from-gold-primary/20 to-gold-accent/20 text-gold-primary dark:text-gold-accent' : 'text-gray-text dark:text-dark-text'
               }`}
             >
-              <span className="w-5 h-4 rounded-sm overflow-hidden flex-shrink-0">
+              <span className="w-6 h-4 rounded-sm overflow-hidden flex-shrink-0 border border-gray-200 dark:border-dark-border group-hover:border-gold-primary/50 transition-colors">
                 <img 
                   src={language.flag} 
                   alt={`${language.name} flag`}
                   className="w-full h-full object-cover"
                 />
               </span>
-              <span className="font-medium">{language.name}</span>
+              <span className="font-medium flex-1">{language.name}</span>
               {router.locale === language.code && (
-                <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-gold-primary dark:text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

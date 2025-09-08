@@ -41,13 +41,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={cycleTheme}
-      className="w-auto flex items-center justify-center p-3 rounded-lg bg-cream-dark dark:bg-dark-tertiary text-gray-text dark:text-dark-text hover:bg-gold-primary hover:text-white transition-colors"
+      className="group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cream-dark to-cream-light dark:from-dark-tertiary dark:to-dark-secondary text-gray-text dark:text-dark-text hover:from-gold-primary hover:to-gold-accent hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gold/50 border border-gold-primary/20"
       aria-label={`Current: ${getThemeLabel()}. Click to change theme`}
       title={`Current: ${getThemeLabel()}`}
     >
-      <span className="w-6 h-5 flex items-center justify-center text-lg">
+      <span className="text-xl transition-transform group-hover:scale-110">
         {getThemeIcon()}
       </span>
+      <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-gold-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </button>
   );
 }
