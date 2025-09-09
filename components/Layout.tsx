@@ -248,15 +248,8 @@ export default function Layout({ children, title, description, keywords, app }: 
                 ref={mobileMenuRef}
                 className="xl:hidden fixed inset-0 z-50 bg-white dark:bg-gray-900"
               >
-                {/* Decorative Background Elements */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  <div className="absolute top-20 right-10 w-32 h-32 bg-gold-primary/5 rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-40 left-8 w-24 h-24 bg-gold-accent/10 rounded-full blur-2xl"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-gold-primary/3 to-gold-accent/3 rounded-full blur-3xl"></div>
-                </div>
-
                 {/* Mobile Menu Header */}
-                <div className="relative z-10 flex items-center justify-between h-20 px-6 bg-white/95 dark:bg-dark-secondary/95 backdrop-blur-xl border-b border-gold-primary/10 dark:border-dark-tertiary shadow-lg">
+                <div className="relative z-10 flex items-center justify-between h-20 px-6 bg-white dark:bg-gray-900 border-b border-gold-primary/10 dark:border-dark-tertiary shadow-lg">
                   <div className="flex items-center space-x-4">
                     <div className="relative">
                       <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-gold-primary to-gold-accent shadow-gold">
@@ -271,7 +264,6 @@ export default function Layout({ children, title, description, keywords, app }: 
                           className="w-10 h-10 object-contain hidden dark:block"
                         />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-gold-primary to-gold-accent rounded-2xl opacity-20 blur-lg"></div>
                     </div>
                     <span className="font-serif font-bold text-2xl bg-gradient-to-r from-gray-text to-gold-primary bg-clip-text text-transparent dark:from-dark-text dark:to-gold-accent">
                       {app.name}
@@ -288,10 +280,10 @@ export default function Layout({ children, title, description, keywords, app }: 
                 </div>
 
                 {/* Mobile Menu Content */}
-                <div className="relative z-10 p-6 space-y-8 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+                <div className="relative z-10 p-6 space-y-8 overflow-y-auto bg-white dark:bg-gray-900" style={{ maxHeight: 'calc(100vh - 80px)' }}>
                   
                   {/* Navigation Links Card */}
-                  <div className="bg-white/80 dark:bg-dark-secondary/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gold-primary/10 dark:border-dark-tertiary">
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl border border-gold-primary/10 dark:border-dark-tertiary">
                     <h3 className="font-serif font-semibold text-lg text-gold-primary dark:text-gold-accent mb-4 flex items-center">
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -333,7 +325,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                   </div>
 
                   {/* Settings Card */}
-                  <div className="bg-white/80 dark:bg-dark-secondary/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gold-primary/10 dark:border-dark-tertiary">
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl border border-gold-primary/10 dark:border-dark-tertiary">
                     <h3 className="font-serif font-semibold text-lg text-gold-primary dark:text-gold-accent mb-4 flex items-center">
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -358,7 +350,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                   </div>
 
                   {/* Download Section */}
-                  <div className="bg-gradient-to-br from-gold-primary/10 via-gold-accent/5 to-gold-light/10 dark:from-gold-primary/20 dark:via-gold-accent/10 dark:to-gold-light/20 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gold-primary/20 dark:border-gold-accent/30">
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl border border-gold-primary/20 dark:border-gold-accent/30">
                     <div className="text-center mb-4">
                       <h3 className="font-serif font-bold text-xl text-gold-primary dark:text-gold-accent mb-2">
                         Téléchargez l&apos;App
