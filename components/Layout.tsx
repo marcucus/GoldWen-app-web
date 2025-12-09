@@ -30,14 +30,14 @@ export default function Layout({ children, title, description, keywords, app }: 
         const scrollY = window.scrollY;
         
         if (navbar) {
-          if (scrollY > 100) {
-            navbar.classList.add('shadow-3xl', 'bg-white/95');
+          if (scrollY > 50) {
+            navbar.classList.add('shadow-2xl', 'bg-white/98', 'dark:bg-dark-secondary/98');
             navbar.classList.remove('border-b');
-            navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
+            navbar.style.backdropFilter = 'blur(24px) saturate(200%)';
           } else {
-            navbar.classList.remove('shadow-3xl', 'bg-white/95');
+            navbar.classList.remove('shadow-2xl', 'bg-white/98', 'dark:bg-dark-secondary/98');
             navbar.classList.add('border-b');
-            navbar.style.backdropFilter = 'blur(10px) saturate(150%)';
+            navbar.style.backdropFilter = 'blur(12px) saturate(150%)';
           }
         }
         
@@ -166,7 +166,7 @@ export default function Layout({ children, title, description, keywords, app }: 
       </Head>
 
       {/* Navigation - Enhanced with premium styling */}
-        <nav className="fixed top-0 w-full z-50 glass-effect border-b border-gold-primary/10 dark:border-dark-tertiary transition-all duration-500 backdrop-blur-xl bg-white/95 dark:bg-dark-secondary/95">
+        <nav className="fixed top-0 w-full z-50 glass-effect border-b border-gold-primary/10 dark:border-dark-tertiary transition-all duration-500 backdrop-blur-xl bg-white/98 dark:bg-dark-secondary/98">
           <div className="container-responsive">
             <div className="flex items-center justify-between h-20">
               {/* Logo - Enhanced with actual logo images and theme support */}
@@ -177,16 +177,16 @@ export default function Layout({ children, title, description, keywords, app }: 
                       <img 
                         src="/images/logo_light.png" 
                         alt="GoldWen Logo" 
-                        className="w-12 h-12 object-contain dark:hidden"
+                        className="w-12 h-12 object-contain dark:hidden transition-transform duration-500 group-hover:scale-110"
                       />
                       <img 
                         src="/images/logo_dark.png" 
                         alt="GoldWen Logo" 
-                        className="w-12 h-12 object-contain hidden dark:block"
+                        className="w-12 h-12 object-contain hidden dark:block transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                   </div>
-                  <span className="font-serif font-bold text-2xl navbar-logo-animated transition-all duration-500">
+                  <span className="font-serif font-bold text-2xl navbar-logo-animated transition-all duration-500 group-hover:tracking-wide">
                     {app.name}
                   </span>
                 </Link>
@@ -196,19 +196,19 @@ export default function Layout({ children, title, description, keywords, app }: 
               <div className="hidden xl:flex items-center space-x-8">
                 <Link 
                   href="/" 
-                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.home')}
                 </Link>
                 <Link 
                   href="/support" 
-                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.support')}
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary font-medium text-lg"
+                  className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.contact')}
                 </Link>
@@ -221,12 +221,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                 
                 <a 
                   href="/#download" 
-                  className="btn-primary text-base px-8 py-3 hover-lift group"
+                  className="btn-primary text-base px-8 py-3 hover-lift group relative overflow-hidden"
                 >
-                  <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                  </svg>
-                  {t('nav.download')}
+                  <span className="relative z-10 flex items-center">
+                    <svg className="w-5 h-5 mr-2 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                    {t('nav.download')}
+                  </span>
                 </a>
               </div>
               
