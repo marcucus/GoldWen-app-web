@@ -1,0 +1,38 @@
+{
+  "title": "Termos de Serviço",
+  "subtitle": "Termos de uso transparentes e justos para GoldWen, projetados com respeito aos seus direitos e privacidade.",
+  "help_section": {
+    "title": "Termos gerais",
+    "subtitle": "Transparência e respeito: nossos compromissos com você."
+  },
+  "coming_soon": {
+    "title": "Termos detalhados disponíveis em breve",
+    "description": "Os termos de uso completos e detalhados estarão disponíveis com o lançamento oficial do aplicativo GoldWen. Estamos comprometidos em fornecer termos transparentes e justos."
+  },
+  "principles": {
+    "title": "Nossos princípios fundamentais",
+    "items": {
+      "privacy": {
+        "title": "Respeito à privacidade",
+        "description": "Seus dados pessoais são protegidos e nunca vendidos a terceiros."
+      },
+      "transparency": {
+        "title": "Transparência",
+        "description": "Termos claros, sem cláusulas ocultas ou enganosas."
+      },
+      "security": {
+        "title": "Segurança",
+        "description": "Ambiente seguro com verificação de perfil e moderação ativa."
+      },
+      "fairness": {
+        "title": "Justiça",
+        "description": "Termos de uso justos para todos os usuários."
+      }
+    }
+  },
+  "contact": {
+    "title": "Perguntas sobre nossos termos?",
+    "description": "Enquanto aguardamos a publicação de nossos termos completos, não hesite em nos contatar para qualquer pergunta ou esclarecimento.",
+    "button": "Entre em contato"
+  }
+}

@@ -39,7 +39,8 @@ export default function LanguageSelector() {
     { code: 'en', name: t('language.english'), flag: '/images/flags/en.svg' },
     { code: 'es', name: t('language.spanish'), flag: '/images/flags/es.svg' },
     { code: 'de', name: t('language.german'), flag: '/images/flags/de.svg' },
-    { code: 'it', name: t('language.italian'), flag: '/images/flags/it.svg' }
+    { code: 'it', name: t('language.italian'), flag: '/images/flags/it.svg' },
+    { code: 'pt', name: t('language.portuguese'), flag: '/images/flags/pt.svg' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === router.locale);

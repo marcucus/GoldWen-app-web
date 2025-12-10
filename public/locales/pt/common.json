@@ -1,0 +1,111 @@
+{
+  "app": {
+    "name": "GoldWen",
+    "slogan": "Projetado para ser desinstalado",
+    "tagline": "Qualidade em vez de quantidade",
+    "description": "GoldWen revoluciona os encontros online oferecendo uma abordagem intencional e tranquilizadora. Chega de deslizar sem parar, dê lugar a conexões significativas."
+  },
+  "nav": {
+    "home": "Início",
+    "features": "Recursos",
+    "about": "Sobre",
+    "support": "Suporte",
+    "download": "Baixar",
+    "contact": "Contato",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "legal": "Legal",
+    "settings": "Configurações"
+  },
+  "hero": {
+    "title": "Uma abordagem revolucionária para encontros",
+    "subtitle": "Chega de deslizar sem parar e ansiedade. GoldWen oferece uma experiência tranquilizadora e intencional para conexões autênticas.",
+    "cta": {
+      "primary": "Baixar o aplicativo",
+      "secondary": "Descubra os recursos"
+    }
+  },
+  "features": {
+    "title": "Uma abordagem revolucionária para encontros",
+    "subtitle": "Chega de deslizar sem parar e ansiedade. GoldWen oferece uma experiência tranquilizadora e intencional para conexões autênticas.",
+    "items": {
+      "daily_selection": {
+        "title": "Seleção Diária",
+        "description": "Receba de 3 a 5 perfis cuidadosamente selecionados todos os dias ao meio-dia."
+      },
+      "smart_matching": {
+        "title": "Correspondência Inteligente",
+        "description": "Nosso algoritmo prioriza a compatibilidade de valores e personalidades."
+      },
+      "ephemeral_conversations": {
+        "title": "Conversas Efêmeras",
+        "description": "Discussões limitadas a 24 horas para incentivar trocas autênticas."
+      },
+      "calm_design": {
+        "title": "Design Tranquilizador",
+        "description": "Interface minimalista inspirada na \"Calm Technology\" para reduzir a ansiedade."
+      }
+    }
+  },
+  "calm_tech": {
+    "title": "A filosofia \"Calm Technology\"",
+    "description": "GoldWen adota os princípios da \"Calm Technology\" para criar uma experiência tranquilizadora que reduz a ansiedade relacionada aos aplicativos de encontros tradicionais.",
+    "subtitle1": "Nossa interface minimalista, espaços generosos e interações previsíveis permitem que você se concentre no essencial: criar conexões autênticas.",
+    "subtitle2": "Com apenas uma notificação por dia e conversas com tempo limitado, incentivamos trocas mais intencionais e menos compulsivas.",
+    "items": {
+      "minimal_design": {
+        "title": "Design Minimalista",
+        "description": "Interfaces limpas sem elementos supérfluos para uma experiência serena."
+      },
+      "predictable_interactions": {
+        "title": "Interações Previsíveis",
+        "description": "Cada ação é clara e tranquilizadora, você sempre sabe o que está acontecendo."
+      },
+      "limited_notifications": {
+        "title": "Notificações Limitadas",
+        "description": "Apenas uma notificação por dia, sem dependência criada artificialmente."
+      }
+    }
+  },
+  "personas": {
+    "title": "Para quem o GoldWen foi projetado?",
+    "subtitle": "Nosso aplicativo é destinado a pessoas que procuram conexões autênticas e estão cansadas dos aplicativos de encontros tradicionais.",
+    "sophie": {
+      "name": "Sofia, a Intencional",
+      "age": "29 anos",
+      "description": "Profissional urbana, cansada da superficialidade. Procura um relacionamento sério e valoriza a compatibilidade de valores."
+    },
+    "marc": {
+      "name": "Marco, o Profissional Ambicioso",
+      "age": "34 anos",
+      "description": "Carreira exigente, pouco tempo livre. Otimiza sua busca concentrando-se em perfis sérios."
+    }
+  },
+  "download": {
+    "title": "Pronto para experimentar um tipo diferente de encontro?",
+    "subtitle": "Junte-se ao GoldWen e descubra como a qualidade pode transformar seus encontros online. Baixe o aplicativo hoje.",
+    "app_store": "Baixar na",
+    "google_play": "Disponível no",
+    "coming_soon": "Em breve disponível no iOS e Android",
+    "stats": {
+      "waiting_list": "Na lista de espera",
+      "user_rating": "Avaliações dos usuários",
+      "satisfaction": "Satisfação"
+    }
+  },
+  "footer": {
+    "description": "O aplicativo de encontros que prioriza a qualidade das conexões para relacionamentos autênticos e duradouros.",
+    "made_with": "Feito com",
+    "in_paris": "em Paris",
+    "copyright": "Todos os direitos reservados."
+  },
+  "language": {
+    "switch": "Mudar idioma",
+    "french": "Français",
+    "english": "English",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "italian": "Italiano",
+    "portuguese": "Português"
+  }
+}

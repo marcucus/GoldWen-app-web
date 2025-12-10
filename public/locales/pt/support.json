@@ -1,0 +1,35 @@
+{
+  "title": "Central de Ajuda e Suporte",
+  "subtitle": "Encontre rapidamente respostas para suas perguntas sobre GoldWen e descubra como aproveitar ao máximo sua experiência.",
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Respostas para as perguntas mais comuns sobre GoldWen.",
+    "items": {
+      "daily_selection": {
+        "question": "Como funciona a seleção diária?",
+        "answer": "Todos os dias ao meio-dia, nosso algoritmo sugere de 3 a 5 perfis cuidadosamente selecionados com base em suas preferências, compatibilidade e valores. Esta abordagem prioriza a qualidade em vez da quantidade para encontros mais significativos."
+      },
+      "conversations_24h": {
+        "question": "Por que as conversas desaparecem após 24 horas?",
+        "answer": "Este recurso incentiva trocas espontâneas e autênticas, evitando o acúmulo de conversas inativas. Ele estimula a criação de conexões reais rapidamente e reduz a ansiedade relacionada a mensagens pendentes."
+      },
+      "smart_matching": {
+        "question": "Como funciona a correspondência inteligente?",
+        "answer": "Nosso algoritmo analisa seus valores, personalidade e preferências para identificar os perfis mais compatíveis. Priorizamos a compatibilidade profunda em vez de critérios superficiais."
+      },
+      "calm_technology": {
+        "question": "O que é a filosofia 'Calm Technology'?",
+        "answer": "GoldWen adota os princípios da 'Calm Technology': interface minimalista, interações previsíveis, notificações limitadas. O objetivo é reduzir a ansiedade e criar uma experiência tranquilizadora."
+      },
+      "contact_support": {
+        "question": "Como entrar em contato com o suporte?",
+        "answer": "Você pode nos contatar através de nossa página de contato ou diretamente por e-mail em support@goldwen.app. Normalmente respondemos dentro de 24 horas com soluções personalizadas."
+      }
+    }
+  },
+  "contact_section": {
+    "title": "Não encontrou a resposta?",
+    "description": "Nossa equipe está aqui para ajudá-lo pessoalmente. Não hesite em nos contatar diretamente.",
+    "button": "Entre em contato"
+  }
+}
