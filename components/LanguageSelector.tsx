@@ -7,6 +7,7 @@ export default function LanguageSelector() {
   const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -29,10 +30,39 @@ export default function LanguageSelector() {
     setFocusedIndex(-1);
   };
 
+  // Calculate dropdown position when opening
+  const updateDropdownPosition = () => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPosition({
+        top: rect.bottom + 12, // 12px gap below button (mt-3)
+        left: rect.left + rect.width / 2, // Center horizontally
+      });
+    }
+  };
+
+  // Update position when opening dropdown or on window resize
+  useEffect(() => {
+    if (isOpen) {
+      updateDropdownPosition();
+      window.addEventListener('resize', updateDropdownPosition);
+      window.addEventListener('scroll', updateDropdownPosition);
+      return () => {
+        window.removeEventListener('resize', updateDropdownPosition);
+        window.removeEventListener('scroll', updateDropdownPosition);
+      };
+    }
+  }, [isOpen]);
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current && 
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -134,7 +164,12 @@ export default function LanguageSelector() {
 
       {isOpen && (
         <div 
-          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 py-4 bg-white dark:bg-dark-secondary backdrop-blur-xl rounded-2xl shadow-2xl border border-gold-primary/30 dark:border-gold-accent/40 z-[9999] min-w-[260px] max-h-[50vh] overflow-y-auto animate-fade-in-down"
+          ref={dropdownRef}
+          style={{
+            top: `${dropdownPosition.top}px`,
+            left: `${dropdownPosition.left}px`,
+          }}
+          className="fixed transform -translate-x-1/2 py-4 bg-white dark:bg-dark-secondary backdrop-blur-xl rounded-2xl shadow-2xl border border-gold-primary/30 dark:border-gold-accent/40 z-[9999] min-w-[260px] max-h-[50vh] overflow-y-auto animate-fade-in-down"
           role="listbox"
           aria-label={t('language.switch')}
         >
