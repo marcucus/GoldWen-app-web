@@ -1,0 +1,29 @@
+{
+  "title": "Entre em contato conosco",
+  "subtitle": "Uma pergunta? Uma sugestão? Nossa equipe está aqui para apoiá-lo em sua experiência GoldWen.",
+  "help_section": {
+    "title": "Estamos aqui para ajudá-lo",
+    "subtitle": "Nossa equipe está comprometida em responder rapidamente e com atenção."
+  },
+  "email_card": {
+    "title": "E-mail",
+    "description": "Escreva-nos diretamente para qualquer pergunta ou sugestão.",
+    "email": "support@goldwen.app"
+  },
+  "response_time_card": {
+    "title": "Tempo de Resposta",
+    "description": "Estamos comprometidos em responder rapidamente.",
+    "time": "Geralmente dentro de 24h"
+  },
+  "other_contact": {
+    "title": "Outras formas de nos contactar",
+    "address": {
+      "title": "Endereço",
+      "value": "Paris, França"
+    },
+    "support": {
+      "title": "Suporte",
+      "link_text": "Confira nossas perguntas frequentes"
+    }
+  }
+}

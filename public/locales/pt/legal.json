@@ -1,0 +1,60 @@
+{
+  "title": "Aviso Legal",
+  "subtitle": "Informações legais e transparência: nosso compromisso com um serviço conforme e responsável.",
+  "main_section": {
+    "title": "Informações legais",
+    "subtitle": "Conformidade legal e total transparência."
+  },
+  "coming_soon": {
+    "title": "Aviso legal completo disponível em breve",
+    "description": "Os avisos legais detalhados serão publicados com o lançamento oficial do aplicativo GoldWen. Eles incluirão todas as informações legais exigidas pelos regulamentos franceses e europeus."
+  },
+  "commitment": {
+    "title": "Nosso compromisso legal",
+    "items": {
+      "gdpr_compliance": {
+        "title": "Conformidade com RGPD",
+        "description": "Plena conformidade com o Regulamento Geral de Proteção de Dados."
+      },
+      "french_law": {
+        "title": "Lei francesa",
+        "description": "Aplicativo em conformidade com a lei francesa e regulamentos aplicáveis."
+      },
+      "transparency": {
+        "title": "Transparência",
+        "description": "Informações claras sobre o editor, hospedagem e responsabilidades."
+      },
+      "user_protection": {
+        "title": "Proteção do usuário",
+        "description": "Respeito aos direitos do usuário e obrigações legais."
+      }
+    }
+  },
+  "future_info": {
+    "title": "Informações futuras",
+    "publisher": {
+      "title": "Editor",
+      "items": [
+        "Nome da empresa",
+        "Endereço da sede",
+        "Número SIRET",
+        "Capital social"
+      ]
+    },
+    "hosting": {
+      "title": "Hospedagem",
+      "items": [
+        "Nome do host",
+        "Endereço do host",
+        "Detalhes de contato técnico",
+        "Localização do servidor"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Perguntas legais?",
+    "description": "Para quaisquer perguntas sobre os aspectos legais do GoldWen, entre em contato com nossa equipe jurídica.",
+    "email": "legal@goldwen.app",
+    "button": "Formulário de contato"
+  }
+}
