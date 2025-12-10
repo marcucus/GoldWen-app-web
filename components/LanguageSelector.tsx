@@ -45,11 +45,20 @@ export default function LanguageSelector() {
   useEffect(() => {
     if (isOpen) {
       updateDropdownPosition();
+      
+      // Throttle scroll updates for better performance
+      let scrollTimeout: NodeJS.Timeout;
+      const handleScroll = () => {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateDropdownPosition, 16); // ~60fps
+      };
+      
       window.addEventListener('resize', updateDropdownPosition);
-      window.addEventListener('scroll', updateDropdownPosition);
+      window.addEventListener('scroll', handleScroll, { passive: true });
       return () => {
         window.removeEventListener('resize', updateDropdownPosition);
-        window.removeEventListener('scroll', updateDropdownPosition);
+        window.removeEventListener('scroll', handleScroll);
+        if (scrollTimeout) clearTimeout(scrollTimeout);
       };
     }
   }, [isOpen]);
