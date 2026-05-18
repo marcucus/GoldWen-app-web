@@ -15,8 +15,8 @@
     "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/css/styles.css --watch"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/speed-insights": "^1.2.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "i18next": "^25.5.1",
     "next": "^14.2.0",
     "next-i18next": "^15.4.2",
