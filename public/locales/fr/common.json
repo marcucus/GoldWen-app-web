@@ -15,7 +15,13 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "legal": "Mentions légales",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "mobile": {
+      "navigation": "Navigation",
+      "download_title": "Téléchargez l'App",
+      "download_description": "Commencez votre voyage vers des connexions authentiques",
+      "coming_soon_on": "Bientôt disponible sur"
+    }
   },
   "hero": {
     "title": "Une approche révolutionnaire des rencontres",
@@ -97,7 +103,31 @@
     "description": "L'application de rencontre qui privilégie la qualité des connexions pour des relations authentiques et durables.",
     "made_with": "Fait avec",
     "in_paris": "à Paris",
-    "copyright": "Tous droits réservés."
+    "copyright": "Tous droits réservés.",
+    "stat_users": "Utilisateurs",
+    "stat_rating": "Note App Store",
+    "stat_satisfaction": "Satisfaction"
+  },
+  "testimonials": {
+    "title": "Ce qu'ils disent de GoldWen",
+    "subtitle": "Des rencontres authentiques, vécues par de vraies personnes.",
+    "items": {
+      "sophie": {
+        "quote": "J'ai trouvé quelqu'un de vraiment compatible grâce à GoldWen. L'approche slow dating fait toute la différence !",
+        "name": "Sophie",
+        "meta": "28 ans, Paris"
+      },
+      "thomas": {
+        "quote": "Enfin une appli qui mise sur la qualité plutôt que la quantité. Mon premier vrai match.",
+        "name": "Thomas",
+        "meta": "32 ans, Lyon"
+      },
+      "camille": {
+        "quote": "L'algorithme de compatibilité est bluffant. Nos valeurs s'alignent parfaitement.",
+        "name": "Camille",
+        "meta": "25 ans, Bordeaux"
+      }
+    }
   },
   "language": {
     "switch": "Changer de langue",

@@ -15,7 +15,13 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legal": "Legal",
-    "settings": "Settings"
+    "settings": "Settings",
+    "mobile": {
+      "navigation": "Navigation",
+      "download_title": "Download the App",
+      "download_description": "Start your journey towards authentic connections",
+      "coming_soon_on": "Coming soon on"
+    }
   },
   "hero": {
     "title": "A revolutionary approach to dating",
@@ -97,7 +103,31 @@
     "description": "The dating app that prioritizes the quality of connections for authentic and lasting relationships.",
     "made_with": "Made with",
     "in_paris": "in Paris",
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "stat_users": "Users",
+    "stat_rating": "App Store Rating",
+    "stat_satisfaction": "Satisfaction"
+  },
+  "testimonials": {
+    "title": "What they say about GoldWen",
+    "subtitle": "Authentic connections, lived by real people.",
+    "items": {
+      "sophie": {
+        "quote": "J'ai trouvé quelqu'un de vraiment compatible grâce à GoldWen. L'approche slow dating fait toute la différence !",
+        "name": "Sophie",
+        "meta": "28, Paris"
+      },
+      "thomas": {
+        "quote": "Enfin une appli qui mise sur la qualité plutôt que la quantité. Mon premier vrai match.",
+        "name": "Thomas",
+        "meta": "32, Lyon"
+      },
+      "camille": {
+        "quote": "L'algorithme de compatibilité est bluffant. Nos valeurs s'alignent parfaitement.",
+        "name": "Camille",
+        "meta": "25, Bordeaux"
+      }
+    }
   },
   "language": {
     "switch": "Switch language",

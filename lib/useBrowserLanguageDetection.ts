@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-const supportedLocales = ['fr', 'en', 'es', 'de', 'it'];
+const supportedLocales = ['fr', 'en', 'es', 'de', 'it', 'pt'];
 
 export function useBrowserLanguageDetection() {
   const router = useRouter();

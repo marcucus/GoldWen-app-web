@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import { useState } from 'react';
 import Layout from '../components/Layout';
 import { appService } from '../lib/app-service';
 import { useTranslation } from 'next-i18next';
@@ -15,6 +16,25 @@ interface ContactProps {
 export default function Contact({ seoData }: ContactProps) {
   const { t } = useTranslation('common');
   const { t: tContact } = useTranslation('contact');
+
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+      if (res.ok) setForm({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
+  };
 
   // Get app data from translations
   const appData = {
@@ -97,6 +117,94 @@ export default function Contact({ seoData }: ContactProps) {
                 </p>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="card animate-fade-in-up mb-8" style={{animationDelay: '0.3s'}}>
+              <h3 className="heading-tertiary mb-8 text-shadow text-center">{tContact('form.title')}</h3>
+              <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-text dark:text-dark-text mb-2">
+                      {tContact('form.name')}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                      placeholder={tContact('form.name_placeholder')}
+                      className="w-full px-4 py-3 rounded-xl border border-gold-primary/20 bg-white dark:bg-dark-tertiary text-gray-text dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-primary/40 focus:border-gold-primary transition-all duration-200"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-text dark:text-dark-text mb-2">
+                      {tContact('form.email')}
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                      placeholder={tContact('form.email_placeholder')}
+                      className="w-full px-4 py-3 rounded-xl border border-gold-primary/20 bg-white dark:bg-dark-tertiary text-gray-text dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-primary/40 focus:border-gold-primary transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-text dark:text-dark-text mb-2">
+                    {tContact('form.subject')}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={form.subject}
+                    onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
+                    placeholder={tContact('form.subject_placeholder')}
+                    className="w-full px-4 py-3 rounded-xl border border-gold-primary/20 bg-white dark:bg-dark-tertiary text-gray-text dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-primary/40 focus:border-gold-primary transition-all duration-200"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-text dark:text-dark-text mb-2">
+                    {tContact('form.message')}
+                  </label>
+                  <textarea
+                    required
+                    rows={5}
+                    value={form.message}
+                    onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                    placeholder={tContact('form.message_placeholder')}
+                    className="w-full px-4 py-3 rounded-xl border border-gold-primary/20 bg-white dark:bg-dark-tertiary text-gray-text dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-primary/40 focus:border-gold-primary transition-all duration-200 resize-none"
+                  />
+                </div>
+
+                {status === 'success' && (
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {tContact('form.success')}
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {tContact('form.error')}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending' || status === 'success'}
+                  className="w-full btn-primary py-4 text-lg font-semibold rounded-xl disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 hover:scale-[1.02]"
+                >
+                  {status === 'sending' ? tContact('form.sending') : tContact('form.submit')}
+                </button>
+              </form>
             </div>
 
             {/* Additional Contact Information */}

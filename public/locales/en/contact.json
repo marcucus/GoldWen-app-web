@@ -15,6 +15,21 @@
     "description": "We are committed to responding to you quickly.",
     "time": "Usually within 24h"
   },
+  "form": {
+    "title": "Send a message",
+    "name": "Full name",
+    "name_placeholder": "Your name",
+    "email": "Email",
+    "email_placeholder": "your@email.com",
+    "subject": "Subject",
+    "subject_placeholder": "How can we help you?",
+    "message": "Message",
+    "message_placeholder": "Describe your request in detail...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent! We will reply within 24h.",
+    "error": "An error occurred. Please try again."
+  },
   "other_contact": {
     "title": "Other ways to reach us",
     "address": {

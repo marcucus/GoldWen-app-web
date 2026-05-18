@@ -24,11 +24,9 @@ export default function Layout({ children, title, description, keywords, app }: 
   useEffect(() => {
     const initNavbarScroll = () => {
       const navbar = document.querySelector('nav');
-      let lastScrollY = window.scrollY;
-
       const updateNavbar = () => {
         const scrollY = window.scrollY;
-        
+
         if (navbar) {
           if (scrollY > 50) {
             navbar.classList.add('shadow-2xl', 'bg-white/98', 'dark:bg-dark-secondary/98');
@@ -40,8 +38,6 @@ export default function Layout({ children, title, description, keywords, app }: 
             navbar.style.backdropFilter = 'blur(12px) saturate(150%)';
           }
         }
-        
-        lastScrollY = scrollY;
       };
 
       window.addEventListener('scroll', updateNavbar);
@@ -113,7 +109,21 @@ export default function Layout({ children, title, description, keywords, app }: 
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="author" content={`${app.name} Team`} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://goldwen.app${router.asPath}`} />
+        <link
+          rel="canonical"
+          href={`https://goldwen.app/${router.locale}${router.asPath === '/' ? '' : router.asPath}`}
+        />
+
+        {/* hreflang — international SEO */}
+        {['fr', 'en', 'es', 'de', 'it', 'pt'].map((locale) => (
+          <link
+            key={locale}
+            rel="alternate"
+            hrefLang={locale}
+            href={`https://goldwen.app/${locale}${router.asPath === '/' ? '' : router.asPath}`}
+          />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href={`https://goldwen.app${router.asPath}`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -290,7 +300,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                       </svg>
-                      Navigation
+                      {t('nav.mobile.navigation')}
                     </h3>
                     <div className="space-y-2">
                       <Link 
@@ -355,10 +365,10 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <div className="bg-white/95 dark:bg-dark-secondary/95 rounded-2xl p-6 shadow-xl border border-gold-primary/20 dark:border-gold-accent/30">
                     <div className="text-center mb-4">
                       <h3 className="font-serif font-bold text-xl text-gold-primary dark:text-gold-accent mb-2">
-                        Téléchargez l&apos;App
+                        {t('nav.mobile.download_title')}
                       </h3>
                       <p className="text-gray-600 dark:text-dark-text-secondary text-sm">
-                        Commencez votre voyage vers des connexions authentiques
+                        {t('nav.mobile.download_description')}
                       </p>
                     </div>
                     
@@ -379,7 +389,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                     {/* App Store badges */}
                     <div className="flex flex-col space-y-3 mt-4">
                       <div className="text-center text-xs text-gray-500 dark:text-dark-text-secondary">
-                        Bientôt disponible sur
+                        {t('nav.mobile.coming_soon_on')}
                       </div>
                       <div className="flex justify-center space-x-4">
                         <div className="bg-black/80 rounded-lg px-3 py-2 flex items-center space-x-2">
@@ -452,16 +462,22 @@ export default function Layout({ children, title, description, keywords, app }: 
                   {/* Social proof */}
                   <div className="flex items-center space-x-8 pt-4">
                     <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">10K+</div>
-                      <div className="text-gray-400 text-sm">Utilisateurs</div>
+                      <div className="text-gold-primary font-bold text-2xl">
+                        {process.env.NEXT_PUBLIC_STAT_USERS || '10K+'}
+                      </div>
+                      <div className="text-gray-400 text-sm">{t('footer.stat_users', 'Utilisateurs')}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">4.9★</div>
-                      <div className="text-gray-400 text-sm">Note App Store</div>
+                      <div className="text-gold-primary font-bold text-2xl">
+                        {process.env.NEXT_PUBLIC_STAT_RATING || '4.9★'}
+                      </div>
+                      <div className="text-gray-400 text-sm">{t('footer.stat_rating', 'Note App Store')}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">95%</div>
-                      <div className="text-gray-400 text-sm">Satisfaction</div>
+                      <div className="text-gold-primary font-bold text-2xl">
+                        {process.env.NEXT_PUBLIC_STAT_SATISFACTION || '95%'}
+                      </div>
+                      <div className="text-gray-400 text-sm">{t('footer.stat_satisfaction', 'Satisfaction')}</div>
                     </div>
                   </div>
                 </div>

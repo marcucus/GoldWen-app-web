@@ -15,7 +15,13 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "legal": "Legal",
-    "settings": "Configurações"
+    "settings": "Configurações",
+    "mobile": {
+      "navigation": "Navegação",
+      "download_title": "Baixe o App",
+      "download_description": "Comece sua jornada em direção a conexões autênticas",
+      "coming_soon_on": "Em breve em"
+    }
   },
   "hero": {
     "title": "Uma abordagem revolucionária para encontros",
@@ -97,7 +103,31 @@
     "description": "O aplicativo de encontros que prioriza a qualidade das conexões para relacionamentos autênticos e duradouros.",
     "made_with": "Feito com",
     "in_paris": "em Paris",
-    "copyright": "Todos os direitos reservados."
+    "copyright": "Todos os direitos reservados.",
+    "stat_users": "Utilizadores",
+    "stat_rating": "Classificação App Store",
+    "stat_satisfaction": "Satisfação"
+  },
+  "testimonials": {
+    "title": "O que dizem sobre o GoldWen",
+    "subtitle": "Conexões autênticas, vividas por pessoas reais.",
+    "items": {
+      "sophie": {
+        "quote": "J'ai trouvé quelqu'un de vraiment compatible grâce à GoldWen. L'approche slow dating fait toute la différence !",
+        "name": "Sophie",
+        "meta": "28 anos, Paris"
+      },
+      "thomas": {
+        "quote": "Enfin une appli qui mise sur la qualité plutôt que la quantité. Mon premier vrai match.",
+        "name": "Thomas",
+        "meta": "32 anos, Lyon"
+      },
+      "camille": {
+        "quote": "L'algorithme de compatibilité est bluffant. Nos valeurs s'alignent parfaitement.",
+        "name": "Camille",
+        "meta": "25 anos, Bordéus"
+      }
+    }
   },
   "language": {
     "switch": "Mudar idioma",

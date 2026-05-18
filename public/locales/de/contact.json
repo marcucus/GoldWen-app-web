@@ -15,6 +15,21 @@
     "description": "Wir verpflichten uns, dir schnell zu antworten.",
     "time": "Normalerweise innerhalb von 24h"
   },
+  "form": {
+    "title": "Nachricht senden",
+    "name": "Vollständiger Name",
+    "name_placeholder": "Dein Name",
+    "email": "E-Mail",
+    "email_placeholder": "deine@email.com",
+    "subject": "Betreff",
+    "subject_placeholder": "Wie können wir dir helfen?",
+    "message": "Nachricht",
+    "message_placeholder": "Beschreibe deine Anfrage im Detail...",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht gesendet! Wir antworten innerhalb von 24h.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+  },
   "other_contact": {
     "title": "Andere Wege, uns zu erreichen",
     "address": {
