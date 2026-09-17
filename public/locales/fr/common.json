@@ -37,10 +37,10 @@
     "items": {
       "daily_selection": {
         "title": "Sélection Quotidienne",
-        "description": "Recevez 3 à 5 profils soigneusement sélectionnés chaque jour à midi."
+        "description": "5 profils chaque jour à midi local. 1 choix gratuit, jusqu’à 3 avec GoldWen Plus. Un choix mutuel ouvre une conversation de 24 heures."
       },
       "smart_matching": {
-        "title": "Matching Intelligent", 
+        "title": "Matching Intelligent",
         "description": "Notre algorithme privilégie la compatibilité des valeurs et des personnalités."
       },
       "ephemeral_conversations": {
@@ -68,7 +68,7 @@
         "description": "Chaque action est claire et rassurante, vous savez toujours ce qui se passe."
       },
       "limited_notifications": {
-        "title": "Notifications Limitées", 
+        "title": "Notifications Limitées",
         "description": "Une seule notification par jour, pas de dépendance créée artificiellement."
       }
     }
@@ -83,51 +83,23 @@
     },
     "marc": {
       "name": "Marc, le Professionnel Ambitieux",
-      "age": "34 ans", 
+      "age": "34 ans",
       "description": "Carrière exigeante, peu de temps libre. Optimise sa recherche en se concentrant sur des profils sérieux."
-    }
+    },
+    "illustrative": "Persona fictif"
   },
   "download": {
     "title": "Prêt(e) à vivre une expérience de rencontre différente ?",
-    "subtitle": "Rejoignez GoldWen et découvrez comment la qualité peut transformer vos rencontres en ligne. Téléchargez l'application dès aujourd'hui.",
+    "subtitle": "L’application est en préparation. Les liens de téléchargement seront disponibles après publication sur les stores.",
     "app_store": "Télécharger sur l'",
     "google_play": "Disponible sur",
-    "coming_soon": "Disponible prochainement sur iOS et Android",
-    "stats": {
-      "waiting_list": "En liste d'attente",
-      "user_rating": "Avis utilisateurs", 
-      "satisfaction": "Satisfaction"
-    }
+    "coming_soon": "Disponible prochainement sur iOS et Android"
   },
   "footer": {
     "description": "L'application de rencontre qui privilégie la qualité des connexions pour des relations authentiques et durables.",
     "made_with": "Fait avec",
     "in_paris": "à Paris",
-    "copyright": "Tous droits réservés.",
-    "stat_users": "Utilisateurs",
-    "stat_rating": "Note App Store",
-    "stat_satisfaction": "Satisfaction"
-  },
-  "testimonials": {
-    "title": "Ce qu'ils disent de GoldWen",
-    "subtitle": "Des rencontres authentiques, vécues par de vraies personnes.",
-    "items": {
-      "sophie": {
-        "quote": "J'ai trouvé quelqu'un de vraiment compatible grâce à GoldWen. L'approche slow dating fait toute la différence !",
-        "name": "Sophie",
-        "meta": "28 ans, Paris"
-      },
-      "thomas": {
-        "quote": "Enfin une appli qui mise sur la qualité plutôt que la quantité. Mon premier vrai match.",
-        "name": "Thomas",
-        "meta": "32 ans, Lyon"
-      },
-      "camille": {
-        "quote": "L'algorithme de compatibilité est bluffant. Nos valeurs s'alignent parfaitement.",
-        "name": "Camille",
-        "meta": "25 ans, Bordeaux"
-      }
-    }
+    "copyright": "Tous droits réservés."
   },
   "language": {
     "switch": "Changer de langue",
@@ -137,5 +109,27 @@
     "german": "Deutsch",
     "italian": "Italiano",
     "portuguese": "Português"
+  },
+  "ritual": {
+    "title": "Votre rituel de midi",
+    "description": "5 profils chaque jour à midi local. 1 choix gratuit, jusqu’à 3 avec GoldWen Plus. Un choix mutuel ouvre une conversation de 24 heures."
+  },
+  "cookies": {
+    "title": "Mesure d’audience",
+    "description": "Vercel Analytics et Speed Insights, facultatifs, mesurent les visites et les performances. Aucun chargement avant votre accord. Votre choix est conservé six mois et peut être retiré à tout moment.",
+    "refuse": "Refuser",
+    "accept": "Accepter",
+    "manage": "Gérer la mesure d’audience"
+  },
+  "legal_reference": "Texte de référence en français",
+  "legal_scope": "Ces informations concernent le site vitrine. L’application mobile est en préparation ; ses conditions et sa politique seront présentées avant toute inscription.",
+  "data_contact": "Contacter le responsable des données",
+  "errors": {
+    "not_found": "Page introuvable",
+    "not_found_description": "La page demandée n’existe pas ou a été déplacée.",
+    "server": "Erreur serveur",
+    "server_description": "Une erreur inattendue est survenue. Réessayez dans quelques instants.",
+    "home": "Retour à l’accueil",
+    "retry": "Réessayer"
   }
 }

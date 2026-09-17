@@ -1,79 +1,33 @@
-// Requires: npm install nodemailer @types/nodemailer
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
-
-interface ContactBody {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
+import { allowContact, escapeHtml, validateContact } from '../../lib/contact-security';
+import { siteUrl } from '../../lib/site';
+export const config = { api: { bodyParser: { sizeLimit: '8kb' } } };
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  const { name, email, subject, message } = req.body as ContactBody;
-
-  // Validation
-  if (!name?.trim() || !email?.trim() || !subject?.trim() || !message?.trim()) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-  if (!isValidEmail(email)) {
-    return res.status(400).json({ error: 'Invalid email address' });
-  }
-  if (message.length > 2000) {
-    return res.status(400).json({ error: 'Message too long (max 2000 chars)' });
-  }
-
-  const recipient = process.env.CONTACT_EMAIL_TO ?? 'support@goldwen.app';
-  const smtpHost = process.env.EMAIL_HOST;
-  const smtpPort = parseInt(process.env.EMAIL_PORT ?? '587', 10);
-  const smtpUser = process.env.EMAIL_USER;
-  const smtpPass = process.env.EMAIL_PASSWORD;
-  const emailFrom = process.env.EMAIL_FROM ?? 'noreply@goldwen.app';
-
-  if (!smtpHost || !smtpUser || !smtpPass) {
-    console.error('[contact] SMTP not configured');
-    return res.status(500).json({ error: 'Email service not configured' });
-  }
-
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    secure: smtpPort === 465,
-    auth: { user: smtpUser, pass: smtpPass },
-  });
-
+  res.setHeader('Cache-Control', 'no-store');
+  if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ error: 'Method not allowed' }); }
+  if (!req.headers['content-type']?.startsWith('application/json')) return res.status(415).json({ error: 'JSON required' });
+  if (req.headers.origin !== new URL(siteUrl).origin && !(process.env.NODE_ENV !== 'production' && req.headers.origin === `http://${req.headers.host}`)) return res.status(403).json({ error: 'Invalid origin' });
+  const data = validateContact(req.body);
+  if (!data) return res.status(400).json({ error: 'Invalid contact fields' });
+  try {
+    // Vercel overwrites this header. Other hosts use the socket address; never trust arbitrary forwarding headers.
+    const ip = process.env.VERCEL === '1' ? String(req.headers['x-vercel-forwarded-for'] || 'unknown').split(',')[0] : req.socket.remoteAddress || 'unknown';
+    if (!await allowContact(ip)) { res.setHeader('Retry-After', '600'); return res.status(429).json({ error: 'Too many requests' }); }
+  } catch { return res.status(503).json({ error: 'Contact temporarily unavailable' }); }
+  const { name, email, subject, message } = data;
+  const { EMAIL_HOST: host, EMAIL_USER: user, EMAIL_PASSWORD: pass } = process.env;
+  if (!host || !user || !pass) return res.status(503).json({ error: 'Contact temporarily unavailable' });
+  const port = Number(process.env.EMAIL_PORT || 587);
+  const transporter = nodemailer.createTransport({ host, port, secure: port === 465, requireTLS: port !== 465, auth: { user, pass }, connectionTimeout: 5000, socketTimeout: 10000 });
   try {
     await transporter.sendMail({
-      from: `"GoldWen Contact" <${emailFrom}>`,
-      to: recipient,
-      replyTo: `"${name}" <${email}>`,
-      subject: `[Contact GoldWen] ${subject}`,
-      text: `Nom: ${name}\nEmail: ${email}\n\n${message}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-          <h2 style="color:#D4AF37">Nouveau message de contact</h2>
-          <table style="width:100%;border-collapse:collapse">
-            <tr><td style="padding:8px;font-weight:bold">Nom</td><td style="padding:8px">${name}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px"><a href="mailto:${email}">${email}</a></td></tr>
-            <tr><td style="padding:8px;font-weight:bold">Sujet</td><td style="padding:8px">${subject}</td></tr>
-          </table>
-          <hr style="border-color:#D4AF37;margin:16px 0"/>
-          <p style="white-space:pre-wrap">${message}</p>
-        </div>
-      `,
+      from: process.env.EMAIL_FROM || 'noreply@goldwen.app', to: process.env.CONTACT_EMAIL_TO || 'goldwen.supp.app@gmail.com',
+      replyTo: { name, address: email }, subject: `[Contact GoldWen] ${subject}`,
+      text: `Nom: ${name}\nEmail: ${email}\nSujet: ${subject}\n\n${message}`,
+      html: `<h2>Contact GoldWen</h2><p>${escapeHtml(name)} (${escapeHtml(email)})</p><h3>${escapeHtml(subject)}</h3><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
     });
-
     return res.status(200).json({ success: true });
-  } catch (err) {
-    console.error('[contact] Failed to send email:', err);
-    return res.status(500).json({ error: 'Failed to send message' });
-  }
+  } catch { return res.status(503).json({ error: 'Contact temporarily unavailable' }); }
+  finally { transporter.close(); }
 }

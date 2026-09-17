@@ -103,3 +103,6 @@ playwright/.cache/
 
 # CSS build output (will be regenerated)
 public/css/styles.css
+.test-build/
+public/sw.js
+public/workbox-*.js

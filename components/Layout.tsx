@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
 import { AppData } from '../lib/app-service';
 import LanguageSelector from './LanguageSelector';
+import { localizedUrl, siteUrl } from '../lib/site';
 import ThemeToggle from './ThemeToggle';
 
 interface LayoutProps {
@@ -102,7 +103,7 @@ export default function Layout({ children, title, description, keywords, app }: 
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        
+
         {/* SEO Meta Tags */}
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -111,7 +112,7 @@ export default function Layout({ children, title, description, keywords, app }: 
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href={`https://goldwen.app/${router.locale}${router.asPath === '/' ? '' : router.asPath}`}
+          href={localizedUrl(router.locale, router.asPath)}
         />
 
         {/* hreflang — international SEO */}
@@ -120,28 +121,28 @@ export default function Layout({ children, title, description, keywords, app }: 
             key={locale}
             rel="alternate"
             hrefLang={locale}
-            href={`https://goldwen.app/${locale}${router.asPath === '/' ? '' : router.asPath}`}
+            href={localizedUrl(locale, router.asPath)}
           />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`https://goldwen.app${router.asPath}`} />
-        
+        <link rel="alternate" hrefLang="x-default" href={localizedUrl('fr', router.asPath)} />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://goldwen.app${router.asPath}`} />
+        <meta property="og:url" content={localizedUrl(router.locale, router.asPath)} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://goldwen.app/images/og-image.png" />
+        <meta property="og:image" content={`${siteUrl}/images/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content={app.name} />
-        
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={`https://goldwen.app${router.asPath}`} />
+        <meta property="twitter:url" content={localizedUrl(router.locale, router.asPath)} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content="https://goldwen.app/images/og-image.png" />
-        
+        <meta property="twitter:image" content={`${siteUrl}/images/og-image.png`} />
+
         {/* Favicons */}
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -149,11 +150,11 @@ export default function Layout({ children, title, description, keywords, app }: 
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#D4AF37" />
-        
+
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -163,7 +164,7 @@ export default function Layout({ children, title, description, keywords, app }: 
               "@type": "SoftwareApplication",
               "name": app.name,
               "description": description,
-              "url": "https://goldwen.app",
+              "url": siteUrl,
               "applicationCategory": "Dating",
               "operatingSystem": "iOS, Android",
               "author": {
@@ -184,14 +185,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                 <Link href="/" className="flex items-center space-x-4 group">
                   <div className="relative navbar-logo-icon-animated">
                     <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-gold transition-all duration-500 group-hover:shadow-gold-lg">
-                      <img 
-                        src="/images/logo_light.png" 
-                        alt="GoldWen Logo" 
+                      <img
+                        src="/images/logo_light.png"
+                        alt="GoldWen Logo"
                         className="w-12 h-12 object-contain dark:hidden transition-transform duration-500 group-hover:scale-110"
                       />
-                      <img 
-                        src="/images/logo_dark.png" 
-                        alt="GoldWen Logo" 
+                      <img
+                        src="/images/logo_dark.png"
+                        alt="GoldWen Logo"
                         className="w-12 h-12 object-contain hidden dark:block transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -201,36 +202,36 @@ export default function Layout({ children, title, description, keywords, app }: 
                   </span>
                 </Link>
               </div>
-              
+
               {/* Desktop menu - Enhanced with premium navigation */}
               <div className="hidden xl:flex items-center space-x-8">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.home')}
                 </Link>
-                <Link 
-                  href="/support" 
+                <Link
+                  href="/support"
                   className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.support')}
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="navbar-link text-gray-text dark:text-dark-text hover:text-gold-primary dark:hover:text-gold-accent font-medium text-lg transition-all duration-300"
                 >
                   {t('nav.contact')}
                 </Link>
-                
+
                 {/* Language Selector */}
                 <LanguageSelector />
-                
+
                 {/* Theme Toggle */}
                 <ThemeToggle />
-                
-                <a 
-                  href="/#download" 
+
+                <Link
+                  href="/#download"
                   className="btn-primary text-base px-8 py-3 hover-lift group relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
@@ -239,11 +240,11 @@ export default function Layout({ children, title, description, keywords, app }: 
                     </svg>
                     {t('nav.download')}
                   </span>
-                </a>
+                </Link>
               </div>
-              
+
               {/* Mobile menu button */}
-              <button 
+              <button
                 onClick={toggleMobileMenu}
                 className="xl:hidden p-3 text-gray-text dark:text-dark-text hover:text-gold-primary transition-colors rounded-lg focus:outline-none"
                 aria-label="Toggle mobile menu"
@@ -256,7 +257,7 @@ export default function Layout({ children, title, description, keywords, app }: 
 
             {/* Mobile Menu - Enhanced Premium Design */}
             {isMobileMenuOpen && (
-              <div 
+              <div
                 ref={mobileMenuRef}
                 className="xl:hidden fixed inset-0 z-50 bg-white/95 dark:bg-dark-secondary/95"
               >
@@ -265,14 +266,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <div className="flex items-center space-x-4">
                     <div className="relative">
                       <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-gold-primary to-gold-accent shadow-gold">
-                        <img 
-                          src="/images/logo_light.png" 
-                          alt="GoldWen Logo" 
+                        <img
+                          src="/images/logo_light.png"
+                          alt="GoldWen Logo"
                           className="w-10 h-10 object-contain dark:hidden"
                         />
-                        <img 
-                          src="/images/logo_dark.png" 
-                          alt="GoldWen Logo" 
+                        <img
+                          src="/images/logo_dark.png"
+                          alt="GoldWen Logo"
                           className="w-10 h-10 object-contain hidden dark:block"
                         />
                       </div>
@@ -281,7 +282,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                       {app.name}
                     </span>
                   </div>
-                  <button 
+                  <button
                     onClick={toggleMobileMenu}
                     className="p-3 text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-gold-primary/10 transition-all duration-300 rounded-xl"
                   >
@@ -293,7 +294,7 @@ export default function Layout({ children, title, description, keywords, app }: 
 
                 {/* Mobile Menu Content */}
                 <div className="relative z-10 p-6 space-y-8 overflow-y-auto bg-white/95 dark:bg-dark-secondary/95" style={{ maxHeight: 'calc(100vh - 80px)' }}>
-                  
+
                   {/* Navigation Links Card */}
                   <div className="bg-white/95 dark:bg-dark-secondary/95 rounded-2xl p-6 shadow-xl border border-gold-primary/10 dark:border-dark-tertiary">
                     <h3 className="font-serif font-semibold text-lg text-gold-primary dark:text-gold-accent mb-4 flex items-center">
@@ -303,8 +304,8 @@ export default function Layout({ children, title, description, keywords, app }: 
                       {t('nav.mobile.navigation')}
                     </h3>
                     <div className="space-y-2">
-                      <Link 
-                        href="/" 
+                      <Link
+                        href="/"
                         className="group flex items-center px-4 py-4 text-lg font-medium text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-gradient-to-r hover:from-gold-primary/5 hover:to-gold-accent/5 rounded-xl transition-all duration-300 transform hover:scale-[1.02]"
                         onClick={toggleMobileMenu}
                       >
@@ -313,8 +314,8 @@ export default function Layout({ children, title, description, keywords, app }: 
                         </svg>
                         {t('nav.home')}
                       </Link>
-                      <Link 
-                        href="/support" 
+                      <Link
+                        href="/support"
                         className="group flex items-center px-4 py-4 text-lg font-medium text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-gradient-to-r hover:from-gold-primary/5 hover:to-gold-accent/5 rounded-xl transition-all duration-300 transform hover:scale-[1.02]"
                         onClick={toggleMobileMenu}
                       >
@@ -323,8 +324,8 @@ export default function Layout({ children, title, description, keywords, app }: 
                         </svg>
                         {t('nav.support')}
                       </Link>
-                      <Link 
-                        href="/contact" 
+                      <Link
+                        href="/contact"
                         className="group flex items-center px-4 py-4 text-lg font-medium text-gray-text dark:text-dark-text hover:text-gold-primary hover:bg-gradient-to-r hover:from-gold-primary/5 hover:to-gold-accent/5 rounded-xl transition-all duration-300 transform hover:scale-[1.02]"
                         onClick={toggleMobileMenu}
                       >
@@ -345,7 +346,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                       </svg>
                       {t('nav.settings')}
                     </h3>
-                    
+
                     {/* Language Selector */}
                     <div className="mb-4">
                       <div className="flex justify-center">
@@ -371,9 +372,9 @@ export default function Layout({ children, title, description, keywords, app }: 
                         {t('nav.mobile.download_description')}
                       </p>
                     </div>
-                    
-                    <a 
-                      href="/#download" 
+
+                    <Link
+                      href="/#download"
                       className="group block w-full text-center btn-primary text-lg py-4 rounded-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                       onClick={toggleMobileMenu}
                     >
@@ -384,7 +385,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                       <svg className="w-4 h-4 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                       </svg>
-                    </a>
+                    </Link>
 
                     {/* App Store badges */}
                     <div className="flex flex-col space-y-3 mt-4">
@@ -437,9 +438,9 @@ export default function Layout({ children, title, description, keywords, app }: 
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="relative">
                       <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-gold animate-glow">
-                        <img 
-                          src="/images/logo_light.png" 
-                          alt="GoldWen Logo" 
+                        <img
+                          src="/images/logo_light.png"
+                          alt="GoldWen Logo"
                           className="w-16 h-16 object-contain"
                         />
                       </div>
@@ -450,36 +451,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                       <div className="w-20 h-1 bg-gradient-to-r from-gold-primary to-gold-light rounded-full mt-2"></div>
                     </div>
                   </div>
-                  
+
                   <p className="text-gold-accent text-lg font-medium italic text-shadow">
                     {app.slogan}
                   </p>
-                  
+
                   <p className="text-gray-300 text-lg leading-relaxed max-w-md">
                     {t('footer.description')}
                   </p>
-
-                  {/* Social proof */}
-                  <div className="flex items-center space-x-8 pt-4">
-                    <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">
-                        {process.env.NEXT_PUBLIC_STAT_USERS || '10K+'}
-                      </div>
-                      <div className="text-gray-400 text-sm">{t('footer.stat_users', 'Utilisateurs')}</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">
-                        {process.env.NEXT_PUBLIC_STAT_RATING || '4.9★'}
-                      </div>
-                      <div className="text-gray-400 text-sm">{t('footer.stat_rating', 'Note App Store')}</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-gold-primary font-bold text-2xl">
-                        {process.env.NEXT_PUBLIC_STAT_SATISFACTION || '95%'}
-                      </div>
-                      <div className="text-gray-400 text-sm">{t('footer.stat_satisfaction', 'Satisfaction')}</div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Navigation links */}
@@ -495,14 +474,14 @@ export default function Layout({ children, title, description, keywords, app }: 
                       </Link>
                     </li>
                     <li>
-                      <a href="/#features" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
+                      <Link href="/#features" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
                         {t('nav.features')}
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/#about" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
+                      <Link href="/#about" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
                         {t('nav.about')}
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link href="/support" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
@@ -529,6 +508,7 @@ export default function Layout({ children, title, description, keywords, app }: 
                         {t('nav.terms')}
                       </Link>
                     </li>
+                    <li><Link href="/donnees-personnelles" className="text-gray-300 hover:text-gold-primary underline">{t('data_contact')}</Link></li>
                     <li>
                       <Link href="/mentions-legales" className="text-gray-300 hover:text-gold-primary transition-all duration-300 text-lg hover:translate-x-2 inline-block">
                         {t('nav.legal')}
@@ -548,10 +528,10 @@ export default function Layout({ children, title, description, keywords, app }: 
                 <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                   <div className="flex items-center space-x-4">
                     <p className="text-gray-400 text-lg">
-                      &copy; 2025 {app.name}. {t('footer.copyright')}
+                      &copy; {new Date().getFullYear()} {app.name}. {t('footer.copyright')}
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center space-x-6">
                     <span className="text-gray-400 text-sm">{t('footer.made_with')}</span>
                     <div className="w-4 h-4 bg-gradient-to-br from-red-400 to-red-600 rounded-full animate-pulse-slow"></div>

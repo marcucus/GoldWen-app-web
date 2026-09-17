@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-
-# Sitemap
+Disallow: /api/
 Sitemap: https://goldwen.app/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1

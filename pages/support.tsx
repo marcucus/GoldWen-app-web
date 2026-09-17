@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
 import { appService } from '../lib/app-service';
@@ -127,12 +128,12 @@ export default function Support({ seoData }: SupportProps) {
                   <p className="text-body text-gray-warm mb-8">
                     {t('support:contact_section.description')}
                   </p>
-                  <a href="/contact" className="btn-primary hover-lift group animate-scale-in">
+                  <Link href="/contact" className="btn-primary hover-lift group animate-scale-in">
                     <svg className="w-6 h-6 mr-3 inline group-hover:animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                     {t('support:contact_section.button')}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

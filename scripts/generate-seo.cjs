@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+require('@next/env').loadEnvConfig(process.cwd());
+const base = (process.env.NEXT_PUBLIC_SITE_URL || 'https://goldwen.app').replace(/\/$/, '');
+const locales = ['fr', 'en', 'es', 'de', 'it', 'pt'];
+const paths = ['', '/support', '/contact', '/conditions', '/confidentialite', '/mentions-legales', '/donnees-personnelles'];
+const escape = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+const url = (locale, path) => escape(`${base}${locale === 'fr' ? '' : `/${locale}`}${path}`);
+const entries = paths.flatMap(path => locales.map(locale => `<url><loc>${url(locale, path)}</loc>${locales.map(other => `<xhtml:link rel="alternate" hreflang="${other}" href="${url(other, path)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${url('fr', path)}"/></url>`));
+fs.writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join('\n')}\n</urlset>\n`);
+fs.writeFileSync('public/robots.txt', `User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${base}/sitemap.xml\n`);

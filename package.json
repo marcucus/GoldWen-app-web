@@ -11,8 +11,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "build:css": "npx tailwindcss -i ./styles/globals.css -o ./public/css/styles.css --watch=false",
-    "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/css/styles.css --watch"
+    "prebuild": "node scripts/generate-seo.cjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.tests.json && node --test tests/*.test.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

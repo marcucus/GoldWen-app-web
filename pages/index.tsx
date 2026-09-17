@@ -50,32 +50,6 @@ export default function Home({ seoData }: HomeProps) {
     }
   ];
 
-  // Get testimonials data from translations
-  const testimonials = [
-    {
-      quote: t('testimonials.items.sophie.quote'),
-      name: t('testimonials.items.sophie.name'),
-      meta: t('testimonials.items.sophie.meta'),
-      initials: 'S',
-      color: 'from-gold-primary to-gold-dark'
-    },
-    {
-      quote: t('testimonials.items.thomas.quote'),
-      name: t('testimonials.items.thomas.name'),
-      meta: t('testimonials.items.thomas.meta'),
-      initials: 'T',
-      color: 'from-gold-light to-gold-primary'
-    },
-    {
-      quote: t('testimonials.items.camille.quote'),
-      name: t('testimonials.items.camille.name'),
-      meta: t('testimonials.items.camille.meta'),
-      initials: 'C',
-      color: 'from-gold-dark to-gold-rich'
-    }
-  ];
-
-  // Get personas data from translations
   const personas = [
     {
       name: t('personas.sophie.name'),
@@ -135,57 +109,10 @@ export default function Home({ seoData }: HomeProps) {
               </div>
             </div>
             
-            {/* Enhanced phone mockup */}
-            <div className="relative animate-fade-in-down" style={{animationDelay: '0.7s'}}>
-              <div className="relative max-w-sm mx-auto">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-primary to-gold-light rounded-3xl blur-xl opacity-30 animate-glow"></div>
-                
-                {/* Phone mockup */}
-                <div className="relative bg-white rounded-3xl shadow-3xl p-8 transform rotate-3 hover:rotate-0 transition-all duration-800 hover-lift animate-float">
-                  <div className="space-y-8">
-                    {/* Header */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-14 h-14 bg-gradient-gold rounded-full animate-pulse-gold flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">G</span>
-                        </div>
-                        <div>
-                          <div className="h-4 bg-gray-200 rounded w-20 mb-2 animate-pulse"></div>
-                          <div className="h-3 bg-gray-100 rounded w-16 animate-pulse"></div>
-                        </div>
-                      </div>
-                      <div className="w-8 h-8 bg-gold-primary rounded-full animate-bounce-subtle"></div>
-                    </div>
-                    
-                    {/* Profile cards */}
-                    <div className="space-y-4">
-                      {[1, 2, 3].map((item, index) => (
-                        <div key={item} className="bg-cream-light rounded-2xl p-4 hover:shadow-lg transition-all duration-400" style={{animationDelay: `${index * 0.2}s`}}>
-                          <div className="flex items-center space-x-3 mb-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full"></div>
-                            <div className="flex-1">
-                              <div className="h-3 bg-gray-200 rounded w-full mb-1"></div>
-                              <div className="h-2 bg-gray-100 rounded w-2/3"></div>
-                            </div>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="h-2 bg-gray-100 rounded w-full"></div>
-                            <div className="h-2 bg-gray-100 rounded w-4/5"></div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* CTA Button */}
-                    <div className="flex justify-center">
-                      <div className="w-32 h-12 bg-gradient-gold rounded-xl animate-glow flex items-center justify-center">
-                        <span className="text-white font-semibold">Choisir</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center space-y-8">
+              <img src="/images/logo_light.png" alt="GoldWen" className="w-48 h-48 object-contain mx-auto" />
+              <p className="font-serif text-3xl">{t('ritual.title')}</p>
+              <p className="text-lg leading-relaxed max-w-sm mx-auto">{t('ritual.description')}</p>
             </div>
           </div>
         </div>
@@ -223,50 +150,6 @@ export default function Home({ seoData }: HomeProps) {
                 
                 {/* Decorative element */}
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="section-padding bg-white dark:bg-dark-primary geometric-bg">
-        <div className="container-responsive">
-          <div className="text-center mb-20 animate-fade-in-up">
-            <div className="art-deco-border mb-8"></div>
-            <h2 className="heading-secondary gold-accent-center text-shadow-lg mb-8">
-              {t('testimonials.title')}
-            </h2>
-            <p className="text-body-large max-w-3xl mx-auto text-gray-warm">
-              {t('testimonials.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.name}
-                className="card-testimonial group animate-fade-in-up"
-                style={{animationDelay: `${index * 0.15}s`}}
-              >
-                {/* Quote mark */}
-                <div className="text-gold-primary text-5xl font-serif leading-none mb-4 opacity-40 select-none">&ldquo;</div>
-
-                {/* Quote text */}
-                <p className="text-body text-gray-warm leading-relaxed mb-8 flex-1">
-                  {testimonial.quote}
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center space-x-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${testimonial.color} rounded-full flex items-center justify-center flex-shrink-0 shadow-gold`}>
-                    <span className="text-white font-bold text-lg">{testimonial.initials}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-dark dark:text-white">{testimonial.name}</div>
-                    <div className="text-sm text-gray-soft">{testimonial.meta}</div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
@@ -373,16 +256,13 @@ export default function Home({ seoData }: HomeProps) {
                             {persona.name.charAt(0)}
                           </span>
                         </div>
-                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cream-lightest rounded-full border-2 border-gold-primary flex items-center justify-center">
-                          <span className="text-gold-primary text-xs font-bold">✓</span>
-                        </div>
                       </div>
                       <div className="flex-1">
                         <h3 className="heading-tertiary text-shadow mb-2">{persona.name}</h3>
                         <div className="flex items-center space-x-2">
                           <span className="text-gold-rich font-semibold text-lg">{persona.age}</span>
                           <div className="w-2 h-2 bg-gold-primary rounded-full"></div>
-                          <span className="text-gray-soft text-sm">Profil vérifié</span>
+                          <span className="text-gray-soft text-sm">{t('personas.illustrative')}</span>
                         </div>
                       </div>
                     </div>
@@ -394,22 +274,7 @@ export default function Home({ seoData }: HomeProps) {
                       </p>
                     </div>
                     
-                    {/* Stats or additional info */}
-                    <div className="flex items-center justify-between mt-8 pt-6 border-t border-gold-primary/10">
-                      <div className="flex space-x-4">
-                        <div className="text-center">
-                          <div className="text-gold-primary font-bold text-lg">98%</div>
-                          <div className="text-gray-soft text-xs">Compatibilité</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-gold-primary font-bold text-lg">5★</div>
-                          <div className="text-gray-soft text-xs">Évaluation</div>
-                        </div>
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-gold rounded-xl flex items-center justify-center group-hover:animate-bounce-subtle">
-                        <span className="text-white text-xl">💎</span>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -507,23 +372,7 @@ export default function Home({ seoData }: HomeProps) {
                 {t('download.coming_soon')}
               </p>
               
-              {/* Social proof or additional info */}
-              <div className="flex items-center justify-center space-x-8 text-center">
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold">10K+</div>
-                  <div className="text-xs opacity-70">{t('download.stats.waiting_list')}</div>
-                </div>
-                <div className="w-px h-8 bg-white/30"></div>
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold">4.9★</div>
-                  <div className="text-xs opacity-70">{t('download.stats.user_rating')}</div>
-                </div>
-                <div className="w-px h-8 bg-white/30"></div>
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold">95%</div>
-                  <div className="text-xs opacity-70">{t('download.stats.satisfaction')}</div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

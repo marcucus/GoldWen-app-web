@@ -1055,3 +1055,21 @@
       0 0 0 1px rgba(212, 175, 55, 0.2);
   }
 }
+/* Calm, readable legal and consent surfaces. */
+.legal-prose { color: #343434; line-height: 1.8; }
+.dark .legal-prose { color: #eee; }
+.legal-prose h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+.legal-prose p { margin-bottom: 1.25rem; }
+.consent-button { padding: .65rem 1rem; background: #fff; color: #343434; border: 1px solid #806817; border-radius: .5rem; }
+.consent-button:hover { background: #f5f0e6; }
+:focus-visible { outline: 3px solid #806817; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+/* Keep headings stable and readable throughout the page. */
+.title-goldwen-animated, .gold-accent-animated, .navbar-logo-animated {
+  animation: none !important; filter: none !important; opacity: 1 !important;
+  color: inherit; -webkit-text-fill-color: currentColor; text-shadow: none !important;
+}
+.heading-primary, .heading-secondary, .heading-tertiary { text-shadow: none !important; text-wrap: balance; }
+.animate-fade-in { opacity: 1; }

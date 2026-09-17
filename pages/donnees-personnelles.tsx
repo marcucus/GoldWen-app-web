@@ -3,8 +3,8 @@ import LegalPage from '../components/LegalPage';
 import { appService } from '../lib/app-service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { ComponentProps } from 'react';
-export default function Page(props: Omit<ComponentProps<typeof LegalPage>, 'kind'>) { return <LegalPage {...props} kind="conditions" />; }
+export default function Page(props: Omit<ComponentProps<typeof LegalPage>, 'kind'>) { return <LegalPage {...props} kind="donnees-personnelles" />; }
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({ props: {
-  seoData: appService.getTermsPageSEO(locale),
+  seoData: appService.getPrivacyPageSEO(locale), 
   ...(await serverSideTranslations(locale || 'fr', ['common'])),
 } });

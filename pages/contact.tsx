@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import Layout from '../components/Layout';
@@ -17,7 +18,7 @@ export default function Contact({ seoData }: ContactProps) {
   const { t } = useTranslation('common');
   const { t: tContact } = useTranslation('contact');
 
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '', website: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -30,7 +31,7 @@ export default function Contact({ seoData }: ContactProps) {
         body: JSON.stringify(form),
       });
       setStatus(res.ok ? 'success' : 'error');
-      if (res.ok) setForm({ name: '', email: '', subject: '', message: '' });
+      if (res.ok) setForm({ name: '', email: '', subject: '', message: '', website: '' });
     } catch {
       setStatus('error');
     }
@@ -95,7 +96,7 @@ export default function Contact({ seoData }: ContactProps) {
                 <p className="text-body text-gray-warm mb-6">
                   {tContact('email_card.description')}
                 </p>
-                <a href="mailto:support@goldwen.app" className="text-gold-primary font-semibold text-lg hover:text-gold-dark transition-colors duration-300">
+                <a href="mailto:goldwen.supp.app@gmail.com" className="text-gold-primary font-semibold text-lg hover:text-gold-dark transition-colors duration-300">
                   {tContact('email_card.email')}
                 </a>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
@@ -122,7 +123,9 @@ export default function Contact({ seoData }: ContactProps) {
             {/* Contact Form */}
             <div className="card animate-fade-in-up mb-8" style={{animationDelay: '0.3s'}}>
               <h3 className="heading-tertiary mb-8 text-shadow text-center">{tContact('form.title')}</h3>
-              <form onSubmit={handleSubmit} noValidate className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="sr-only" aria-hidden="true"><label htmlFor="website">Website</label><input id="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={e => setForm({ ...form, website: e.target.value })} /></div>
+                <p className="text-sm"><Link className="underline" href="/confidentialite">{t('nav.privacy')}</Link> · <Link className="underline" href="/donnees-personnelles">{t('data_contact')}</Link></p>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-text dark:text-dark-text mb-2">
@@ -212,20 +215,8 @@ export default function Contact({ seoData }: ContactProps) {
               <div className="text-center">
                 <h3 className="heading-tertiary mb-8 text-shadow">{tContact('other_contact.title')}</h3>
                 
-                <div className="grid sm:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mx-auto shadow-gold group-hover:animate-glow">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-text mb-2">{tContact('other_contact.address.title')}</h4>
-                      <p className="text-gray-warm">{tContact('other_contact.address.value')}</p>
-                    </div>
-                  </div>
-                  
+                <div className="grid gap-8">
+
                   <div className="space-y-4">
                     <div className="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mx-auto shadow-gold group-hover:animate-glow">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -235,9 +226,9 @@ export default function Contact({ seoData }: ContactProps) {
                     <div>
                       <h4 className="font-semibold text-gray-text mb-2">{tContact('other_contact.support.title')}</h4>
                       <p className="text-gray-warm">
-                        <a href="/support" className="text-gold-primary hover:text-gold-dark transition-colors duration-300">
+                        <Link href="/support" className="text-gold-primary hover:text-gold-dark transition-colors duration-300">
                           {tContact('other_contact.support.link_text')}
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>

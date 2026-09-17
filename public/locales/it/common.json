@@ -37,7 +37,7 @@
     "items": {
       "daily_selection": {
         "title": "Selezione Giornaliera",
-        "description": "Ricevi da 3 a 5 profili accuratamente selezionati ogni giorno a mezzogiorno."
+        "description": "5 profili ogni giorno a mezzogiorno locale. 1 scelta gratuita, fino a 3 con GoldWen Plus. Una scelta reciproca apre una conversazione di 24 ore."
       },
       "smart_matching": {
         "title": "Matching Intelligente",
@@ -85,49 +85,21 @@
       "name": "Marc, il Professionista Ambizioso",
       "age": "34 anni",
       "description": "Carriera impegnativa, poco tempo libero. Ottimizza la sua ricerca concentrandosi su profili seri."
-    }
+    },
+    "illustrative": "Persona fittizia"
   },
   "download": {
     "title": "Pronto a vivere un'esperienza di incontri diversa?",
-    "subtitle": "Unisciti a GoldWen e scopri come la qualità può trasformare i tuoi incontri online. Scarica l'app oggi.",
+    "subtitle": "L’app è in preparazione. I link saranno disponibili dopo la pubblicazione negli store.",
     "app_store": "Scarica su",
     "google_play": "Disponibile su",
-    "coming_soon": "Presto disponibile su iOS e Android",
-    "stats": {
-      "waiting_list": "In lista d'attesa",
-      "user_rating": "Recensioni utenti",
-      "satisfaction": "Soddisfazione"
-    }
+    "coming_soon": "Presto disponibile su iOS e Android"
   },
   "footer": {
     "description": "L'app di incontri che priorizza la qualità delle connessioni per relazioni autentiche e durature.",
     "made_with": "Fatto con",
     "in_paris": "a Parigi",
-    "copyright": "Tutti i diritti riservati.",
-    "stat_users": "Utenti",
-    "stat_rating": "Voto App Store",
-    "stat_satisfaction": "Soddisfazione"
-  },
-  "testimonials": {
-    "title": "Cosa dicono di GoldWen",
-    "subtitle": "Connessioni autentiche, vissute da persone reali.",
-    "items": {
-      "sophie": {
-        "quote": "J'ai trouvé quelqu'un de vraiment compatible grâce à GoldWen. L'approche slow dating fait toute la différence !",
-        "name": "Sophie",
-        "meta": "28 anni, Parigi"
-      },
-      "thomas": {
-        "quote": "Enfin une appli qui mise sur la qualité plutôt que la quantité. Mon premier vrai match.",
-        "name": "Thomas",
-        "meta": "32 anni, Lione"
-      },
-      "camille": {
-        "quote": "L'algorithme de compatibilité est bluffant. Nos valeurs s'alignent parfaitement.",
-        "name": "Camille",
-        "meta": "25 anni, Bordeaux"
-      }
-    }
+    "copyright": "Tutti i diritti riservati."
   },
   "language": {
     "switch": "Cambia lingua",
@@ -137,5 +109,27 @@
     "german": "Deutsch",
     "italian": "Italiano",
     "portuguese": "Português"
+  },
+  "ritual": {
+    "title": "Il tuo rituale di mezzogiorno",
+    "description": "5 profili ogni giorno a mezzogiorno locale. 1 scelta gratuita, fino a 3 con GoldWen Plus. Una scelta reciproca apre una conversazione di 24 ore."
+  },
+  "cookies": {
+    "title": "Misurazione del pubblico",
+    "description": "Vercel Analytics e Speed Insights sono facoltativi e misurano visite e prestazioni. Si caricano solo con il tuo accordo. La scelta viene salvata per sei mesi e può essere revocata in qualsiasi momento.",
+    "refuse": "Rifiuta",
+    "accept": "Accetta",
+    "manage": "Gestisci la misurazione"
+  },
+  "legal_reference": "Testo di riferimento in francese",
+  "legal_scope": "Queste informazioni riguardano il sito web. L’app è in preparazione; condizioni e informativa saranno presentate prima della registrazione.",
+  "data_contact": "Contatta il responsabile dei dati",
+  "errors": {
+    "not_found": "Pagina non trovata",
+    "not_found_description": "Questa pagina non esiste o è stata spostata.",
+    "server": "Errore del server",
+    "server_description": "Si è verificato un errore. Riprova tra qualche istante.",
+    "home": "Torna alla home",
+    "retry": "Riprova"
   }
 }

@@ -7,7 +7,7 @@
     "items": {
       "daily_selection": {
         "question": "Como funciona a seleção diária?",
-        "answer": "Todos os dias ao meio-dia, nosso algoritmo sugere de 3 a 5 perfis cuidadosamente selecionados com base em suas preferências, compatibilidade e valores. Esta abordagem prioriza a qualidade em vez da quantidade para encontros mais significativos."
+        "answer": "5 perfis todos os dias ao meio-dia local. 1 escolha gratuita, até 3 com GoldWen Plus. Uma escolha mútua abre uma conversa de 24 horas."
       },
       "conversations_24h": {
         "question": "Por que as conversas desaparecem após 24 horas?",
@@ -23,7 +23,7 @@
       },
       "contact_support": {
         "question": "Como entrar em contato com o suporte?",
-        "answer": "Você pode nos contatar através de nossa página de contato ou diretamente por e-mail em support@goldwen.app. Normalmente respondemos dentro de 24 horas com soluções personalizadas."
+        "answer": "Você pode nos contatar através de nossa página de contato ou diretamente por e-mail em goldwen.supp.app@gmail.com. Normalmente respondemos dentro de 24 horas com soluções personalizadas."
       }
     }
   },

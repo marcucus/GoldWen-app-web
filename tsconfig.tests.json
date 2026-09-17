@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "noEmit": false,
+    "incremental": false,
+    "outDir": ".test-build"
+  },
+  "include": [
+    "lib/site.ts",
+    "lib/contact-security.ts",
+    "pages/api/contact.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
