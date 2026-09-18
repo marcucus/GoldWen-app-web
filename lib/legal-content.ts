@@ -44,7 +44,7 @@ export const legalSections: Record<string, string[][]> = {
     ],
     [
       "Conservation et sécurité",
-      "La limite de débit expire au plus tard après onze minutes. Le site ne conserve pas les messages en base de données : ils sont livrés par e-mail. Les demandes sont conservées le temps de leur traitement ; l’éditeur doit fixer et appliquer une durée de suppression dans sa boîte de support avant activation en production. Les durées des journaux techniques dépendent de la configuration de l’hébergeur et doivent être confirmées avant lancement. Les échanges utilisent HTTPS et l’envoi SMTP requiert TLS. Le contenu utilisateur est validé et échappé, sans journaliser les messages."
+      "La limite de débit expire au plus tard après onze minutes. Le site ne conserve pas les messages en base de données : ils sont livrés par e-mail. Les demandes sont conservées pendant leur traitement puis douze mois après clôture. Cette suppression doit aussi être appliquée dans la boîte de support. Les journaux de sécurité sont conservés au maximum six mois, sans contenu des messages ; les durées et réglages effectifs chez les prestataires doivent être vérifiés avant lancement. Les échanges utilisent HTTPS et l’envoi SMTP requiert TLS. Le contenu utilisateur est validé et échappé, sans journaliser les messages."
     ],
     [
       "Exercer vos droits",
